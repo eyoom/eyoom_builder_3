@@ -1,0 +1,451 @@
+<?php if (!defined('_GNUBOARD_')) exit;
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/prism/prism.min.css" type="text/css" media="screen">',0);
+?>
+
+<div class="ui-accordion-tab">
+	<div class="headline">
+		<h4><strong><i class="fa fa-genderless color-red"></i> Table</strong></h4>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-info font-size-12"><i class="fa fa-info-circle"></i> 이윰빌더에서 사용하는 시즌3 Table의 ShortCodes 입니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-success font-size-12"><i class="fa fa-check"></i> 소스코드는 해당 예제에 마우스 포인트를 갖다대면 <a href="#" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a> 버튼이 나타나며, 클릭하면 소스코드를 볼 수 있습니다.</p>
+	</div>
+	<div class="margin-bottom-30"></div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>기본 예제</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>모든 테이블 소스는 <code>&lt;div class="table-list-eb"&gt;&lt;/div&gt;</code> 로 감싸줍니다. <code>&lt;table&gt;</code> 에 약간의 패딩과 수평 구분선이 있는 기본 스타일의 <code>.table</code> 클래스를 추가하세요.</p>
+	    	<p><strong>예제</strong></p>
+			<div class="code-example">
+				<div class="table-list-eb">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Username</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>줄무늬 행</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p><code>&lt;tbody&gt;</code> 안에 테이블 행에 얼룩말같은 줄무늬를 추가하려면, <code>.table-striped</code> 를 사용하세요.</p>
+	    	<p><strong>예제</strong></p>
+			<div class="code-example">
+				<div class="table-list-eb">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Username</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>행 hover</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p><code>&lt;tbody&gt;</code> 안의 테이블 행에 hover 상태를 확인할 수 있게끔 하려면 <code>.table-hover</code> 를 추가하세요.</p>
+	    	<p><strong>예제</strong></p>
+			<div class="code-example">
+				<div class="table-list-eb">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Username</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>선있는 테이블</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>테이블의 모서리와 셀에 선을 그리기 위해 <code>.table-bordered</code> 을 추가하세요.</p>
+	    	<p><strong>예제</strong></p>
+			<div class="code-example">
+				<div class="table-list-eb">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Username</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>혼합</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p><code>.table-bordered</code> <code>.table-striped</code> <code>.table-hover</code> 혼합</p>
+	    	<p><strong>예제</strong></p>
+			<div class="code-example">
+				<div class="table-list-eb">
+					<table class="table table-bordered table-striped table-hover">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Username</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td>Mark</td>
+								<td>Otto</td>
+								<td>@mdo</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Jacob</td>
+								<td>Thornton</td>
+								<td>@fat</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td>Larry</td>
+								<td>the Bird</td>
+								<td>@twitter</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>맥락적인 클래스들</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>테이블 행이나 셀에 색을 넣으려면 맥락적인 클래스들을 사용하세요. <code>.active</code> <code>.success</code> <code>.info</code> <code>.warning</code> <code>.danger</code></p>
+	    	<p><strong>예제</strong></p>
+			<div class="code-example">
+				<div class="table-list-eb">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Column heading</th>
+								<th>Column heading</th>
+								<th>Column heading</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="active">
+								<th scope="row">1</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr class="success">
+								<th scope="row">3</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr>
+								<th scope="row">4</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr class="info">
+								<th scope="row">5</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr>
+								<th scope="row">6</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr class="warning">
+								<th scope="row">7</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr>
+								<th scope="row">8</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr class="danger">
+								<th scope="row">9</th>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>반응형 테이블</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p><code>.table</code> 을 <code>.table-responsive</code> 으로 감싸서 작은 기기에서는 수평 스크롤을 할 수 있는 반응형 테이블을 만듭니다(768px 이하). 768px 보다 큰 기기에서는 보기에 차이가 없습니다.</p>
+	    	<p><strong>예제</strong></p>
+			<div class="code-example">
+				<div class="table-list-eb">
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+	    	<p><strong>예제</strong></p>
+			<div class="code-example">
+				<div class="table-list-eb">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+									<th>Table heading</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+									<td>Table cell</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.code-example {position:relative}
+#source-button {position:absolute;top:0;right:0;z-index:100;font-weight:600}
+#source-modal .modal-content {border-radius:0}
+#source-modal .btn-clipboard {letter-spacing:0.5px}
+#source-modal .hljs {padding:10px 12px}
+pre {display:block;padding:9px;margin:0 0 9.5px;font-size:12px;line-height:1.49;word-break:break-all;word-wrap:break-word;color:#333;background-color:#eaeaea;border:0;border-radius:0}
+pre code {padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}
+.pre-scrollable {max-height:340px;overflow-y:scroll}
+.example-box {position:relative;border:1px dashed #d5d5d5;padding:10px}
+</style>
+
+<!--{? C.G5_IS_MOBILE}-->
+<style>
+.modal-backdrop {z-index:0}
+</style>
+<!--{/}-->
+
+<script src="../../../plugins/prism/prism.min.js"></script>
+<script src="../../../plugins/clipboard/clipboard.min.js"></script>
+<script src="../../../js/code-view.min.js"></script>
+<script>
+$(document).ready(function(){
+	var clipboard = new Clipboard('.btn-copy');
+    Codeview.init();
+});
+</script>

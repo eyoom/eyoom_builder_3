@@ -1,0 +1,4286 @@
+<?php if (!defined('_GNUBOARD_')) exit;
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/prism/prism.min.css" type="text/css" media="screen">',0);
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/eyoom-form/plugins/select2/select2.min.css" type="text/css" media="screen">',0);
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/eyoom-form/plugins/jquery-clockpicker/jquery.clockpicker.min.css" type="text/css" media="screen">',0);
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/eyoom-form/plugins/bootstrap-daterangepicker/daterangepicker.min.css" type="text/css" media="screen">',0);
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/eyoom-form/plugins/jquery-tagEditor/jquery.tag-editor.css" type="text/css" media="screen">',0);
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/eyoom-form/plugins/jquery-asColorPicker/css/asColorPicker.min.css" type="text/css" media="screen">',0);
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/eyoom-form/plugins/dropify/css/dropify.min.css" type="text/css" media="screen">',0);
+?>
+
+<div class="ui-advanced-eyoom-form">
+	<div class="headline">
+		<h4><strong><i class="fa fa-genderless color-red"></i> Advanced form</strong></h4>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-info font-size-12"><i class="fa fa-info-circle"></i> 이윰빌더에서 사용하는 시즌3 Eyoom form의 확장기능 ShortCodes 입니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-success font-size-12"><i class="fa fa-check"></i> 소스코드는 해당 예제에 마우스 포인트를 갖다대면 <a href="#" class="btn-e btn-e-purple btn-e-xs" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a> 버튼이 나타나며, 클릭하면 소스코드를 볼 수 있습니다.</p>
+	</div>
+	<div class="margin-bottom-20"></div>
+	<div class="alert alert-warning margin-bottom-20">
+		<p><i class="fa fa-exclamation-circle"></i> Eyoom Form 적용을 위하여 소스코드는 <code>class="eyoom-form"</code> 으로 감싸주어야 합니다.</p>
+		<div class="margin-bottom-10"></div>
+<pre class="line-numbers">
+<code class="language-html">
+&lt;!--form 태그의 경우-->
+&lt;form action="#" class="eyoom-form">
+	소스코드
+&lt;/form>
+
+&lt;!--div 태그의 경우-->
+&lt;div class="eyoom-form">
+	소스코드
+&lt;/div></code>
+</pre>
+	</div>
+	<div class="margin-bottom-40"></div>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5">
+		<header>Select2 Forms<a href="#select2-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="select2-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Select2 Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 상단과 하단에 아래소스를 추가합니다. select2.min.css 스타일시트와 select2.min.js 스크립트 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-select2-document" class="language-html">&lt;!--작업중인 파일 상단에 추가-->
+&lt;link rel="stylesheet" href="\../../../plugins/eyoom-form/plugins/select2/select2.min.css">
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/select2/select2.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/select2/select2.min.css<br>../plugins/eyoom-form/plugins/select2/select2.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-select2-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#select2-source-1" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">단일 선택 Select</label>
+						<label class="select">
+							<select class="select2-single">
+								<optgroup label="Alaskan/Hawaiian Time Zone">
+									<option value="AK">Alaska</option>
+									<option value="HI">Hawaii</option>
+								</optgroup>
+								<optgroup label="Pacific Time Zone">
+									<option value="CA">California</option>
+									<option value="NV">Nevada</option>
+									<option value="OR">Oregon</option>
+									<option value="WA">Washington</option>
+								</optgroup>
+								<optgroup label="Mountain Time Zone">
+									<option value="AZ">Arizona</option>
+									<option value="CO">Colorado</option>
+									<option value="ID">Idaho</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NM">New Mexico</option>
+									<option value="ND">North Dakota</option>
+									<option value="UT">Utah</option>
+									<option value="WY">Wyoming</option>
+								</optgroup>
+								<optgroup label="Central Time Zone">
+									<option value="AL">Alabama</option>
+									<option value="AR">Arkansas</option>
+									<option value="IL">Illinois</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="OK">Oklahoma</option>
+									<option value="SD">South Dakota</option>
+									<option value="TX">Texas</option>
+									<option value="TN">Tennessee</option>
+									<option value="WI">Wisconsin</option>
+								</optgroup>
+								<optgroup label="Eastern Time Zone">
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="IN">Indiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="OH">Ohio</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WV">West Virginia</option>
+								</optgroup>
+							</select>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+							    $(".select2-single").select2();
+						    });
+						</script>
+					</section>
+					<div id="select2-source-1" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-select2-source-1" class="language-html">&lt;label class="label">단일 선택 Select&lt;/label>
+&lt;label class="select">
+	&lt;select class="select2-single">
+		&lt;optgroup label="Alaskan/Hawaiian Time Zone">
+			&lt;option value="AK">Alaska&lt;/option>
+			&lt;option value="HI">Hawaii&lt;/option>
+		&lt;/optgroup>
+		&lt;optgroup label="Pacific Time Zone">
+			&lt;option value="CA">California&lt;/option>
+			&lt;option value="NV">Nevada&lt;/option>
+			&lt;option value="OR">Oregon&lt;/option>
+			&lt;option value="WA">Washington&lt;/option>
+		&lt;/optgroup>
+		...
+	&lt;/select>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+	    $(".select2-single").select2();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-select2-source-1" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#select2-source-2" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">복수 선택 Select</label>
+						<label class="select">
+							<select class="select2-multiple" multiple>
+								<optgroup label="Alaskan/Hawaiian Time Zone">
+									<option value="AK">Alaska</option>
+									<option value="HI">Hawaii</option>
+								</optgroup>
+								<optgroup label="Pacific Time Zone">
+									<option value="CA">California</option>
+									<option value="NV">Nevada</option>
+									<option value="OR">Oregon</option>
+									<option value="WA">Washington</option>
+								</optgroup>
+								<optgroup label="Mountain Time Zone">
+									<option value="AZ">Arizona</option>
+									<option value="CO">Colorado</option>
+									<option value="ID">Idaho</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NM">New Mexico</option>
+									<option value="ND">North Dakota</option>
+									<option value="UT">Utah</option>
+									<option value="WY">Wyoming</option>
+								</optgroup>
+								<optgroup label="Central Time Zone">
+									<option value="AL">Alabama</option>
+									<option value="AR">Arkansas</option>
+									<option value="IL">Illinois</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="OK">Oklahoma</option>
+									<option value="SD">South Dakota</option>
+									<option value="TX">Texas</option>
+									<option value="TN">Tennessee</option>
+									<option value="WI">Wisconsin</option>
+								</optgroup>
+								<optgroup label="Eastern Time Zone">
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="IN">Indiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="OH">Ohio</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WV">West Virginia</option>
+								</optgroup>
+							</select>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+							    $(".select2-multiple").select2();
+						    });
+						</script>
+					</section>
+					<div id="select2-source-2" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-select2-source-2" class="language-html">&lt;label class="label">복수 선택 Select&lt;/label>
+&lt;label class="select">
+	&lt;select class="select2-multiple" multiple>
+		&lt;optgroup label="Alaskan/Hawaiian Time Zone">
+			&lt;option value="AK">Alaska&lt;/option>
+			&lt;option value="HI">Hawaii&lt;/option>
+		&lt;/optgroup>
+		&lt;optgroup label="Pacific Time Zone">
+			&lt;option value="CA">California&lt;/option>
+			&lt;option value="NV">Nevada&lt;/option>
+			&lt;option value="OR">Oregon&lt;/option>
+			&lt;option value="WA">Washington&lt;/option>
+		&lt;/optgroup>
+		...
+	&lt;/select>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+	    $(".select2-multiple").select2();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-select2-source-2" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#select2-source-3" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">복수 선택 Placeholder Select</label>
+						<label class="select">
+							<select class="select2-placeholder-multiple" multiple>
+								<optgroup label="Alaskan/Hawaiian Time Zone">
+									<option value="AK">Alaska</option>
+									<option value="HI">Hawaii</option>
+								</optgroup>
+								<optgroup label="Pacific Time Zone">
+									<option value="CA">California</option>
+									<option value="NV">Nevada</option>
+									<option value="OR">Oregon</option>
+									<option value="WA">Washington</option>
+								</optgroup>
+								<optgroup label="Mountain Time Zone">
+									<option value="AZ">Arizona</option>
+									<option value="CO">Colorado</option>
+									<option value="ID">Idaho</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NM">New Mexico</option>
+									<option value="ND">North Dakota</option>
+									<option value="UT">Utah</option>
+									<option value="WY">Wyoming</option>
+								</optgroup>
+								<optgroup label="Central Time Zone">
+									<option value="AL">Alabama</option>
+									<option value="AR">Arkansas</option>
+									<option value="IL">Illinois</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="OK">Oklahoma</option>
+									<option value="SD">South Dakota</option>
+									<option value="TX">Texas</option>
+									<option value="TN">Tennessee</option>
+									<option value="WI">Wisconsin</option>
+								</optgroup>
+								<optgroup label="Eastern Time Zone">
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="IN">Indiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="OH">Ohio</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WV">West Virginia</option>
+								</optgroup>
+							</select>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$(".select2-placeholder-multiple").select2({
+									placeholder: "Select a state",
+									allowClear: true
+								});
+						    });
+						</script>
+					</section>
+					<div id="select2-source-3" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-select2-source-3" class="language-html">&lt;label class="label">복수 선택 Placeholder Select&lt;/label>
+&lt;label class="select">
+	&lt;select class="select2-placeholder-multiple" multiple>
+		&lt;optgroup label="Alaskan/Hawaiian Time Zone">
+			&lt;option value="AK">Alaska&lt;/option>
+			&lt;option value="HI">Hawaii&lt;/option>
+		&lt;/optgroup>
+		&lt;optgroup label="Pacific Time Zone">
+			&lt;option value="CA">California&lt;/option>
+			&lt;option value="NV">Nevada&lt;/option>
+			&lt;option value="OR">Oregon&lt;/option>
+			&lt;option value="WA">Washington&lt;/option>
+		&lt;/optgroup>
+		...
+	&lt;/select>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$(".select2-placeholder-multiple").select2({
+			placeholder: "Select a state",
+			allowClear: true
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-select2-source-3" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Clockpicker Forms<a href="#clockpicker-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="clockpicker-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Clockpicker Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 상단과 하단에 아래소스를 추가합니다. jquery.clockpicker.min.css 스타일시트와 jquery.clockpicker.min.js 스크립트 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-clockpicker-document" class="language-html">&lt;!--작업중인 파일 상단에 추가-->
+&lt;link rel="stylesheet" href="\../../../plugins/eyoom-form/plugins/jquery-clockpicker/jquery.clockpicker.min.css">
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-clockpicker/jquery.clockpicker.min.js">&lt;/script>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('.clockpicker').clockpicker();
+    });
+&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-clockpicker/jquery.clockpicker.min.css<br>../plugins/eyoom-form/plugins/jquery-clockpicker/jquery.clockpicker.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-clockpicker-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">기본</label>
+							<label class="input clockpicker">
+								<i class="icon-append fa fa-clock-o"></i>
+							    <input type="text" value="09:30">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">좌측형</label>
+							<label class="input clockpicker" data-placement="left" data-align="top">
+								<i class="icon-append fa fa-clock-o"></i>
+							    <input type="text" value="15:30">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">우측형</label>
+							<label class="input clockpicker" data-placement="right" data-align="top">
+								<i class="icon-append fa fa-clock-o"></i>
+							    <input type="text" value="09:30">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">상단형</label>
+							<label class="input clockpicker" data-placement="top">
+								<i class="icon-append fa fa-clock-o"></i>
+							    <input type="text" value="15:30">
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">기본 자동 닫힘</label>
+							<label class="input clockpicker" data-autoclose="true">
+								<i class="icon-append fa fa-clock-o"></i>
+							    <input type="text" value="09:30">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">좌측형 자동 닫힘</label>
+							<label class="input clockpicker" data-autoclose="true" data-placement="left" data-align="top">
+								<i class="icon-append fa fa-clock-o"></i>
+							    <input type="text" value="15:30">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">우측형 자동 닫힘</label>
+							<label class="input clockpicker" data-autoclose="true" data-placement="right" data-align="top">
+								<i class="icon-append fa fa-clock-o"></i>
+							    <input type="text" value="09:30">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">상단형 자동 닫힘</label>
+							<label class="input clockpicker" data-autoclose="true" data-placement="top">
+								<i class="icon-append fa fa-clock-o"></i>
+							    <input type="text" value="15:30">
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Timepicker Forms<a href="#timepicker-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="timepicker-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Timepicker Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery.timepicker.min.js 스크립트 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-timepicker-document" class="language-html">&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-timepicker/jquery.timepicker.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-timepicker/jquery.timepicker.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-timepicker-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">기본</label>
+							<label class="input">
+								<i class="icon-append fa fa-clock-o"></i>
+								<input type="text" id="timepicker_1" class="ui-timepicker-input" autocomplete="off">
+							</label>
+							<script>
+							    jQuery(document).ready(function(){
+									$('#timepicker_1').timepicker();
+							    });
+							</script>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">시간 범위</label>
+							<label class="input">
+								<i class="icon-append fa fa-clock-o"></i>
+								<input type="text" id="timepicker_2" class="ui-timepicker-input" data-min-time="2:00pm" data-max-time="11:30pm" data-show-duration="true" autocomplete="off">
+							</label>
+							<script>
+							    jQuery(document).ready(function(){
+									$('#timepicker_2').timepicker();
+							    });
+							</script>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">비활성 시간 지정</label>
+							<label class="input">
+								<i class="icon-append fa fa-clock-o"></i>
+								<input type="text" id="timepicker_3" class="ui-timepicker-input" autocomplete="off">
+							</label>
+							<script>
+							    jQuery(document).ready(function(){
+									$('#timepicker_3').timepicker({
+									    'disableTimeRanges': [
+									        ['1am', '2am'],
+									        ['3am', '4:31am']
+									    ]
+									});
+							    });
+							</script>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">현재 시간 선택</label>
+							<label class="input input-button">
+								<div class="button"><input type="button" id="timepicker_4_btn">현재 시간</div>
+								<input type="text" id="timepicker_4" class="ui-timepicker-input" autocomplete="off">
+							</label>
+							<script>
+							    jQuery(document).ready(function(){
+									$('#timepicker_4').timepicker();
+									$('#timepicker_4_btn').on('click', function (){
+									    $('#timepicker_4').timepicker('setTime', new Date());
+									});
+							    });
+							</script>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Datepicker Forms<a href="#datepicker-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="datepicker-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Datepicker Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery-ui.min.js 스크립트와 datepicker.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-datepicker-document" class="language-html">&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js<br>../plugins/eyoom-form/js/datepicker.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-datepicker-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#datepicker-source-1" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">단일 선택 Datepicker</label>
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" name="date" id="date">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+						        $('#date').datepicker({
+						            dateFormat: 'yy-mm-dd',
+						            prevText: '<i class="fa fa-angle-left"></i>',
+						            nextText: '<i class="fa fa-angle-right"></i>',
+						            showMonthAfterYear: true,
+						            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+						            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+						            dayNamesMin: ['일','월','화','수','목','금','토']
+						        });
+						    });
+						</script>
+					</section>
+					<div id="datepicker-source-1" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-datepicker-source-1" class="language-html">&lt;label class="label">단일 선택 Datepicker&lt;/label>
+&lt;label class="input">
+	&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+	&lt;input type="text" name="date" id="date">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+        $('#date').datepicker({
+            dateFormat: 'yy-mm-dd',
+            prevText: '&lt;i class="fa fa-angle-left">&lt;/i>',
+            nextText: '&lt;i class="fa fa-angle-right">&lt;/i>',
+            showMonthAfterYear: true,
+            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            dayNamesMin: ['일','월','화','수','목','금','토']
+        });
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-datepicker-source-1" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<section class="source-example">
+				<a href="#datepicker-source-2" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+				<label class="label">기간 선택 Datepicker</label>
+				<div class="row">
+					<div class="col col-6 sm-margin-bottom-10">
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" name="start" id="start" placeholder="Start date">
+						</label>
+					</div>
+					<div class="col col-6">
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" name="finish" id="finish" placeholder="Finish date">
+						</label>
+					</div>
+				</div>
+				<script>
+				    jQuery(document).ready(function(){
+				        $('#start').datepicker({
+				            dateFormat: 'yy-mm-dd',
+				            prevText: '<i class="fa fa-angle-left"></i>',
+				            nextText: '<i class="fa fa-angle-right"></i>',
+				            showMonthAfterYear: true,
+				            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+				            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				            dayNamesMin: ['일','월','화','수','목','금','토'],
+				            onSelect: function(selectedDate){
+				                $('#finish').datepicker('option', 'minDate', selectedDate);
+				            }
+				        });
+				        $('#finish').datepicker({
+				            dateFormat: 'yy-mm-dd',
+				            prevText: '<i class="fa fa-angle-left"></i>',
+				            nextText: '<i class="fa fa-angle-right"></i>',
+				            showMonthAfterYear: true,
+				            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+				            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				            dayNamesMin: ['일','월','화','수','목','금','토'],
+				            onSelect: function(selectedDate){
+				                $('#start').datepicker('option', 'maxDate', selectedDate);
+				            }
+				        });
+				    });
+				</script>
+			</section>
+			<div id="datepicker-source-2" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Source Code HTML</h4>
+			            </div>
+			            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-datepicker-source-2" class="language-html">&lt;label class="label">기간 선택 Datepicker&lt;/label>
+&lt;div class="row">
+	&lt;div class="col col-6 sm-margin-bottom-10">
+		&lt;label class="input">
+			&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+			&lt;input type="text" name="start" id="start" placeholder="Start date">
+		&lt;/label>
+	&lt;/div>
+	&lt;div class="col col-6">
+		&lt;label class="input">
+			&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+			&lt;input type="text" name="finish" id="finish" placeholder="Finish date">
+		&lt;/label>
+	&lt;/div>
+&lt;/div>
+&lt;script>
+    jQuery(document).ready(function(){
+        $('#start').datepicker({
+            dateFormat: 'yy-mm-dd',
+            prevText: '&lt;i class="fa fa-angle-left">&lt;/i>',
+            nextText: '&lt;i class="fa fa-angle-right">&lt;/i>',
+            showMonthAfterYear: true,
+            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            onSelect: function(selectedDate){
+                $('#finish').datepicker('option', 'minDate', selectedDate);
+            }
+        });
+        $('#finish').datepicker({
+            dateFormat: 'yy-mm-dd',
+            prevText: '&lt;i class="fa fa-angle-left">&lt;/i>',
+            nextText: '&lt;i class="fa fa-angle-right">&lt;/i>',
+            showMonthAfterYear: true,
+            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            onSelect: function(selectedDate){
+                $('#start').datepicker('option', 'maxDate', selectedDate);
+            }
+        });
+    });
+&lt;/script></code>
+</pre>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-datepicker-source-2" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<section class="source-example">
+				<a href="#datepicker-source-3" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+				<label class="label">단일 선택 Inline</label>
+				<div id="inline"></div>
+				<script>
+				    jQuery(document).ready(function(){
+				        $('#inline').datepicker({
+				            dateFormat: 'yy-mm-dd',
+				            prevText: '<i class="fa fa-angle-left"></i>',
+				            nextText: '<i class="fa fa-angle-right"></i>',
+				            showMonthAfterYear: true,
+				            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+				            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+				            dayNamesMin: ['일','월','화','수','목','금','토']
+				        });
+				    });
+				</script>
+
+			</section>
+			<div id="datepicker-source-3" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Source Code HTML</h4>
+			            </div>
+			            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-datepicker-source-3" class="language-html">&lt;label class="label">단일 선택 Inline&lt;/label>
+&lt;div id="inline">&lt;/div>
+&lt;script>
+    jQuery(document).ready(function(){
+        $('#inline').datepicker({
+            dateFormat: 'yy-mm-dd',
+            prevText: '&lt;i class="fa fa-angle-left">&lt;/i>',
+            nextText: '&lt;i class="fa fa-angle-right">&lt;/i>',
+            showMonthAfterYear: true,
+            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            dayNamesMin: ['일','월','화','수','목','금','토']
+        });
+    });
+&lt;/script></code>
+</pre>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-datepicker-source-3" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<section class="source-example">
+				<a href="#datepicker-source-4" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+				<label class="label">기간 선택 Inline</label>
+				<div class="row">
+					<div class="col col-6">
+						<div id="inline-start"></div>
+					</div>
+					<div class="col col-6">
+						<div id="inline-finish"></div>
+					</div>
+					<script>
+					    jQuery(document).ready(function(){
+					        $('#inline-start').datepicker({
+					            dateFormat: 'yy-mm-dd',
+					            prevText: '<i class="fa fa-angle-left"></i>',
+					            nextText: '<i class="fa fa-angle-right"></i>',
+					            showMonthAfterYear: true,
+					            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+					            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+					            dayNamesMin: ['일','월','화','수','목','금','토'],
+					            onSelect: function(selectedDate){
+					                $('#inline-finish').datepicker('option', 'minDate', selectedDate);
+					            }
+					        });
+					        $('#inline-finish').datepicker({
+					            dateFormat: 'yy-mm-dd',
+					            prevText: '<i class="fa fa-angle-left"></i>',
+					            nextText: '<i class="fa fa-angle-right"></i>',
+					            showMonthAfterYear: true,
+					            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+					            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+					            dayNamesMin: ['일','월','화','수','목','금','토'],
+					            onSelect: function(selectedDate){
+					                $('#inline-start').datepicker('option', 'maxDate', selectedDate);
+					            }
+					        });
+					    });
+					</script>
+
+				</div>
+			</section>
+			<div id="datepicker-source-4" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Source Code HTML</h4>
+			            </div>
+			            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-datepicker-source-4" class="language-html">&lt;label class="label">기간 선택 Inline&lt;/label>
+&lt;div class="row">
+	&lt;div class="col col-6">
+		&lt;div id="inline-start">&lt;/div>
+	&lt;/div>
+	&lt;div class="col col-6">
+		&lt;div id="inline-finish">&lt;/div>
+	&lt;/div>
+&lt;/div>
+&lt;script>
+    jQuery(document).ready(function(){
+        $('#inline-start').datepicker({
+            dateFormat: 'yy-mm-dd',
+            prevText: '&lt;i class="fa fa-angle-left">&lt;/i>',
+            nextText: '&lt;i class="fa fa-angle-right">&lt;/i>',
+            showMonthAfterYear: true,
+            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+            onSelect: function(selectedDate){
+                $('#inline-finish').datepicker('option', 'minDate', selectedDate);
+            }
+        });
+        $('#inline-finish').datepicker({
+            dateFormat: 'yy-mm-dd',
+            prevText: '&lt;i class="fa fa-angle-left">&lt;/i>',
+            nextText: '&lt;i class="fa fa-angle-right">&lt;/i>',
+            showMonthAfterYear: true,
+            monthNames: ['년 1월','년 2월','년 3월','년 4월','년 5월','년 6월','년 7월','년 8월','년 9월','년 10월','년 11월','년 12월'],
+            monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+            dayNamesMin: ['일','월','화','수','목','금','토'],
+
+            onSelect: function(selectedDate){
+                $('#inline-start').datepicker('option', 'maxDate', selectedDate);
+            }
+        });
+    });
+&lt;/script></code>
+</pre>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-datepicker-source-4" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Date Range Picker Forms<a href="#daterangepicker-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="daterangepicker-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Date Range Picker Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery-ui.min.js 스크립트와 datepicker.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-daterangepicker-document" class="language-html">&lt;!--작업중인 파일 상단에 추가-->
+&lt;link rel="stylesheet" href="\../../../plugins/eyoom-form/plugins/bootstrap-daterangepicker/daterangepicker.min.css">
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/moment/moment.min.js">&lt;/script>
+&lt;script src="\../../../plugins/eyoom-form/plugins/bootstrap-daterangepicker/daterangepicker.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/bootstrap-daterangepicker/daterangepicker.min.css<br>../plugins/eyoom-form/plugins/moment/moment.min.js<br>../plugins/eyoom-form/plugins/bootstrap-daterangepicker/daterangepicker.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterangepicker-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#daterange-basic" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">기본 Daterangepicker</label>
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" class="daterange-basic" value="2016/01/01 - 2016/01/31">
+						</label>
+						<script>
+							$(function() {
+							    $('.daterange-basic').daterangepicker({
+									locale: {
+										format: 'YYYY/MM/DD',
+										applyLabel: '확인 <i class="fa fa-check"></i>',
+										cancelLabel: '취소 <i class="fa fa-times"></i>',
+								        daysOfWeek: ['일','월','화','수','목','금','토'],
+								        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+									},
+							        applyClass: 'btn-e btn-e-yellow color-white',
+							        cancelClass: 'btn-e btn-e-dark color-white'
+							    });
+							});
+						</script>
+					</section>
+					<div id="daterange-basic" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-daterange-basic" class="language-html">&lt;label class="label">기본 Daterangepicker&lt;/label>
+&lt;label class="input">
+	&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+	&lt;input type="text" class="daterange-basic" value="2016/01/01 - 2016/01/31">
+&lt;/label>
+&lt;script>
+	$(function() {
+	    $('.daterange-basic').daterangepicker({
+			locale: {
+				format: 'YYYY/MM/DD',
+				applyLabel: '확인 &lt;i class="fa fa-check">&lt;/i>',
+				cancelLabel: '취소 &lt;i class="fa fa-times">&lt;/i>',
+		        daysOfWeek: ['일','월','화','수','목','금','토'],
+		        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+			},
+	        applyClass: 'btn-e btn-e-yellow color-white',
+	        cancelClass: 'btn-e btn-e-dark color-white',
+	    });
+	});
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterange-basic" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#daterange-basic-empty" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">기본 여백 Daterangepicker</label>
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" class="daterange-basic-empty" value="">
+						</label>
+						<script>
+							$(function() {
+							    $('.daterange-basic-empty').daterangepicker({
+							        autoUpdateInput: false,
+									locale: {
+										format: 'YYYY/MM/DD',
+										applyLabel: '확인 <i class="fa fa-check"></i>',
+										cancelLabel: '취소 <i class="fa fa-times"></i>',
+								        daysOfWeek: ['일','월','화','수','목','금','토'],
+								        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+									},
+							        applyClass: 'btn-e btn-e-yellow color-white',
+							        cancelClass: 'btn-e btn-e-dark color-white'
+							    });
+								$('.daterange-basic-empty').on('apply.daterangepicker', function(ev, picker) {
+									$(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+								});
+								$('.daterange-basic-empty').on('cancel.daterangepicker', function(ev, picker) {
+									$(this).val('');
+								});
+							});
+						</script>
+					</section>
+					<div id="daterange-basic-empty" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-daterange-basic-empty" class="language-html">&lt;label class="label">기본 여백 싱글 Daterangepicker&lt;/label>
+&lt;label class="input">
+	&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+	&lt;input type="text" class="daterange-single-empty" value="">
+&lt;/label>
+&lt;script>
+	$(function() {
+	    $('.daterange-single-empty').daterangepicker({
+	        autoUpdateInput: false,
+			locale: {
+				format: 'YYYY/MM/DD',
+				applyLabel: '확인 &lt;i class="fa fa-check">&lt;/i>',
+				cancelLabel: '취소 &lt;i class="fa fa-times">&lt;/i>',
+		        daysOfWeek: ['일','월','화','수','목','금','토'],
+		        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+			},
+	        applyClass: 'btn-e btn-e-yellow color-white',
+	        cancelClass: 'btn-e btn-e-dark color-white'
+	    });
+		$('.daterange-basic-empty').on('apply.daterangepicker', function(ev, picker) {
+			$(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
+		});
+		$('.daterange-basic-empty').on('cancel.daterangepicker', function(ev, picker) {
+			$(this).val('');
+		});
+	});
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterange-basic-empty" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#daterange-time" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">시간 지정 Daterangepicker</label>
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" class="daterange-time" value="2016/01/01 - 2016/01/31">
+						</label>
+						<script>
+							$(function() {
+							    $('.daterange-time').daterangepicker({
+							        timePicker: true,
+									locale: {
+										format: 'YYYY/MM/DD h:mm A',
+										applyLabel: '확인 <i class="fa fa-check"></i>',
+										cancelLabel: '취소 <i class="fa fa-times"></i>',
+								        daysOfWeek: ['일','월','화','수','목','금','토'],
+								        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+									},
+							        applyClass: 'btn-e btn-e-yellow color-white',
+							        cancelClass: 'btn-e btn-e-dark color-white'
+							    });
+							});
+						</script>
+					</section>
+					<div id="daterange-time" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-daterange-time" class="language-html">&lt;label class="label">시간 지정 Daterangepicker&lt;/label>
+&lt;label class="input">
+	&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+	&lt;input type="text" class="daterange-time" value="2016/01/01 - 2016/01/31">
+&lt;/label>
+&lt;script>
+	$(function() {
+	    $('.daterange-time').daterangepicker({
+	        timePicker: true,
+			locale: {
+				format: 'YYYY/MM/DD h:mm A',
+				applyLabel: '확인 &lt;i class="fa fa-check">&lt;/i>',
+				cancelLabel: '취소 &lt;i class="fa fa-times">&lt;/i>',
+		        daysOfWeek: ['일','월','화','수','목','금','토'],
+		        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+			},
+	        applyClass: 'btn-e btn-e-yellow color-white',
+	        cancelClass: 'btn-e btn-e-dark color-white'
+	    });
+	});
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterange-time" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#daterange-datemenu" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">선택형(년,월) Daterangepicker</label>
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" class="daterange-datemenu" value="2016/01/01 - 2016/01/31">
+						</label>
+						<script>
+							$(function() {
+							    $('.daterange-datemenu').daterangepicker({
+								    showDropdowns: true,
+									locale: {
+										format: 'YYYY/MM/DD',
+										applyLabel: '확인 <i class="fa fa-check"></i>',
+										cancelLabel: '취소 <i class="fa fa-times"></i>',
+								        daysOfWeek: ['일','월','화','수','목','금','토'],
+								        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+									},
+							        applyClass: 'btn-e btn-e-yellow color-white',
+							        cancelClass: 'btn-e btn-e-dark color-white'
+							    });
+							});
+						</script>
+					</section>
+					<div id="daterange-datemenu" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-daterange-datemenu" class="language-html">&lt;label class="label">선택형(년,월) Daterangepicker&lt;/label>
+&lt;label class="input">
+	&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+	&lt;input type="text" class="daterange-datemenu" value="2016/01/01 - 2016/01/31">
+&lt;/label>
+&lt;script>
+	$(function() {
+	    $('.daterange-basic').daterangepicker({
+		    showDropdowns: true,
+			locale: {
+				format: 'YYYY/MM/DD',
+				applyLabel: '확인 &lt;i class="fa fa-check">&lt;/i>',
+				cancelLabel: '취소 &lt;i class="fa fa-times">&lt;/i>',
+		        daysOfWeek: ['일','월','화','수','목','금','토'],
+		        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+			},
+	        applyClass: 'btn-e btn-e-yellow color-white',
+	        cancelClass: 'btn-e btn-e-dark color-white',
+	    });
+	});
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterange-datemenu" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#daterange-single" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">기본 싱글 Daterangepicker</label>
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" class="daterange-single" value="2016/01/01">
+						</label>
+						<script>
+							$(function() {
+							    $('.daterange-single').daterangepicker({
+							        singleDatePicker: true,
+									locale: {
+										format: 'YYYY/MM/DD',
+								        daysOfWeek: ['일','월','화','수','목','금','토'],
+								        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+									}
+							    });
+							});
+						</script>
+					</section>
+					<div id="daterange-single" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-daterange-single" class="language-html">&lt;label class="label">기본 싱글 Daterangepicker&lt;/label>
+&lt;label class="input">
+	&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+	&lt;input type="text" class="daterange-single" value="2016/01/01">
+&lt;/label>
+&lt;script>
+	$(function() {
+	    $('.daterange-single').daterangepicker({
+	        singleDatePicker: true,
+			locale: {
+				format: 'YYYY/MM/DD',
+		        daysOfWeek: ['일','월','화','수','목','금','토'],
+		        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+			}
+	    });
+	});
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterange-single" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#daterange-single-datemenu" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">싱글 선택형(년,월) Daterangepicker</label>
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" class="daterange-single-datemenu" value="2016/01/01">
+						</label>
+						<script>
+							$(function() {
+							    $('.daterange-single-datemenu').daterangepicker({
+							        singleDatePicker: true,
+							        showDropdowns: true,
+									locale: {
+										format: 'YYYY/MM/DD',
+								        daysOfWeek: ['일','월','화','수','목','금','토'],
+								        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+									}
+							    });
+							});
+						</script>
+					</section>
+					<div id="daterange-single-datemenu" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-daterange-single-datemenu" class="language-html">&lt;label class="label">싱글 선택형(년,월) Daterangepicker&lt;/label>
+&lt;label class="input">
+	&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+	&lt;input type="text" class="daterange-single-datemenu" value="2016/01/01">
+&lt;/label>
+&lt;script>
+	$(function() {
+	    $('.daterange-single').daterangepicker({
+	        singleDatePicker: true,
+	        showDropdowns: true,
+			locale: {
+				format: 'YYYY/MM/DD',
+		        daysOfWeek: ['일','월','화','수','목','금','토'],
+		        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+			}
+	    });
+	});
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterange-single-datemenu" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#daterange-single-empty" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">기본 여백 싱글 Daterangepicker</label>
+						<label class="input">
+							<i class="icon-append fa fa-calendar-o"></i>
+							<input type="text" class="daterange-single-empty" value="">
+						</label>
+						<script>
+							$(function() {
+							    $('.daterange-single-empty').daterangepicker({
+							        singleDatePicker: true,
+							        autoUpdateInput: false,
+									locale: {
+										format: 'YYYY/MM/DD',
+								        daysOfWeek: ['일','월','화','수','목','금','토'],
+								        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+									}
+							    });
+								$('.daterange-single-empty').on('apply.daterangepicker', function(ev, picker) {
+									$(this).val(picker.startDate.format('YYYY/MM/DD'));
+								});
+								$('.daterange-single-empty').on('cancel.daterangepicker', function(ev, picker) {
+									$(this).val('');
+								});
+							});
+						</script>
+					</section>
+					<div id="daterange-single-empty" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-daterange-single-empty" class="language-html">&lt;label class="label">기본 여백 싱글 Daterangepicker&lt;/label>
+&lt;label class="input">
+	&lt;i class="icon-append fa fa-calendar-o">&lt;/i>
+	&lt;input type="text" class="daterange-single-empty" value="">
+&lt;/label>
+&lt;script>
+	$(function() {
+	    $('.daterange-single-empty').daterangepicker({
+	        singleDatePicker: true,
+	        autoUpdateInput: false,
+			locale: {
+				format: 'YYYY/MM/DD',
+		        daysOfWeek: ['일','월','화','수','목','금','토'],
+		        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+			}
+	    });
+		$('.daterange-single-empty').on('apply.daterangepicker', function(ev, picker) {
+			$(this).val(picker.startDate.format('YYYY/MM/DD'));
+		});
+		$('.daterange-single-empty').on('cancel.daterangepicker', function(ev, picker) {
+			$(this).val('');
+		});
+	});
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterange-single-empty" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#daterange-predefined" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">미리 정의된 기간 Daterangepicker</label>
+						<div class="clearfix"></div>
+						<button type="button" class="btn-e btn-e-default btn-e-brd daterange-predefined">
+							<i class="fa fa-calendar-o"></i>&nbsp;&nbsp;
+							<span></span>&nbsp;&nbsp;
+							<b class="caret"></b>
+						</button>
+						<script>
+							$(function() {
+							    var start = moment().subtract(29, 'days');
+							    var end = moment();
+							    function cb(start, end) {
+							        $('.daterange-predefined span').html(start.format('YYYY/MM/DD') + ' - ' + end.format('YYYY/MM/DD'));
+							    }
+							    $('.daterange-predefined').daterangepicker({
+							        startDate: start,
+							        endDate: end,
+									locale: {
+										format: 'YYYY/MM/DD',
+										applyLabel: '확인 <i class="fa fa-check"></i>',
+										cancelLabel: '취소 <i class="fa fa-times"></i>',
+								        daysOfWeek: ['일','월','화','수','목','금','토'],
+								        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+									},
+							        ranges: {
+							           '오늘': [moment(), moment()],
+							           '어제': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+							           '지난 7일': [moment().subtract(6, 'days'), moment()],
+							           '지난 30일': [moment().subtract(29, 'days'), moment()],
+							           '이번달': [moment().startOf('month'), moment().endOf('month')],
+							           '지난달': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+							        },
+							        opens: 'left',
+							        applyClass: 'btn-e btn-e-yellow color-white',
+							        cancelClass: 'btn-e btn-e-dark color-white'
+							    }, cb);
+							    cb(start, end);
+							});
+						</script>
+					</section>
+					<div id="daterange-predefined" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-daterange-predefined" class="language-html">&lt;label class="label">미리 정의된 기간 Daterangepicker&lt;/label>
+&lt;div class="clearfix">&lt;/div>
+&lt;button type="button" class="btn-e btn-e-default btn-e-brd daterange-predefined">
+	&lt;i class="fa fa-calendar-o">&lt;/i>
+	&lt;span>&lt;/span>
+	&lt;b class="caret">&lt;/b>
+&lt;/button>
+&lt;script>
+	$(function() {
+	    var start = moment().subtract(29, 'days');
+	    var end = moment();
+	    function cb(start, end) {
+	        $('.daterange-predefined span').html(start.format('YYYY/MM/DD') + ' - ' + end.format('YYYY/MM/DD'));
+	    }
+	    $('.daterange-predefined').daterangepicker({
+	        startDate: start,
+	        endDate: end,
+			locale: {
+				format: 'YYYY/MM/DD',
+				applyLabel: '확인 &lt;i class="fa fa-check">&lt;/i>',
+				cancelLabel: '취소 &lt;i class="fa fa-times">&lt;/i>',
+		        daysOfWeek: ['일','월','화','수','목','금','토'],
+		        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월']
+			},
+	        ranges: {
+	           '오늘': [moment(), moment()],
+	           '어제': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+	           '지난 7일': [moment().subtract(6, 'days'), moment()],
+	           '지난 30일': [moment().subtract(29, 'days'), moment()],
+	           '이번달': [moment().startOf('month'), moment().endOf('month')],
+	           '지난달': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+	        },
+	        opens: 'left',
+	        applyClass: 'btn-e btn-e-yellow color-white',
+	        cancelClass: 'btn-e btn-e-dark color-white'
+	    }, cb);
+	    cb(start, end);
+	});
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-daterange-predefined" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Slider Range Forms<a href="#slider-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="slider-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Slider Range Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery-ui.min.js 스크립트 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-slider-document" class="language-html">&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-slider-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#slider-default" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">기본 Slider [<span class="slider-value-color" id="slider_default_value">0</span>]</label>
+						<div id="slider_default"></div>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#slider_default').slider({
+									min: 0,
+									max: 1000,
+									slide: function(event, ui){
+										$('#slider_default_value').text(ui.value);
+									}
+								});
+						    });
+						</script>
+					</section>
+					<div id="slider-default" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-slider-default" class="language-html">&lt;label class="label">기본 Slider [&lt;span class="slider-value-color" id="slider_default_value">0&lt;/span>]&lt;/label>
+&lt;div id="slider_default">&lt;/div>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#slider_default').slider({
+			min: 0,
+			max: 1000,
+			slide: function(event, ui){
+				$('#slider_default_value').text(ui.value);
+			}
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-slider-default" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#slider-step" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">스탭 Slider [<span class="slider-value-color" id="slider_step_value">1000</span>]</label>
+						<div id="slider_step"></div>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#slider_step').slider({
+									min: 1000,
+									max: 3000,
+									step: 100,
+									slide: function(event, ui){
+										$('#slider_step_value').text(ui.value);
+									}
+								});
+						    });
+						</script>
+
+					</section>
+					<div id="slider-step" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-slider-step" class="language-html">&lt;label class="label">스탭 Slider [&lt;span class="slider-value-color" id="slider_step_value">1000&lt;/span>]&lt;/label>
+&lt;div id="slider_step">&lt;/div>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#slider_step').slider({
+			min: 1000,
+			max: 3000,
+			step: 100,
+			slide: function(event, ui){
+				$('#slider_step_value').text(ui.value);
+			}
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-slider-step" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+			<section class="source-example">
+				<a href="#slider-range" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+				<label class="label">기간 Slider [<span class="slider-value-color" id="slider_range_value1">5000</span> ~ <span class="slider-value-color" id="slider_range_value2">35000</span>]</label>
+				<div id="slider_range"></div>
+				<script>
+				    jQuery(document).ready(function(){
+						$('#slider_range').slider({
+							min: 0,
+							max: 40000,
+							step: 1000,
+							range: true,
+							values: [5000, 35000],
+							slide: function(event, ui){
+								$('#slider_range_value1').text(ui.values[0]);
+								$('#slider_range_value2').text(ui.values[1]);
+							}
+						});
+				    });
+				</script>
+			</section>
+			<div id="slider-range" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Source Code HTML</h4>
+			            </div>
+			            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-slider-range" class="language-html">&lt;label class="label">기간 Slider [&lt;span class="slider-value-color" id="slider_range_value1">5000&lt;/span> ~ &lt;span class="slider-value-color" id="slider_range_value2">35000&lt;/span>]&lt;/label>
+&lt;div id="slider_range">&lt;/div>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#slider_range').slider({
+			min: 0,
+			max: 40000,
+			step: 1000,
+			range: true,
+			values: [5000, 35000],
+			slide: function(event, ui){
+				$('#slider_range_value1').text(ui.values[0]);
+				$('#slider_range_value2').text(ui.values[1]);
+			}
+		});
+    });
+&lt;/script></code>
+</pre>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-slider-range" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>tagEditor Forms<a href="#tageditor-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="tageditor-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">tagEditor Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 상단과 하단에 아래소스를 추가합니다. jquery.tag-editor.css 스타일시트와 jquery-ui.min.js 스크립트, jquery.tag-editor.min.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-tageditor-document" class="language-html">&lt;!--작업중인 파일 상단에 추가-->
+&lt;link rel="stylesheet" href="\../../../plugins/eyoom-form/plugins/jquery-tagEditor/jquery.tag-editor.css">
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js">&lt;/script>
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-tagEditor/jquery.tag-editor.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-tagEditor/jquery.tag-editor.css<br>../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js<br>../plugins/eyoom-form/plugins/jquery-tagEditor/jquery.tag-editor.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-tageditor-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#tageditor-default" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">기본 tagEditor</label>
+						<label class="textarea">
+							<textarea id="tagEditor_default"></textarea>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#tagEditor_default').tagEditor({
+								    initialTags: ['서울', '대전', '대구', '부산'],
+								    delimiter: ', ',
+								    placeholder: '태그 입력'
+								});
+						    });
+						</script>
+					</section>
+					<div id="tageditor-default" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-tageditor-default" class="language-html">&lt;label class="label">기본 tagEditor&lt;/label>
+&lt;label class="textarea">
+	&lt;textarea id="tagEditor_default">&lt;/textarea>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#tagEditor_default').tagEditor({
+		    initialTags: ['서울', '대전', '대구', '부산'],
+		    delimiter: ', ',
+		    placeholder: '태그 입력'
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-tageditor-default" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#tageditor-red" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">빨강 tagEditor</label>
+						<label class="textarea tag-red">
+							<textarea id="tagEditor_red"></textarea>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#tagEditor_red').tagEditor({
+								    initialTags: ['서울', '대전', '대구', '부산'],
+								    delimiter: ', ',
+								    placeholder: '태그 입력'
+								});
+						    });
+						</script>
+					</section>
+					<div id="tageditor-red" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-tageditor-red" class="language-html">&lt;label class="label">빨강 tagEditor&lt;/label>
+&lt;label class="textarea tag-red">
+	&lt;textarea id="tagEditor_red">&lt;/textarea>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#tagEditor_red').tagEditor({
+		    initialTags: ['서울', '대전', '대구', '부산'],
+		    delimiter: ', ',
+		    placeholder: '태그 입력'
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-tageditor-red" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#tageditor-green" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">초록 tagEditor</label>
+						<label class="textarea tag-green">
+							<textarea id="tagEditor_green"></textarea>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#tagEditor_green').tagEditor({
+								    initialTags: ['서울', '대전', '대구', '부산'],
+								    delimiter: ', ',
+								    placeholder: '태그 입력'
+								});
+						    });
+						</script>
+					</section>
+					<div id="tageditor-green" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-tageditor-green" class="language-html">&lt;label class="label">초록 tagEditor&lt;/label>
+&lt;label class="textarea tag-green">
+	&lt;textarea id="tagEditor_green">&lt;/textarea>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#tagEditor_green').tagEditor({
+		    initialTags: ['서울', '대전', '대구', '부산'],
+		    delimiter: ', ',
+		    placeholder: '태그 입력'
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-tageditor-green" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#tageditor-yellow" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">노랑 tagEditor</label>
+						<label class="textarea tag-yellow">
+							<textarea id="tagEditor_yellow"></textarea>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#tagEditor_yellow').tagEditor({
+								    initialTags: ['서울', '대전', '대구', '부산'],
+								    delimiter: ', ',
+								    placeholder: '태그 입력'
+								});
+						    });
+						</script>
+					</section>
+					<div id="tageditor-yellow" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-tageditor-yellow" class="language-html">&lt;label class="label">노랑 tagEditor&lt;/label>
+&lt;label class="textarea tag-yellow">
+	&lt;textarea id="tagEditor_yellow">&lt;/textarea>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#tagEditor_yellow').tagEditor({
+		    initialTags: ['서울', '대전', '대구', '부산'],
+		    delimiter: ', ',
+		    placeholder: '태그 입력'
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-tageditor-yellow" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#tageditor-dark" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">검정 tagEditor</label>
+						<label class="textarea tag-dark">
+							<textarea id="tagEditor_dark"></textarea>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#tagEditor_dark').tagEditor({
+								    initialTags: ['서울', '대전', '대구', '부산'],
+								    delimiter: ', ',
+								    placeholder: '태그 입력'
+								});
+						    });
+						</script>
+					</section>
+					<div id="tageditor-dark" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-tageditor-dark" class="language-html">&lt;label class="label">검정 tagEditor&lt;/label>
+&lt;label class="textarea tag-dark">
+	&lt;textarea id="tagEditor_dark">&lt;/textarea>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#tagEditor_dark').tagEditor({
+		    initialTags: ['서울', '대전', '대구', '부산'],
+		    delimiter: ', ',
+		    placeholder: '태그 입력'
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-tageditor-dark" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#tageditor-auto" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">자동완성 tagEditor</label>
+						<label class="textarea">
+							<textarea id="tagEditor_auto"></textarea>
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#tagEditor_auto').tagEditor({
+								    autocomplete: {
+								        delay: 0,
+								        position: { collision: 'flip' },
+								        source: ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'CSS', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme']
+								    },
+								    forceLowercase: false,
+								    placeholder: '프로그램 언어 입력'
+								});
+						    });
+						</script>
+					</section>
+					<div id="tageditor-auto" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-tageditor-auto" class="language-html">&lt;label class="label">자동완성 tagEditor&lt;/label>
+&lt;label class="textarea">
+	&lt;textarea id="tagEditor_auto">&lt;/textarea>
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#tagEditor_auto').tagEditor({
+		    autocomplete: {
+		        delay: 0,
+		        position: { collision: 'flip' },
+		        source: ['ActionScript', 'AppleScript', 'Asp', 'BASIC', 'C', 'C++', 'CSS', 'Clojure', 'COBOL', 'ColdFusion', 'Erlang', 'Fortran', 'Groovy', 'Haskell', 'HTML', 'Java', 'JavaScript', 'Lisp', 'Perl', 'PHP', 'Python', 'Ruby', 'Scala', 'Scheme']
+		    },
+		    forceLowercase: false,
+		    placeholder: '프로그램 언어 입력'
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-tageditor-auto" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Bootstrap Maxlength Forms<a href="#maxlength-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="maxlength-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Bootstrap Maxlength Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery-ui.min.js 스크립트와 bootstrap-maxlength.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-maxlength-document" class="language-html">&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js">&lt;/script>
+&lt;script src="\../../../plugins/eyoom-form/plugins/bootstrap-maxlength/bootstrap-maxlength.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js<br>../plugins/eyoom-form/plugins/bootstrap-maxlength/bootstrap-maxlength.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-maxlength-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">Input</label>
+							<div class="input">
+								<input type="text" class="maxlength_input" maxlength="25" placeholder="25자 이내로 입력해 주세요.">
+							</div>
+							<script>
+							    jQuery(document).ready(function(){
+									$('input.maxlength_input').maxlength({
+										alwaysShow: true,
+										threshold: 10,
+										warningClass: "label label-success",
+										limitReachedClass: "label label-danger",
+										placement: 'bottom-right-inside'
+									});
+							    });
+							</script>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">Textarea</label>
+							<label class="textarea textarea-resizable">
+								<textarea class="maxlength_textarea" maxlength="225" rows="2" placeholder="255자 이내로 입력해 주세요."></textarea>
+							</label>
+							<script>
+							    jQuery(document).ready(function(){
+									$('textarea.maxlength_textarea').maxlength({
+										alwaysShow: true,
+										warningClass: "label label-success",
+										limitReachedClass: "label label-danger",
+										placement: 'bottom-right-inside'
+									});
+							    });
+							</script>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>asSpinner Forms<a href="#asspinner-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="asspinner-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">asSpinner Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery.mousewheel.js 스크립트와 jquery-asSpinner.min.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-asspinner-document" class="language-html">&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-asSpinner/jquery.mousewheel.js">&lt;/script>
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-asSpinner/jquery-asSpinner.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-asSpinner/jquery.mousewheel.js<br>../plugins/eyoom-form/plugins/jquery-asSpinner/jquery-asSpinner.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-asspinner-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#asspinner-default" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">기본 Spinner</label>
+						<label class="input">
+							<input type="text" class="default_spinner" value="0">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$('.default_spinner').asSpinner();
+						    });
+						</script>
+					</section>
+					<div id="asspinner-default" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-asspinner-default" class="language-html">&lt;label class="label">기본 Spinner&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="default_spinner" value="0">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('.default_spinner').asSpinner();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-asspinner-default" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#asspinner-mousewheel" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">마우스휠 Spinner</label>
+						<label class="input">
+							<input type="text" class="mousewheel_spinner" value="0">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+						        $('.mousewheel_spinner').asSpinner({
+						            mousewheel: true,
+									min: -10,
+									max: 10
+						        });
+						    });
+						</script>
+					</section>
+					<div id="asspinner-mousewheel" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-asspinner-mousewheel" class="language-html">&lt;label class="label">마우스휠 Spinner&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="mousewheel_spinner" value="0">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+        $('.mousewheel_spinner').asSpinner({
+            mousewheel: true,
+			min: -10,
+			max: 10
+        });
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-asspinner-mousewheel" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#asspinner-format" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">금액 정의된 Spinner (￦1000 ~ ￦30000)</label>
+						<label class="input">
+							<input type="text" class="format_spinner" value="￦1000">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+						        $(".format_spinner").asSpinner({
+									min: 1000,
+									max: 30000,
+							        step: 1000,
+						            format: function(value) {
+						                return '￦'+value;
+						            },
+						            parse: function(value) {
+						                return value.replace('￦','');
+						            }
+						        });
+						    });
+						</script>
+					</section>
+					<div id="asspinner-format" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-asspinner-format" class="language-html">&lt;label class="label">금액 정의된 Spinner (￦1000 ~ ￦30000)&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="format_spinner" value="￦1000">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+        $(".format_spinner").asSpinner({
+			min: 1000,
+			max: 30000,
+	        step: 1000,
+            format: function(value) {
+                return '￦'+value;
+            },
+            parse: function(value) {
+                return value.replace('￦','');
+            }
+        });
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-asspinner-format" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#asspinner-rule" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">월단위 Spinner</label>
+						<label class="input">
+							<input type="text" class="rule_spinner" value="1">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+						        $(".rule_spinner").asSpinner({
+						            rule: 'month'
+						        });
+						    });
+						</script>
+					</section>
+					<div id="asspinner-rule" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-asspinner-rule" class="language-html">&lt;label class="label">월단위 Spinner&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="rule_spinner" value="1">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+        $(".rule_spinner").asSpinner({
+            rule: 'month'
+        });
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-asspinner-rule" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>louMultiSelect Forms<a href="#multiselect-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="multiselect-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">louMultiSelect Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery.multi-select.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-multiselect-document" class="language-html">&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-louMultiSelect/jquery.multi-select.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-louMultiSelect/jquery.multi-select.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-multiselect-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#multiselect-pre-selected" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">미리 선택된 MultiSelect</label>
+						<select id="multiselect_pre_selected" multiple="multiple">
+							<option value="elem_1" selected>elem 1</option>
+							<option value="elem_2">elem 2</option>
+							<option value="elem_3">elem 3</option>
+							<option value="elem_4" selected>elem 4</option>
+							<option value="elem_5">elem 5</option>
+							<option value="elem_6">elem 6</option>
+							<option value="elem_7">elem 7</option>
+							<option value="elem_8" selected>elem 8</option>
+							<option value="elem_9">elem 9</option>
+							<option value="elem_10">elem 10</option>
+							<option value="elem_11">elem 11</option>
+							<option value="elem_12">elem 12</option>
+							<option value="elem_13">elem 13</option>
+							<option value="elem_14">elem 14</option>
+							<option value="elem_15">elem 15</option>
+							<option value="elem_16">elem 16</option>
+							<option value="elem_17">elem 17</option>
+							<option value="elem_18">elem 18</option>
+							<option value="elem_19">elem 19</option>
+							<option value="elem_20">elem 20</option>
+						</select>
+						<script>
+						    jQuery(document).ready(function(){
+							    $('#multiselect_pre_selected').multiSelect();
+						    });
+						</script>
+					</section>
+					<div id="multiselect-pre-selected" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-multiselect-pre-selected" class="language-html">&lt;label class="label">미리 선택된 MultiSelect&lt;/label>
+&lt;select id="multiselect_pre_selected" multiple="multiple">
+	&lt;option value="elem_1" selected>elem 1&lt;/option>
+	&lt;option value="elem_2">elem 2&lt;/option>
+	&lt;option value="elem_3">elem 3&lt;/option>
+	&lt;option value="elem_4" selected>elem 4&lt;/option>
+	&lt;option value="elem_5">elem 5&lt;/option>
+	&lt;option value="elem_6">elem 6&lt;/option>
+	&lt;option value="elem_7">elem 7&lt;/option>
+	&lt;option value="elem_8" selected>elem 8&lt;/option>
+	&lt;option value="elem_9">elem 9&lt;/option>
+	&lt;option value="elem_10">elem 10&lt;/option>
+	&lt;option value="elem_11">elem 11&lt;/option>
+	&lt;option value="elem_12">elem 12&lt;/option>
+	&lt;option value="elem_13">elem 13&lt;/option>
+	&lt;option value="elem_14">elem 14&lt;/option>
+	&lt;option value="elem_15">elem 15&lt;/option>
+	&lt;option value="elem_16">elem 16&lt;/option>
+	&lt;option value="elem_17">elem 17&lt;/option>
+	&lt;option value="elem_18">elem 18&lt;/option>
+	&lt;option value="elem_19">elem 19&lt;/option>
+	&lt;option value="elem_20">elem 20&lt;/option>
+&lt;/select>
+&lt;script>
+    jQuery(document).ready(function(){
+	    $('#multiselect_pre_selected').multiSelect();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-multiselect-pre-selected" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#multiselect-callback" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">콜백 MultiSelect</label>
+						<select id="multiselect_callback" multiple="multiple">
+							<option value="elem_1">elem 1</option>
+							<option value="elem_2">elem 2</option>
+							<option value="elem_3">elem 3</option>
+							<option value="elem_4">elem 4</option>
+							<option value="elem_5">elem 5</option>
+							<option value="elem_6">elem 6</option>
+							<option value="elem_7">elem 7</option>
+							<option value="elem_8">elem 8</option>
+							<option value="elem_9">elem 9</option>
+							<option value="elem_10">elem 10</option>
+							<option value="elem_11">elem 11</option>
+							<option value="elem_12">elem 12</option>
+							<option value="elem_13">elem 13</option>
+							<option value="elem_14">elem 14</option>
+							<option value="elem_15">elem 15</option>
+							<option value="elem_16">elem 16</option>
+							<option value="elem_17">elem 17</option>
+							<option value="elem_18">elem 18</option>
+							<option value="elem_19">elem 19</option>
+							<option value="elem_20">elem 20</option>
+						</select>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#multiselect_callback').multiSelect({
+									afterSelect: function(values){
+										alert("선택 : "+values);
+									},
+									afterDeselect: function(values){
+										alert("선택해제 : "+values);
+									}
+								});
+						    });
+						</script>
+					</section>
+					<div id="multiselect-callback" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-multiselect-callback" class="language-html">&lt;label class="label">콜백 MultiSelect&lt;/label>
+&lt;select id="multiselect_callback" multiple="multiple">
+	&lt;option value="elem_1">elem 1&lt;/option>
+	&lt;option value="elem_2">elem 2&lt;/option>
+	&lt;option value="elem_3">elem 3&lt;/option>
+	&lt;option value="elem_4">elem 4&lt;/option>
+	&lt;option value="elem_5">elem 5&lt;/option>
+	&lt;option value="elem_6">elem 6&lt;/option>
+	&lt;option value="elem_7">elem 7&lt;/option>
+	&lt;option value="elem_8">elem 8&lt;/option>
+	&lt;option value="elem_9">elem 9&lt;/option>
+	&lt;option value="elem_10">elem 10&lt;/option>
+	&lt;option value="elem_11">elem 11&lt;/option>
+	&lt;option value="elem_12">elem 12&lt;/option>
+	&lt;option value="elem_13">elem 13&lt;/option>
+	&lt;option value="elem_14">elem 14&lt;/option>
+	&lt;option value="elem_15">elem 15&lt;/option>
+	&lt;option value="elem_16">elem 16&lt;/option>
+	&lt;option value="elem_17">elem 17&lt;/option>
+	&lt;option value="elem_18">elem 18&lt;/option>
+	&lt;option value="elem_19">elem 19&lt;/option>
+	&lt;option value="elem_20">elem 20&lt;/option>
+&lt;/select>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#multiselect_callback').multiSelect({
+			afterSelect: function(values){
+				alert("선택 : "+values);
+			},
+			afterDeselect: function(values){
+				alert("선택해제 : "+values);
+			}
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-multiselect-callback" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#multiselect-group" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">그룹 MultiSelect</label>
+						<select id="multiselect_group" multiple="multiple">
+							<optgroup label="Friends">
+								<option value="1">Yoda</option>
+								<option value="2" selected>Obiwan</option>
+							</optgroup>
+							<optgroup label="Enemies">
+								<option value="3">Palpatine</option>
+								<option value="4" disabled>Darth Vader</option>
+							</optgroup>
+						</select>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#multiselect_group').multiSelect({
+									selectableOptgroup: true
+								});
+						    });
+						</script>
+					</section>
+					<div id="multiselect-group" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-multiselect-group" class="language-html">&lt;label class="label">그룹 MultiSelect&lt;/label>
+&lt;select id="multiselect_group" multiple="multiple">
+	&lt;optgroup label="Friends">
+		&lt;option value="1">Yoda&lt;/option>
+		&lt;option value="2" selected>Obiwan&lt;/option>
+	&lt;/optgroup>
+	&lt;optgroup label="Enemies">
+		&lt;option value="3">Palpatine&lt;/option>
+		&lt;option value="4" disabled>Darth Vader&lt;/option>
+	&lt;/optgroup>
+&lt;/select>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#multiselect_group').multiSelect({
+			selectableOptgroup: true
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-multiselect-group" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#multiselect-disabled" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">비활성 MultiSelect</label>
+						<select id="multiselect_disabled" multiple="multiple" disabled>
+							<option value="elem_1">elem 1</option>
+							<option value="elem_2">elem 2</option>
+							<option value="elem_3">elem 3</option>
+							<option value="elem_4">elem 4</option>
+							<option value="elem_5">elem 5</option>
+							<option value="elem_6">elem 6</option>
+							<option value="elem_7">elem 7</option>
+							<option value="elem_8">elem 8</option>
+							<option value="elem_9">elem 9</option>
+							<option value="elem_10">elem 10</option>
+							<option value="elem_11">elem 11</option>
+							<option value="elem_12">elem 12</option>
+							<option value="elem_13">elem 13</option>
+							<option value="elem_14">elem 14</option>
+							<option value="elem_15">elem 15</option>
+							<option value="elem_16">elem 16</option>
+							<option value="elem_17">elem 17</option>
+							<option value="elem_18">elem 18</option>
+							<option value="elem_19">elem 19</option>
+							<option value="elem_20">elem 20</option>
+						</select>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#multiselect_disabled').multiSelect();
+						    });
+						</script>
+					</section>
+					<div id="multiselect-disabled" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-multiselect-disabled" class="language-html">&lt;label class="label">비활성 MultiSelect&lt;/label>
+&lt;select id="multiselect_disabled" multiple="multiple" disabled>
+	&lt;option value="elem_1">elem 1&lt;/option>
+	&lt;option value="elem_2">elem 2&lt;/option>
+	&lt;option value="elem_3">elem 3&lt;/option>
+	&lt;option value="elem_4">elem 4&lt;/option>
+	&lt;option value="elem_5">elem 5&lt;/option>
+	&lt;option value="elem_6">elem 6&lt;/option>
+	&lt;option value="elem_7">elem 7&lt;/option>
+	&lt;option value="elem_8">elem 8&lt;/option>
+	&lt;option value="elem_9">elem 9&lt;/option>
+	&lt;option value="elem_10">elem 10&lt;/option>
+	&lt;option value="elem_11">elem 11&lt;/option>
+	&lt;option value="elem_12">elem 12&lt;/option>
+	&lt;option value="elem_13">elem 13&lt;/option>
+	&lt;option value="elem_14">elem 14&lt;/option>
+	&lt;option value="elem_15">elem 15&lt;/option>
+	&lt;option value="elem_16">elem 16&lt;/option>
+	&lt;option value="elem_17">elem 17&lt;/option>
+	&lt;option value="elem_18">elem 18&lt;/option>
+	&lt;option value="elem_19">elem 19&lt;/option>
+	&lt;option value="elem_20">elem 20&lt;/option>
+&lt;/select>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#multiselect_disabled').multiSelect();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-multiselect-disabled" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section class="source-example">
+						<a href="#multiselect-methods" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">메소드 MultiSelect</label>
+						<select id="multiselect_methods" multiple="multiple">
+							<option value="elem_1">elem 1</option>
+							<option value="elem_2">elem 2</option>
+							<option value="elem_3">elem 3</option>
+							<option value="elem_4">elem 4</option>
+							<option value="elem_5">elem 5</option>
+							<option value="elem_6">elem 6</option>
+							<option value="elem_7">elem 7</option>
+							<option value="elem_8">elem 8</option>
+							<option value="elem_9">elem 9</option>
+							<option value="elem_10">elem 10</option>
+							<option value="elem_11">elem 11</option>
+							<option value="elem_12">elem 12</option>
+							<option value="elem_13">elem 13</option>
+							<option value="elem_14">elem 14</option>
+							<option value="elem_15">elem 15</option>
+							<option value="elem_16">elem 16</option>
+							<option value="elem_17">elem 17</option>
+							<option value="elem_18">elem 18</option>
+							<option value="elem_19">elem 19</option>
+							<option value="elem_20">elem 20</option>
+						</select>
+						<div class="text-center">
+							<a href="#" id="select-all" class="btn-e btn-e-blue btn-e-xs">모두 선택</a>
+							<a href="#" id="deselect-all" class="btn-e btn-e-dark btn-e-xs">모두 선택해제</a>
+							<a href="#" id="select-10" class="btn-e btn-e-blue btn-e-xs">10개 선택</a>
+							<a href="#" id="deselect-10" class="btn-e btn-e-dark btn-e-xs">10개 선택해제</a>
+						</div>
+						<script>
+						    jQuery(document).ready(function(){
+								$('#multiselect_methods').multiSelect();
+								$('#select-all').click(function(){
+									$('#multiselect_methods').multiSelect('select_all');
+									return false;
+								});
+								$('#deselect-all').click(function(){
+									$('#multiselect_methods').multiSelect('deselect_all');
+									return false;
+								});
+								$('#select-10').click(function(){
+									$('#multiselect_methods').multiSelect('select', ['elem_1', 'elem_2', 'elem_3', 'elem_4', 'elem_5', 'elem_6', 'elem_7', 'elem_8', 'elem_9', 'elem_10']);
+									return false;
+								});
+								$('#deselect-10').click(function(){
+									$('#multiselect_methods').multiSelect('deselect', ['elem_1', 'elem_2', 'elem_3', 'elem_4', 'elem_5', 'elem_6', 'elem_7', 'elem_8', 'elem_9', 'elem_10']);
+									return false;
+								});
+						    });
+						</script>
+					</section>
+					<div id="multiselect-methods" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-multiselect-methods" class="language-html">&lt;label class="label">메소드 MultiSelect&lt;/label>
+&lt;select id="multiselect_methods" multiple="multiple">
+	&lt;option value="elem_1">elem 1&lt;/option>
+	&lt;option value="elem_2">elem 2&lt;/option>
+	&lt;option value="elem_3">elem 3&lt;/option>
+	&lt;option value="elem_4">elem 4&lt;/option>
+	&lt;option value="elem_5">elem 5&lt;/option>
+	&lt;option value="elem_6">elem 6&lt;/option>
+	&lt;option value="elem_7">elem 7&lt;/option>
+	&lt;option value="elem_8">elem 8&lt;/option>
+	&lt;option value="elem_9">elem 9&lt;/option>
+	&lt;option value="elem_10">elem 10&lt;/option>
+	&lt;option value="elem_11">elem 11&lt;/option>
+	&lt;option value="elem_12">elem 12&lt;/option>
+	&lt;option value="elem_13">elem 13&lt;/option>
+	&lt;option value="elem_14">elem 14&lt;/option>
+	&lt;option value="elem_15">elem 15&lt;/option>
+	&lt;option value="elem_16">elem 16&lt;/option>
+	&lt;option value="elem_17">elem 17&lt;/option>
+	&lt;option value="elem_18">elem 18&lt;/option>
+	&lt;option value="elem_19">elem 19&lt;/option>
+	&lt;option value="elem_20">elem 20&lt;/option>
+&lt;/select>
+&lt;div class="text-center">
+	&lt;a href="#" id="select-all" class="btn-e btn-e-blue btn-e-xs">모두 선택&lt;/a>
+	&lt;a href="#" id="deselect-all" class="btn-e btn-e-dark btn-e-xs">모두 선택해제&lt;/a>
+	&lt;a href="#" id="select-10" class="btn-e btn-e-blue btn-e-xs">10개 선택&lt;/a>
+	&lt;a href="#" id="deselect-10" class="btn-e btn-e-dark btn-e-xs">10개 선택해제&lt;/a>
+&lt;/div>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('#multiselect_methods').multiSelect();
+		$('#select-all').click(function(){
+			$('#multiselect_methods').multiSelect('select_all');
+			return false;
+		});
+		$('#deselect-all').click(function(){
+			$('#multiselect_methods').multiSelect('deselect_all');
+			return false;
+		});
+		$('#select-10').click(function(){
+			$('#multiselect_methods').multiSelect('select', ['elem_1', 'elem_2', 'elem_3', 'elem_4', 'elem_5', 'elem_6', 'elem_7', 'elem_8', 'elem_9', 'elem_10']);
+			return false;
+		});
+		$('#deselect-10').click(function(){
+			$('#multiselect_methods').multiSelect('deselect', ['elem_1', 'elem_2', 'elem_3', 'elem_4', 'elem_5', 'elem_6', 'elem_7', 'elem_8', 'elem_9', 'elem_10']);
+			return false;
+		});
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-multiselect-methods" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Knob Forms<a href="#knob-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="knob-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Knob Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery.knob.min.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-knob-document" class="language-html">&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-knob/jquery.knob.min.js">&lt;/script>
+&lt;script>
+    jQuery(document).ready(function(){
+		$(".knob").knob();
+    });
+&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-knob/jquery.knob.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-knob-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#knob-source-1" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<div class="text-center">
+							<label class="label">Disable display input</label>
+							<div class="knob-wrap">
+								<input class="knob" data-width="120" data-thickness=.2 data-fgColor="#959595" data-displayInput=false value="35">
+							</div>
+						</div>
+					</section>
+					<div id="knob-source-1" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-knob-source-1" class="language-html">&lt;div class="text-center">
+	&lt;label class="label">Disable display input&lt;/label>
+	&lt;div class="knob-wrap">
+		&lt;input class="knob" data-width="120" data-thickness=.2 data-fgColor="#959595" data-displayInput=false value="35">
+	&lt;/div>
+&lt;/div></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-knob-source-1" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#knob-source-2" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<div class="text-center">
+							<label class="label">'cursor' mode</label>
+							<div class="knob-wrap">
+								<input class="knob" data-width="120" data-cursor=true data-fgColor="#3D4254" data-thickness=.2 value="29">
+							</div>
+						</div>
+					</section>
+					<div id="knob-source-2" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-knob-source-2" class="language-html">&lt;div class="text-center">
+	&lt;label class="label">'cursor' mode&lt;/label>
+	&lt;div class="knob-wrap">
+		&lt;input class="knob" data-width="120" data-cursor=true data-fgColor="#3D4254" data-thickness=.2 value="29">
+	&lt;/div>
+&lt;/div></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-knob-source-2" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#knob-source-3" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<div class="text-center">
+							<label class="label">Display previous value</label>
+							<div class="knob-wrap">
+								<input class="knob" data-width="120" data-fgColor="#FF5330" data-thickness=.2 data-min="-100" data-displayPrevious=true value="45">
+							</div>
+						</div>
+					</section>
+					<div id="knob-source-3" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-knob-source-3" class="language-html">&lt;div class="text-center">
+	&lt;label class="label">Display previous value&lt;/label>
+	&lt;div class="knob-wrap">
+		&lt;input class="knob" data-width="120" data-fgColor="#FF5330" data-thickness=.2 data-min="-100" data-displayPrevious=true value="45">
+	&lt;/div>
+&lt;/div></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-knob-source-3" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#knob-source-4" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<div class="text-center">
+							<label class="label">Angle offset</label>
+							<div class="knob-wrap">
+								<input class="knob" data-width="120" data-thickness=.2 data-fgColor="#2289FF" data-angleOffset=90 data-linecap=round value="35">
+							</div>
+						</div>
+					</section>
+					<div id="knob-source-4" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-knob-source-4" class="language-html">&lt;div class="text-center">
+	&lt;label class="label">Angle offset&lt;/label>
+	&lt;div class="knob-wrap">
+		&lt;input class="knob" data-width="120" data-thickness=.2 data-fgColor="#2289FF" data-angleOffset=90 data-linecap=round value="35">
+	&lt;/div>
+&lt;/div></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-knob-source-4" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#knob-source-5" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<div class="text-center">
+							<label class="label">Angle offset and arc</label>
+							<div class="knob-wrap">
+								<input class="knob" data-width="120" data-thickness=.2 data-fgColor="#A0CB26" data-angleOffset=-125 data-angleArc=250 data-rotation="anticlockwise" data-linecap=round value="35">
+							</div>
+						</div>
+					</section>
+					<div id="knob-source-5" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-knob-source-5" class="language-html">&lt;div class="text-center">
+	&lt;label class="label">Angle offset and arc&lt;/label>
+	&lt;div class="knob-wrap">
+		&lt;input class="knob" data-width="120" data-thickness=.2 data-fgColor="#A0CB26" data-angleOffset=-125 data-angleArc=250 data-rotation="anticlockwise" data-linecap=round value="35">
+	&lt;/div>
+&lt;/div></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-knob-source-5" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#knob-source-6" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<div class="text-center">
+							<label class="label">4-digit, step 1000</label>
+							<div class="knob-wrap">
+								<input class="knob" data-width="120" data-thickness=.2 data-fgColor="#FFA72C" data-min="-10000" data-displayPrevious=true data-max="10000" data-step="1000" value="0">
+							</div>
+						</div>
+					</section>
+					<div id="knob-source-6" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-knob-source-6" class="language-html">&lt;div class="text-center">
+	&lt;label class="label">4-digit, step 1000&lt;/label>
+	&lt;div class="knob-wrap">
+		&lt;input class="knob" data-width="120" data-thickness=.2 data-fgColor="#FFA72C" data-min="-10000" data-displayPrevious=true data-max="10000" data-step="1000" value="0">
+	&lt;/div>
+&lt;/div></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-knob-source-6" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>asColorPicker Forms<a href="#ascolorPicker-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="ascolorPicker-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">asColorPicker Forms 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 상단과 하단에 아래소스를 추가합니다. asColorPicker.min.css 스타일시트와 jquery-ui.min.js 스크립트, jquery-asColor.js 스크립트, jquery-asGradient.js 스크립트, jquery-asColorPicker.min.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-ascolorPicker-document" class="language-html">&lt;!--작업중인 파일 상단에 추가-->
+&lt;link rel="stylesheet" href="\../../../plugins/eyoom-form/plugins/jquery-asColorPicker/css/asColorPicker.min.css">
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js">&lt;/script>
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asColor.min.js">&lt;/script>
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asGradient.min.js">&lt;/script>
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asColorPicker.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-asColorPicker/css/asColorPicker.min.css<br>../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js<br>../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asColor.min.js<br>../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asGradient.min.js<br>../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asColorPicker.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-ascolorPicker-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#ascolorpicker-default" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">기본</label>
+						<label class="input">
+							<input type="text" class="ascolorpicker_default" value="#FF2900">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$(".ascolorpicker_default").asColorPicker();
+						    });
+						</script>
+					</section>
+					<div id="ascolorpicker-default" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-ascolorpicker-default" class="language-html">&lt;label class="label">기본&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="ascolorpicker_default" value="#FF2900">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$(".ascolorpicker_default").asColorPicker();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-ascolorpicker-default" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#ascolorpicker-palettes" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">팔레트 asColorPicker</label>
+						<label class="input">
+							<input type="text" class="ascolorpicker_palettes" data-mode="palettes" value="#0078FF">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$(".ascolorpicker_palettes").asColorPicker();
+						    });
+						</script>
+					</section>
+					<div id="ascolorpicker-palettes" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-ascolorpicker-palettes" class="language-html">&lt;label class="label">팔레트 asColorPicker&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="ascolorpicker_palettes" data-mode="palettes" value="#0078FF">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$(".ascolorpicker_palettes").asColorPicker();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-ascolorpicker-palettes" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#ascolorpicker-complex" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">복합 asColorPicker</label>
+						<label class="input">
+							<input type="text" class="ascolorpicker_complex" data-mode="complex" value="#87BA00">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$(".ascolorpicker_complex").asColorPicker();
+						    });
+						</script>
+					</section>
+					<div id="ascolorpicker-complex" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-ascolorpicker-complex" class="language-html">&lt;label class="label">복합 asColorPicker&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="ascolorpicker_complex" data-mode="complex" value="#87BA00">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$(".ascolorpicker_complex").asColorPicker();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-ascolorpicker-complex" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#ascolorpicker-gradient" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">그라디언트 asColorPicker</label>
+						<label class="input">
+							<input type="text" class="ascolorpicker_gradient" data-mode="gradient" value="#FF9500">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+								$(".ascolorpicker_gradient").asColorPicker();
+						    });
+						</script>
+					</section>
+					<div id="ascolorpicker-gradient" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-ascolorpicker-gradient" class="language-html">&lt;label class="label">그라디언트 asColorPicker&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="ascolorpicker_gradient" data-mode="gradient" value="#FF9500">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+		$(".ascolorpicker_gradient").asColorPicker();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-ascolorpicker-gradient" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#ascolorpicker-gradient-2" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">그라디언트 asColorPicker (without switchable)</label>
+						<label class="input">
+							<input type="text" class="ascolorpicker_gradient_2" data-mode="gradient" value="#663BB8">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+					            $(".ascolorpicker_gradient_2").asColorPicker({
+					                gradient: {
+					                    switchable: false
+					                }
+					            });
+						    });
+						</script>
+					</section>
+					<div id="ascolorpicker-gradient-2" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-ascolorpicker-gradient-2" class="language-html">&lt;label class="label">그라디언트 asColorPicker (without switchable)&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="ascolorpicker_gradient_2" data-mode="gradient" value="#663BB8">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+        $(".ascolorpicker_gradient_2").asColorPicker({
+            gradient: {
+                switchable: false
+            }
+        });
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-ascolorpicker-gradient-2" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<div class="col col-4">
+					<section class="source-example">
+						<a href="#ascolorpicker-gradient-color" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+						<label class="label">그라디언트 asColorPicker (with color value)</label>
+						<label class="input">
+							<input type="text" class="ascolorpicker_gradient_color" data-mode="gradient" value="rgb(120, 84, 71)">
+						</label>
+						<script>
+						    jQuery(document).ready(function(){
+						        $(".ascolorpicker_gradient_color").asColorPicker();
+						    });
+						</script>
+
+					</section>
+					<div id="ascolorpicker-gradient-color" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+					    <div class="modal-dialog modal-lg">
+					        <div class="modal-content">
+					            <div class="modal-header">
+					                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					                <h4 class="modal-title">Source Code HTML</h4>
+					            </div>
+					            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-ascolorpicker-gradient-color" class="language-html">&lt;label class="label">그라디언트 asColorPicker (with color value)&lt;/label>
+&lt;label class="input">
+	&lt;input type="text" class="ascolorpicker_gradient_color" data-mode="gradient" value="rgb(120, 84, 71)">
+&lt;/label>
+&lt;script>
+    jQuery(document).ready(function(){
+        $(".ascolorpicker_gradient_color").asColorPicker();
+    });
+&lt;/script></code>
+</pre>
+					            </div>
+					            <div class="modal-footer">
+						            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-ascolorpicker-gradient-color" data-dismiss="modal">CODE COPY</button>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" id="validation-form-ex" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Validation rules<a href="#validation-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="validation-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Validation rules 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery.validate.min.js 스크립트와 additional-methods.min.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-validation-document" class="language-html">&lt;!--예제 소스는 아래와 같이 id값을 부여한 form 태그 사이에 입력-->
+&lt;form action="#" id="validation-form-ex" class="eyoom-form">
+	예제 소스 입력
+&lt;/form>
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-validate/jquery.validate.min.js">&lt;/script>
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-validate/additional-methods.min.js">&lt;/script>
+&lt;script>
+    jQuery(document).ready(function(){
+        $("#validation-form-ex").validate({
+            // Validation 설정
+            rules: {
+                required: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                url: {
+                    required: true,
+                    url: true
+                },
+                date: {
+                    required: true,
+                    date: true
+                },
+                min: {
+                    required: true,
+                    minlength: 5
+                },
+                max: {
+                    required: true,
+                    maxlength: 10
+                },
+                range: {
+                    required: true,
+                    rangelength: [5, 10]
+                },
+                digits: {
+                    required: true,
+                    digits: true
+                },
+                number: {
+                    required: true,
+                    number: true
+                },
+                minVal: {
+                    required: true,
+                    min: 10
+                },
+                maxVal: {
+                    required: true,
+                    max: 20
+                },
+                rangeVal: {
+                    required: true,
+                    range: [10, 20]
+                }
+            },
+
+            // Validation 메세지
+            messages: {
+                required: {
+                    required: '입력해 주세요.'
+                },
+                email: {
+                    required: '이메일 주소를 입력해 주세요.',
+                    email : "메일규칙에 어긋납니다"
+                },
+                url: {
+                    required: 'URL 주소를 입력해 주세요.',
+                    url : "정상적인 URL이 아닙니다"
+                },
+                date: {
+                    required: '날짜를 입력해 주세요.',
+                    date: '날짜를 입력해 주세요.'
+                },
+                min: {
+                    required: '5 글자 이상 입력해 주세요.',
+                    minlength: '최소 (5)글자 이상이어야 합니다.'
+                },
+                max: {
+                    required: '10 글자 이하 입력해 주세요.',
+                    maxlength: '최대 (10)글자 이하이어야 합니다.'
+                },
+                range: {
+                    required: '5 글자 ~ 10 글자 사이를 입력해 주세요.',
+                    rangelength: '(5) ~ (10)글자 사이를 입력해 주세요.'
+                },
+                digits: {
+                    required: '숫자 정수를 입력해 주세요.',
+                    digits: '숫자 정수이어야 합니다.'
+                },
+                number: {
+                    required: '숫자를 입력해 주세요. (소수 가능)',
+                    number: '숫자이어야 합니다.'
+                },
+                minVal: {
+                    required: '10 이상을 입력해 주세요.',
+                    min: '(10) 이상을 입력해 주세요.'
+                },
+                maxVal: {
+                    required: '20 이하를 입력해 주세요.',
+                    max: '(20) 이하를 입력해 주세요.'
+                },
+                rangeVal: {
+                    required: '10 ~ 20 사이를 입력해 주세요.',
+                    range: '(10) ~ (20) 사이를 입력해 주세요.'
+                }
+            },
+
+            // 아래 코드는 변경하지 마세요.
+            errorPlacement: function(error, element) {
+                error.insertAfter(element.parent());
+            }
+        });
+    });
+&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-validate/jquery.validate.min.js<br>../plugins/eyoom-form/plugins/jquery-validate/additional-methods.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-validation-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">필수 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-check"></i>
+								<input type="text" name="required" placeholder="필수 입력">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">이메일 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-envelope"></i>
+								<input type="email" name="email" placeholder="이메일 주소">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">URL <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-link"></i>
+								<input type="url" name="url" placeholder="URL 주소">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">날짜 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-calendar-o"></i>
+								<input type="text" name="date" placeholder="YYYY-MM-DD 또는 다른 날짜 형식">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">5자 이상 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" name="min" placeholder="5자 이상 입력">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">10자 이하 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" name="max" placeholder="10자 이하 입력">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">글자수 범위 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" name="range" placeholder="5자 ~ 10자 사이">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-2"></div>
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">정수 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" name="digits" placeholder="숫자 정수">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">숫자 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" name="number" placeholder="소수 가능">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">10이상 숫자 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" name="minVal" placeholder="10이상 숫자 입력">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">20이하 숫자 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" name="maxVal" placeholder="20이하 숫자 입력">
+							</label>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">숫자 범위 <span class="validation-mark">*</span></label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" name="rangeVal" placeholder="10 ~ 20 사이의 숫자 입력">
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5;margin-top:30px">
+		<header>Masked inputs<a href="#masked-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></header>
+
+		<fieldset>
+			<div id="masked-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-lg">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			                <h4 class="modal-title">Masked inputs 사용법</h4>
+			            </div>
+			            <div class="modal-body">
+							<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 하단에 아래소스를 추가합니다. jquery.maskedinput.min.js 스크립트의 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-masked-document" class="language-html">&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/jquery-maskedinput/jquery.maskedinput.min.js">&lt;/script></code>
+</pre>
+							<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/jquery-maskedinput/jquery.maskedinput.min.js</div>
+			            </div>
+			            <div class="modal-footer">
+				            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-masked-document" data-dismiss="modal">CODE COPY</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">날짜</label>
+							<label class="input">
+								<i class="icon-append fa fa-calendar-o"></i>
+								<input type="text" id="masked_date">
+							</label>
+							<div class="note"><strong>예제:</strong> YYYY-MM-DD</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_date").mask('9999-99-99', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">시간</label>
+							<label class="input">
+								<i class="icon-append fa fa-clock-o"></i>
+								<input type="text" id="masked_time">
+							</label>
+							<div class="note"><strong>예제:</strong> hh:mm</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_time").mask('99:99', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">날짜와 시간</label>
+							<label class="input">
+								<i class="icon-append fa fa-calendar-plus-o"></i>
+								<input type="text" id="masked_date_time">
+							</label>
+							<div class="note"><strong>예제:</strong> YYYY-MM-DD hh:mm</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_date_time").mask('9999-99-99 99:99', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">휴대폰 번호</label>
+							<label class="input">
+								<i class="icon-append fa fa-phone"></i>
+								<input type="tel" id="masked_phone">
+							</label>
+							<div class="note"><strong>예제:</strong> ( ) 9999-9999</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_phone").mask('(999) 9999-9999', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">사업자 등록 번호</label>
+							<label class="input">
+								<i class="icon-append fa fa-building"></i>
+								<input type="text" id="masked_corporate">
+							</label>
+							<div class="note"><strong>예제:</strong> 999-99-99999</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_corporate").mask('999-99-99999', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+				</div>
+				<div class="col col-2"></div>
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">지불 카드</label>
+							<label class="input">
+								<i class="icon-append fa fa-credit-card"></i>
+								<input type="text" id="masked_card">
+							</label>
+							<div class="note"><strong>예제:</strong> 9999-9999-9999-9999</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_card").mask('9999-9999-9999-9999', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">시리얼 번호</label>
+							<label class="input">
+								<i class="icon-append fa fa-asterisk"></i>
+								<input type="text" id="masked_serial">
+							</label>
+							<div class="note"><strong>예제:</strong> 9999-9999-9999-9999-9999</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_serial").mask('****-****-****-****-****', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">퍼센트</label>
+							<label class="input">
+								<i class="icon-append fa fa-percent"></i>
+								<input type="text" id="masked_percent">
+							</label>
+							<div class="note"><strong>예제:</strong> 99.99%</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_percent").mask('99.99%', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+					<section>
+						<div class="code-example">
+							<label class="label">IP 주소</label>
+							<label class="input">
+								<i class="icon-append fa fa-hdd-o"></i>
+								<input type="text" id="masked_ip">
+							</label>
+							<div class="note"><strong>예제:</strong> 999.999.999.999</div>
+							<script>
+							    jQuery(document).ready(function(){
+							        $("#masked_ip").mask('999.999.999.999', {placeholder:'_'});
+							    });
+							</script>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+
+	<div class="eb-dropify" style="margin-top:30px;margin-bottom:20px">
+		<h4 class="margin-bottom-20"><strong class="color-blue">Dropify</strong> <small>- File Uploads</small><a href="#dropify-document" data-toggle="modal" class="btn-e btn-e-purple btn-e-sm btn-e-document pull-right"><i class="fa fa-file-text"></i> 사용법</a></h4>
+		<div id="dropify-document" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		    <div class="modal-dialog modal-lg">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+		                <h4 class="modal-title">Dropify Forms 사용법</h4>
+		            </div>
+		            <div class="modal-body">
+						<div class="alert alert-info margin-top-10">테마 내 작업중인 파일 상단과 하단에 아래소스를 추가합니다. dropify.min.css 스타일시트와 dropify.min.js 스크립트 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</div>
+<pre class="line-numbers">
+<code id="copy-dropify-document" class="language-html">&lt;!--작업중인 파일 상단에 추가-->
+&lt;link rel="stylesheet" href="\../../../plugins/eyoom-form/plugins/dropify/css/dropify.min.css">
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/eyoom-form/plugins/dropify/js/dropify.min.js">&lt;/script>
+&lt;script>
+    jQuery(document).ready(function(){
+		$('.dropify').dropify({
+		    messages: {
+		        'default': '파일을 끌어와서 넣거나 클릭하세요.',
+		        'replace': '파일을 끌어와서 넣거나 클릭하여 변경하세요.',
+		        'remove':  '삭제하기',
+		        'error':   'Error! 잘못된 파일입니다.'
+		    }
+		});
+    });
+&lt;/script></code>
+</pre>
+						<div class="alert alert-warning">보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.<br>../plugins/eyoom-form/plugins/dropify/css/dropify.min.css<br>../plugins/eyoom-form/plugins/dropify/js/dropify.min.js</div>
+		            </div>
+		            <div class="modal-footer">
+			            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-dropify-document" data-dismiss="modal">CODE COPY</button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 md-margin-bottom-20">
+				<section class="source-example">
+					<a href="#dropify-default" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+					<form action="#">
+						<h6 class="margin-bottom-10"><strong>기본 Dropify</strong></h6>
+						<input type="file" class="dropify">
+					</form>
+				</section>
+				<div id="dropify-default" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				    <div class="modal-dialog modal-lg">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				                <h4 class="modal-title">Source Code HTML</h4>
+				            </div>
+				            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-dropify-default" class="language-html">&lt;form action="#">
+	&lt;h6 class="margin-bottom-10">&lt;strong>기본 Dropify&lt;/strong>&lt;/h6>
+	&lt;input type="file" class="dropify">
+&lt;/form></code>
+</pre>
+				            </div>
+				            <div class="modal-footer">
+					            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-dropify-default" data-dismiss="modal">CODE COPY</button>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-4 md-margin-bottom-20">
+				<section class="source-example">
+					<a href="#dropify-default-value" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+					<form action="#">
+						<h6 class="margin-bottom-10"><strong>기본 파일 지정 Dropify</strong></h6>
+						<input type="file" class="dropify" data-default-file="../../../plugins/eyoom-form/plugins/dropify/sample_1.jpg">
+					</form>
+				</section>
+				<div id="dropify-default-value" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				    <div class="modal-dialog modal-lg">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				                <h4 class="modal-title">Source Code HTML</h4>
+				            </div>
+				            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-dropify-default-value" class="language-html">&lt;form action="#">
+	&lt;h6 class="margin-bottom-10">&lt;strong>기본 파일 지정 Dropify&lt;/strong>&lt;/h6>
+	&lt;input type="file" class="dropify" data-default-file="지정 파일 URL">
+&lt;/form></code>
+</pre>
+				            </div>
+				            <div class="modal-footer">
+					            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-dropify-default-value" data-dismiss="modal">CODE COPY</button>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<section class="source-example">
+					<a href="#dropify-height" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+					<form action="#">
+						<h6 class="margin-bottom-10"><strong>높이 설정 Dropify</strong></h6>
+						<input type="file" class="dropify" data-height="400" data-default-file="../../../plugins/eyoom-form/plugins/dropify/sample_2.jpg">
+					</form>
+				</section>
+				<div id="dropify-height" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				    <div class="modal-dialog modal-lg">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				                <h4 class="modal-title">Source Code HTML</h4>
+				            </div>
+				            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-dropify-height" class="language-html">&lt;form action="#">
+	&lt;h6 class="margin-bottom-10">&lt;strong>높이 설정 Dropify&lt;/strong>&lt;/h6>
+	&lt;input type="file" class="dropify" data-height="400" data-default-file="지정 파일 URL">
+&lt;/form></code>
+</pre>
+				            </div>
+				            <div class="modal-footer">
+					            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-dropify-height" data-dismiss="modal">CODE COPY</button>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+		<div class="margin-bottom-20"></div>
+		<div class="row">
+			<div class="col-md-4 md-margin-bottom-20">
+				<section class="source-example">
+					<a href="#dropify-file-size" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+					<form action="#">
+						<h6 class="margin-bottom-10"><strong>파일 사이즈 설정 Dropify</strong></h6>
+						<input type="file" class="dropify" data-max-file-size="3M">
+					</form>
+				</section>
+				<div id="dropify-file-size" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				    <div class="modal-dialog modal-lg">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				                <h4 class="modal-title">Source Code HTML</h4>
+				            </div>
+				            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-dropify-file-size" class="language-html">&lt;form action="#">
+	&lt;h6 class="margin-bottom-10">&lt;strong>파일 사이즈 설정 Dropify&lt;/strong>&lt;/h6>
+	&lt;input type="file" class="dropify" data-max-file-size="3M">
+&lt;/form></code>
+</pre>
+				            </div>
+				            <div class="modal-footer">
+					            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-dropify-file-size" data-dismiss="modal">CODE COPY</button>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-4 md-margin-bottom-20">
+				<section class="source-example">
+					<a href="#dropify-disabled" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+					<form action="#">
+						<h6 class="margin-bottom-10"><strong>비활성 Dropify</strong></h6>
+						<input type="file" class="dropify" disabled="disabled">
+					</form>
+				</section>
+				<div id="dropify-disabled" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				    <div class="modal-dialog modal-lg">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				                <h4 class="modal-title">Source Code HTML</h4>
+				            </div>
+				            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-dropify-disabled" class="language-html">&lt;form action="#">
+	&lt;h6 class="margin-bottom-10">&lt;strong>비활성 Dropify&lt;/strong>&lt;/h6>
+	&lt;input type="file" class="dropify" disabled="disabled">
+&lt;/form></code>
+</pre>
+				            </div>
+				            <div class="modal-footer">
+					            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-dropify-disabled" data-dismiss="modal">CODE COPY</button>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<section class="source-example">
+					<a href="#dropify-designated" data-toggle="modal" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a>
+					<form action="#">
+						<h6 class="margin-bottom-10"><strong>지정된 파일 Dropify</strong></h6>
+						<input type="file" class="dropify" disabled="disabled" data-default-file="../../../plugins/eyoom-form/plugins/dropify/sample_1.jpg">
+					</form>
+				</section>
+				<div id="dropify-designated" class="modal fade source-modal" tabindex="-1" role="dialog" aria-hidden="true">
+				    <div class="modal-dialog modal-lg">
+				        <div class="modal-content">
+				            <div class="modal-header">
+				                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				                <h4 class="modal-title">Source Code HTML</h4>
+				            </div>
+				            <div class="modal-body">
+<pre class="line-numbers">
+<code id="copy-dropify-designated" class="language-html">&lt;form action="#">
+	&lt;h6 class="margin-bottom-10">&lt;strong>지정된 파일 Dropify&lt;/strong>&lt;/h6>
+	&lt;input type="file" class="dropify" disabled="disabled" data-default-file="지정 파일 URL">
+&lt;/form></code>
+</pre>
+				            </div>
+				            <div class="modal-footer">
+					            <button type="button" class="btn-e btn-e-lg btn-e-dark rounded btn-copy" data-clipboard-action="copy" data-clipboard-target="#copy-dropify-designated" data-dismiss="modal">CODE COPY</button>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.code-example {position:relative}
+#source-button {position:absolute;top:0;right:0;z-index:100;font-weight:600}
+#source-modal .modal-content {border-radius:0}
+#source-modal .btn-clipboard {letter-spacing:0.5px}
+#source-modal .hljs {padding:10px 12px}
+pre {display:block;padding:9px;margin:0 0 9.5px;font-size:12px;line-height:1.49;word-break:break-all;word-wrap:break-word;color:#333;background-color:#eaeaea;border:0;border-radius:0}
+pre code {padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}
+.pre-scrollable {max-height:340px;overflow-y:scroll}
+.example-box {position:relative;border:1px dashed #d5d5d5;padding:10px}
+.source-example {position:relative}
+.ui-advanced-eyoom-form .btn-e-source {position:absolute;top:0;right:0;z-index:100;font-weight:600;padding-left:10px;padding-right:10px;visibility:hidden}
+.ui-advanced-eyoom-form .btn-e-source.btn-visible {visibility:visible}
+</style>
+
+<!--{? C.G5_IS_MOBILE}-->
+<style>
+.modal-backdrop {z-index:0}
+</style>
+<!--{/}-->
+
+<script src="../../../plugins/prism/prism.min.js"></script>
+<script src="../../../plugins/clipboard/clipboard.min.js"></script>
+<script src="../../../js/code-view.min.js"></script>
+<script>
+$(document).ready(function(){
+	var clipboard = new Clipboard('.btn-copy');
+    Codeview.init();
+});
+</script>
+
+<!--{* -------------------- Select2 (Plugin : select2) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/select2/select2.min.js"></script>
+
+<!--{* -------------------- Clockpicker (Plugin : jquery-clockpicker) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-clockpicker/jquery.clockpicker.min.js"></script>
+<script>
+    jQuery(document).ready(function(){
+		$('.clockpicker').clockpicker();
+    });
+</script>
+
+<!--{* -------------------- Timepicker (Plugin : jquery-timepicker) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-timepicker/jquery.timepicker.min.js"></script>
+
+<!--{* -------------------- Datepicker (Plugin : jquery-ui) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+<!--{* -------------------- Date Range Picker (Plugin : bootstrap-daterangepicker) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/moment/moment.min.js"></script>
+<script src="../../../plugins/eyoom-form/plugins/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+
+<!--{* -------------------- tagEditor (Plugin : jquery-tagEditor + jquery-ui)-------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-tagEditor/jquery.tag-editor.min.js"></script>
+
+<!--{* -------------------- Bootstrap Maxlength (Plugin : bootstrap-maxlength + jquery-ui) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+
+<!--{* -------------------- asSpinner (Plugin : jquery-asSpinner) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-asSpinner/jquery.mousewheel.js"></script>
+<script src="../../../plugins/eyoom-form/plugins/jquery-asSpinner/jquery-asSpinner.min.js"></script>
+
+<!--{* -------------------- louMultiSelect (Plugin : jquery-louMultiSelect) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-louMultiSelect/jquery.multi-select.js"></script>
+
+<!--{* -------------------- knob (Plugin : jquery-knob) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script>
+    jQuery(document).ready(function(){
+		$(".knob").knob();
+    });
+</script>
+
+<!--{* -------------------- asColorPicker (Plugin : jquery-asColorPicker + jquery-ui) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asColor.min.js"></script>
+<script src="../../../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asGradient.min.js"></script>
+<script src="../../../plugins/eyoom-form/plugins/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+
+<!--{* -------------------- Validation (Plugin : jquery-validate) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-validate/jquery.validate.min.js"></script>
+<script src="../../../plugins/eyoom-form/plugins/jquery-validate/additional-methods.min.js"></script>
+<script>
+    jQuery(document).ready(function(){
+        $("#validation-form-ex").validate({
+            // Validation 설정
+            rules: {
+                required: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                url: {
+                    required: true,
+                    url: true
+                },
+                date: {
+                    required: true,
+                    date: true
+                },
+                min: {
+                    required: true,
+                    minlength: 5
+                },
+                max: {
+                    required: true,
+                    maxlength: 10
+                },
+                range: {
+                    required: true,
+                    rangelength: [5, 10]
+                },
+                digits: {
+                    required: true,
+                    digits: true
+                },
+                number: {
+                    required: true,
+                    number: true
+                },
+                minVal: {
+                    required: true,
+                    min: 10
+                },
+                maxVal: {
+                    required: true,
+                    max: 20
+                },
+                rangeVal: {
+                    required: true,
+                    range: [10, 20]
+                }
+            },
+
+            // Validation 메세지
+            messages: {
+                required: {
+                    required: '입력해 주세요.'
+                },
+                email: {
+                    required: '이메일 주소를 입력해 주세요.',
+                    email : "메일규칙에 어긋납니다"
+                },
+                url: {
+                    required: 'URL 주소를 입력해 주세요.',
+                    url : "정상적인 URL이 아닙니다"
+                },
+                date: {
+                    required: '날짜를 입력해 주세요.',
+                    date: '날짜를 입력해 주세요.'
+                },
+                min: {
+                    required: '5 글자 이상 입력해 주세요.',
+                    minlength: '최소 (5)글자 이상이어야 합니다.'
+                },
+                max: {
+                    required: '10 글자 이하 입력해 주세요.',
+                    maxlength: '최대 (10)글자 이하이어야 합니다.'
+                },
+                range: {
+                    required: '5 글자 ~ 10 글자 사이를 입력해 주세요.',
+                    rangelength: '(5) ~ (10)글자 사이를 입력해 주세요.'
+                },
+                digits: {
+                    required: '숫자 정수를 입력해 주세요.',
+                    digits: '숫자 정수이어야 합니다.'
+                },
+                number: {
+                    required: '숫자를 입력해 주세요. (소수 가능)',
+                    number: '숫자이어야 합니다.'
+                },
+                minVal: {
+                    required: '10 이상을 입력해 주세요.',
+                    min: '(10) 이상을 입력해 주세요.'
+                },
+                maxVal: {
+                    required: '20 이하를 입력해 주세요.',
+                    max: '(20) 이하를 입력해 주세요.'
+                },
+                rangeVal: {
+                    required: '10 ~ 20 사이를 입력해 주세요.',
+                    range: '(10) ~ (20) 사이를 입력해 주세요.'
+                }
+            },
+
+            // 아래 코드는 변경하지 마세요.
+            errorPlacement: function(error, element) {
+                error.insertAfter(element.parent());
+            }
+        });
+    });
+</script>
+
+<!--{* -------------------- Masked Input (Plugin : jquery-maskedinput) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/jquery-maskedinput/jquery.maskedinput.min.js"></script>
+
+<!--{* -------------------- Dropify (Plugin : dropify) -------------------- *}-->
+<script src="../../../plugins/eyoom-form/plugins/dropify/js/dropify.min.js"></script>
+<script>
+    jQuery(document).ready(function(){
+		$('.dropify').dropify({
+		    messages: {
+		        'default': '파일을 끌어와서 넣거나 클릭하세요.',
+		        'replace': '파일을 끌어와서 넣거나 클릭하여 변경하세요.',
+		        'remove':  '삭제하기',
+		        'error':   'Error! 잘못된 파일입니다.'
+		    }
+		});
+    });
+</script>

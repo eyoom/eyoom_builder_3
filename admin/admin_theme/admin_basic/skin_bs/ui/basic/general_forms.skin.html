@@ -1,0 +1,1050 @@
+<?php if (!defined('_GNUBOARD_')) exit;
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/prism/prism.min.css" type="text/css" media="screen">',0);
+?>
+
+<div class="ui-eyoom-form">
+	<div class="headline">
+		<h4><strong><i class="fa fa-genderless color-red"></i> Eyoom form</strong></h4>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-info font-size-12"><i class="fa fa-info-circle"></i> 이윰빌더에서 사용하는 시즌3 Eyoom form의 ShortCodes 입니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-success font-size-12"><i class="fa fa-check"></i> 소스코드는 해당 예제에 마우스 포인트를 갖다대면 <a href="#" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a> 버튼이 나타나며, 클릭하면 소스코드를 볼 수 있습니다.</p>
+	</div>
+	<div class="margin-bottom-20"></div>
+	<div class="alert alert-warning margin-bottom-20">
+		<p><i class="fa fa-exclamation-circle"></i> Eyoom Form 적용을 위하여 소스코드는 <code>class="eyoom-form"</code> 으로 감싸주어야 합니다.</p>
+		<div class="margin-bottom-10"></div>
+<pre class="line-numbers">
+<code class="language-html">
+&lt;!--form 태그의 경우-->
+&lt;form action="#" class="eyoom-form">
+	소스코드
+&lt;/form>
+
+&lt;!--div 태그의 경우-->
+&lt;div class="eyoom-form">
+	소스코드
+&lt;/div></code>
+</pre>
+	</div>
+	<div class="margin-bottom-40"></div>
+
+	<form action="#" class="eyoom-form" style="border:1px solid #d5d5d5">
+		<header>기본 Eyoom Form</header>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">기본 Input</label>
+							<label class="input">
+								<input type="text">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">라운드 Input</label>
+							<label class="input">
+								<input type="text" class="rounded">
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">버튼 Input</label>
+							<div class="input input-button">
+								<input type="text">
+								<div class="button"><input type="button">BUTTON</div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">파일 업로드 Input</label>
+							<div class="input input-file">
+								<div class="button"><input type="file" id="file" onchange="this.parentNode.nextSibling.value = this.value">UPLOAD</div><input type="text" readonly>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">Placeholder input</label>
+							<label class="input input-search">
+								<input type="text" placeholder="placeholder">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">포커스 Input</label>
+							<label class="input">
+								<input type="text" class="focus">
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">좌측 아이콘 Input</label>
+							<label class="input">
+								<i class="icon-prepend fa fa-user"></i>
+								<input type="text">
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">우측 아이콘 Input</label>
+							<label class="input">
+								<i class="icon-append fa fa-user"></i>
+								<input type="text">
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">비활성 Input</label>
+							<label class="input state-disabled">
+								<input type="text" disabled>
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">비활성 라운드 Input</label>
+							<label class="input state-disabled">
+								<input type="text" class="rounded" disabled>
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<section>
+				<div class="code-example">
+					<label class="label">기본 Select</label>
+					<label class="select">
+						<select>
+							<option value="0">옵션 선택</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						<i></i>
+					</label>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">다중선택 Select</label>
+					<label class="select select-multiple">
+						<select multiple>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+						</select>
+					</label>
+					<div class="note"><strong>Note:</strong> 'ctrl' 또는 'cmd' 버튼으로 다중선택 가능</div>
+				</div>
+			</section>
+		</fieldset>
+
+		<fieldset>
+			<section>
+				<div class="code-example">
+					<label class="label">기본 Textarea</label>
+					<label class="textarea">
+						<textarea rows="3"></textarea>
+					</label>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">크기조절 Textarea</label>
+					<label class="textarea textarea-resizable">
+						<textarea rows="3"></textarea>
+					</label>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">확장되는 Textarea</label>
+					<label class="textarea textarea-expandable">
+						<textarea rows="3"></textarea>
+					</label>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">비활성 Textarea</label>
+					<label class="textarea state-disabled">
+						<textarea rows="3" disabled></textarea>
+					</label>
+				</div>
+			</section>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-4">
+					<section>
+						<div class="code-example">
+							<label class="label">우측 상단 툴팁 Input</label>
+							<label class="input">
+								<i class="icon-append fa fa-info-circle"></i>
+								<input type="text" placeholder="Focus to view the tooltip">
+								<b class="tooltip tooltip-top-right">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-4">
+					<section>
+						<div class="code-example">
+							<label class="label">우측 하단 툴팁 Input</label>
+							<label class="input">
+								<i class="icon-append fa fa-info-circle"></i>
+								<input type="text" placeholder="Focus to view the tooltip">
+								<b class="tooltip tooltip-bottom-right">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-4">
+					<section>
+						<div class="code-example">
+							<label class="label">우측 툴팁 Input</label>
+							<label class="input">
+								<i class="icon-append fa fa-info-circle"></i>
+								<input type="text" placeholder="Focus to view the tooltip">
+								<b class="tooltip tooltip-right">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-4">
+					<section>
+						<div class="code-example">
+							<label class="label">좌측 상단 툴팁 Input</label>
+							<label class="input">
+								<i class="icon-prepend fa fa-info-circle"></i>
+								<input type="text" placeholder="Focus to view the tooltip">
+								<b class="tooltip tooltip-top-left">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-4">
+					<section>
+						<div class="code-example">
+							<label class="label">좌측 하단 툴팁 Input</label>
+							<label class="input">
+								<i class="icon-prepend fa fa-info-circle"></i>
+								<input type="text" placeholder="Focus to view the tooltip">
+								<b class="tooltip tooltip-bottom-left">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-4">
+					<section>
+						<div class="code-example">
+							<label class="label">좌측 툴팁 Input</label>
+							<label class="input">
+								<i class="icon-prepend fa fa-info-circle"></i>
+								<input type="text" placeholder="Focus to view the tooltip">
+								<b class="tooltip tooltip-left">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">우측 상단 툴팁 Textarea</label>
+							<label class="textarea">
+								<i class="icon-append fa fa-info-circle"></i>
+								<textarea rows="3" placeholder="Focus to view the tooltip"></textarea>
+								<b class="tooltip tooltip-top-right">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">우측 툴팁 Textarea</label>
+							<label class="textarea">
+								<i class="icon-append fa fa-info-circle"></i>
+								<textarea rows="3" placeholder="Focus to view the tooltip"></textarea>
+								<b class="tooltip tooltip-right">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">좌측 상단 툴팁 Textarea</label>
+							<label class="textarea">
+								<i class="icon-prepend fa fa-info-circle"></i>
+								<textarea rows="3" placeholder="Focus to view the tooltip"></textarea>
+								<b class="tooltip tooltip-top-left">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">좌측 툴팁 Textarea</label>
+							<label class="textarea">
+								<i class="icon-prepend fa fa-info-circle"></i>
+								<textarea rows="3" placeholder="Focus to view the tooltip"></textarea>
+								<b class="tooltip tooltip-left">도움이 되는 정보</b>
+							</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 기본 Radio</label>
+							<label class="radio"><input type="radio" checked><i></i>Default color</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 검정 Radio</label>
+							<label class="radio dark-radio"><input type="radio" checked><i></i>Dark color</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 빨강 Radio</label>
+							<label class="radio red-radio"><input type="radio" checked><i></i>Red color</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 파랑 Radio</label>
+							<label class="radio blue-radio"><input type="radio" checked><i></i>Blue color</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 초록 Radio</label>
+							<label class="radio green-radio"><input type="radio" checked><i></i>Green color</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 노랑 Radio</label>
+							<label class="radio yellow-radio"><input type="radio" checked><i></i>Yellow color</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<section>
+				<div class="code-example">
+					<label class="label">세로 정렬 Radio</label>
+					<div class="row">
+						<div class="col col-4">
+							<label class="radio"><input type="radio" name="radio" checked><i></i>Australia</label>
+							<label class="radio"><input type="radio" name="radio"><i></i>Canada</label>
+							<label class="radio"><input type="radio" name="radio"><i></i>China</label>
+						</div>
+						<div class="col col-4">
+							<label class="radio"><input type="radio" name="radio"><i></i>France</label>
+							<label class="radio"><input type="radio" name="radio"><i></i>Germany</label>
+							<label class="radio"><input type="radio" name="radio"><i></i>Mexico</label>
+						</div>
+						<div class="col col-4">
+							<label class="radio"><input type="radio" name="radio"><i></i>Netherlands</label>
+							<label class="radio"><input type="radio" name="radio"><i></i>Poland</label>
+							<label class="radio"><input type="radio" name="radio"><i></i>Singapore</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">인라인 Radio</label>
+					<div class="inline-group">
+						<label class="radio"><input type="radio" name="radio-inline" checked><i></i>Australia</label>
+						<label class="radio"><input type="radio" name="radio-inline"><i></i>Canada</label>
+						<label class="radio"><input type="radio" name="radio-inline"><i></i>China</label>
+						<label class="radio"><input type="radio" name="radio-inline"><i></i>France</label>
+						<label class="radio"><input type="radio" name="radio-inline"><i></i>Germany</label>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">비활성 인라인 Radio</label>
+					<div class="inline-group">
+						<label class="radio state-disabled"><input type="radio" name="radio-inline-disabled" checked disabled><i></i>Australia</label>
+						<label class="radio state-disabled"><input type="radio" name="radio-inline-disabled" disabled><i></i>Canada</label>
+						<label class="radio state-disabled"><input type="radio" name="radio-inline-disabled" disabled><i></i>China</label>
+						<label class="radio state-disabled"><input type="radio" name="radio-inline-disabled" disabled><i></i>France</label>
+						<label class="radio state-disabled"><input type="radio" name="radio-inline-disabled" disabled><i></i>Germany</label>
+					</div>
+				</div>
+			</section>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 기본 Checkbox</label>
+							<label class="checkbox"><input type="checkbox" checked><i></i>Default color</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-6">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 검정 Checkbox</label>
+							<label class="checkbox dark-checkbox"><input type="checkbox" checked><i></i>Dark color</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 빨강 Checkbox</label>
+							<label class="checkbox red-checkbox"><input type="checkbox" checked><i></i>Red color</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 파랑 Checkbox</label>
+							<label class="checkbox blue-checkbox"><input type="checkbox" checked><i></i>Blue color</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 초록 Checkbox</label>
+							<label class="checkbox green-checkbox"><input type="checkbox" checked><i></i>Green color</label>
+						</div>
+					</section>
+				</div>
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">선택된 노랑 Checkbox</label>
+							<label class="checkbox yellow-checkbox"><input type="checkbox" checked><i></i>Yellow color</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<section>
+				<div class="code-example">
+					<label class="label">세로 정렬 Checkbox</label>
+					<div class="row">
+						<div class="col col-4">
+							<label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Australia</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Canada</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>China</label>
+						</div>
+						<div class="col col-4">
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>France</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Germany</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Mexico</label>
+						</div>
+						<div class="col col-4">
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Netherlands</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Poland</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Singapore</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">인라인 Checkbox</label>
+					<div class="inline-group">
+						<label class="checkbox"><input type="checkbox" name="checkbox-inline" checked><i></i>Australia</label>
+						<label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Canada</label>
+						<label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>China</label>
+						<label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>France</label>
+						<label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Germany</label>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">비활성 인라인 Checkbox</label>
+					<div class="inline-group">
+						<label class="checkbox state-disabled"><input type="checkbox" name="checkbox-inline-disabled" checked disabled><i></i>Australia</label>
+						<label class="checkbox state-disabled"><input type="checkbox" name="checkbox-inline-disabled" disabled><i></i>Canada</label>
+						<label class="checkbox state-disabled"><input type="checkbox" name="checkbox-inline-disabled" disabled><i></i>China</label>
+						<label class="checkbox state-disabled"><input type="checkbox" name="checkbox-inline-disabled" disabled><i></i>France</label>
+						<label class="checkbox state-disabled"><input type="checkbox" name="checkbox-inline-disabled" disabled><i></i>Germany</label>
+					</div>
+				</div>
+			</section>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">기본 Toggle</label>
+							<label class="toggle"><input type="checkbox" checked><i></i>Default color toggle</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">빨강 Toggle</label>
+							<label class="toggle red-toggle"><input type="checkbox" checked><i></i>Red toggle</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">파랑 Toggle</label>
+							<label class="toggle blue-toggle"><input type="checkbox" checked><i></i>Blue toggle</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">노랑 Toggle</label>
+							<label class="toggle yellow-toggle"><input type="checkbox" checked><i></i>Yellow toggle</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">작은 기본 Toggle</label>
+							<label class="toggle small-toggle"><input type="checkbox" checked><i></i>Small default toggle</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">작은 빨강 Toggle</label>
+							<label class="toggle small-toggle red-toggle"><input type="checkbox" checked><i></i>Small red toggle</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">작은 파랑 Toggle</label>
+							<label class="toggle small-toggle blue-toggle"><input type="checkbox" checked><i></i>Small blue toggle</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-3">
+					<section>
+						<div class="code-example">
+							<label class="label">작은 노랑 Toggle</label>
+							<label class="toggle small-toggle yellow-toggle"><input type="checkbox" checked><i></i>Small yellow toggle</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">기본 On Toggle</label>
+							<label class="toggle"><input type="checkbox" checked><i></i>On</label>
+							<label class="label">기본 Off Toggle</label>
+							<label class="toggle"><input type="checkbox"><i></i>Off</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-2"></div>
+
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">작은 On Toggle</label>
+							<label class="toggle small-toggle"><input type="checkbox" checked><i></i>On</label>
+							<label class="label">작은 Off Toggle</label>
+							<label class="toggle small-toggle"><input type="checkbox"><i></i>Off</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<div class="row">
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">Radio 성능 Toggle</label>
+							<label class="toggle"><input type="radio" name="radio-toggle" checked><i></i>France</label>
+							<label class="toggle"><input type="radio" name="radio-toggle"><i></i>Germany</label>
+							<label class="toggle"><input type="radio" name="radio-toggle"><i></i>Mexico</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-2"></div>
+
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">Checkbox 성능 Toggle</label>
+							<label class="toggle"><input type="checkbox" name="checkbox-toggle" checked><i></i>Netherlands</label>
+							<label class="toggle"><input type="checkbox" name="checkbox-toggle"><i></i>Poland</label>
+							<label class="toggle"><input type="checkbox" name="checkbox-toggle"><i></i>Singapore</label>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">비활성 Radio 성능 Toggle</label>
+							<label class="toggle state-disabled"><input type="radio" name="radio-toggle-disabled" checked disabled><i></i>France</label>
+							<label class="toggle state-disabled"><input type="radio" name="radio-toggle-disabled" disabled><i></i>Germany</label>
+							<label class="toggle state-disabled"><input type="radio" name="radio-toggle-disabled" disabled><i></i>Mexico</label>
+						</div>
+					</section>
+				</div>
+
+				<div class="col col-2"></div>
+
+				<div class="col col-5">
+					<section>
+						<div class="code-example">
+							<label class="label">비활성 Checkbox 성능 Toggle</label>
+							<label class="toggle state-disabled"><input type="checkbox" name="checkbox-toggle-disabled" checked disabled><i></i>Netherlands</label>
+							<label class="toggle state-disabled"><input type="checkbox" name="checkbox-toggle-disabled" disabled><i></i>Poland</label>
+							<label class="toggle state-disabled"><input type="checkbox" name="checkbox-toggle-disabled" disabled><i></i>Singapore</label>
+						</div>
+					</section>
+				</div>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<section>
+				<div class="code-example">
+					<label class="label">빨강 별점 평가</label>
+					<div class="rating">
+						<input type="radio" name="stars-rating" id="stars-rating-5">
+						<label for="stars-rating-5"><i class="fa fa-star"></i></label>
+						<input type="radio" name="stars-rating" id="stars-rating-4">
+						<label for="stars-rating-4"><i class="fa fa-star"></i></label>
+						<input type="radio" name="stars-rating" id="stars-rating-3">
+						<label for="stars-rating-3"><i class="fa fa-star"></i></label>
+						<input type="radio" name="stars-rating" id="stars-rating-2">
+						<label for="stars-rating-2"><i class="fa fa-star"></i></label>
+						<input type="radio" name="stars-rating" id="stars-rating-1">
+						<label for="stars-rating-1"><i class="fa fa-star"></i></label>
+						Red Stars
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">파랑 별점 평가</label>
+					<div class="rating blue-checked">
+						<input type="radio" name="blue-stars-rating" id="blue-stars-rating-5">
+						<label for="blue-stars-rating-5"><i class="fa fa-star"></i></label>
+						<input type="radio" name="blue-stars-rating" id="blue-stars-rating-4">
+						<label for="blue-stars-rating-4"><i class="fa fa-star"></i></label>
+						<input type="radio" name="blue-stars-rating" id="blue-stars-rating-3">
+						<label for="blue-stars-rating-3"><i class="fa fa-star"></i></label>
+						<input type="radio" name="blue-stars-rating" id="blue-stars-rating-2">
+						<label for="blue-stars-rating-2"><i class="fa fa-star"></i></label>
+						<input type="radio" name="blue-stars-rating" id="blue-stars-rating-1">
+						<label for="blue-stars-rating-1"><i class="fa fa-star"></i></label>
+						Blue Stars
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">초록 별점 평가</label>
+					<div class="rating green-checked">
+						<input type="radio" name="green-stars-rating" id="green-stars-rating-5">
+						<label for="green-stars-rating-5"><i class="fa fa-star"></i></label>
+						<input type="radio" name="green-stars-rating" id="green-stars-rating-4">
+						<label for="green-stars-rating-4"><i class="fa fa-star"></i></label>
+						<input type="radio" name="green-stars-rating" id="green-stars-rating-3">
+						<label for="green-stars-rating-3"><i class="fa fa-star"></i></label>
+						<input type="radio" name="green-stars-rating" id="green-stars-rating-2">
+						<label for="green-stars-rating-2"><i class="fa fa-star"></i></label>
+						<input type="radio" name="green-stars-rating" id="green-stars-rating-1">
+						<label for="green-stars-rating-1"><i class="fa fa-star"></i></label>
+						Green Stars
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">노랑 별점 평가</label>
+					<div class="rating yellow-checked">
+						<input type="radio" name="yellow-stars-rating" id="yellow-stars-rating-5">
+						<label for="yellow-stars-rating-5"><i class="fa fa-star"></i></label>
+						<input type="radio" name="yellow-stars-rating" id="yellow-stars-rating-4">
+						<label for="yellow-stars-rating-4"><i class="fa fa-star"></i></label>
+						<input type="radio" name="yellow-stars-rating" id="yellow-stars-rating-3">
+						<label for="yellow-stars-rating-3"><i class="fa fa-star"></i></label>
+						<input type="radio" name="yellow-stars-rating" id="yellow-stars-rating-2">
+						<label for="yellow-stars-rating-2"><i class="fa fa-star"></i></label>
+						<input type="radio" name="yellow-stars-rating" id="yellow-stars-rating-1">
+						<label for="yellow-stars-rating-1"><i class="fa fa-star"></i></label>
+						Yellow Stars
+					</div>
+				</div>
+			</section>
+		</fieldset>
+
+		<header style="border-top:1px solid #e5e5e5">Eyoom Form 반응형 그리드 시스템</header>
+
+		<fieldset>
+			<section>
+				<div class="code-example">
+					<label class="label">col-2</label>
+					<div class="row">
+						<div class="col col-2">
+							<label class="input">
+								<input type="text" placeholder="2/12">
+							</label>
+						</div>
+						<div class="col col-2">
+							<label class="input">
+								<input type="text" placeholder="2/12">
+							</label>
+						</div>
+						<div class="col col-2">
+							<label class="input">
+								<input type="text" placeholder="2/12">
+							</label>
+						</div>
+						<div class="col col-2">
+							<label class="input">
+								<input type="text" placeholder="2/12">
+							</label>
+						</div>
+						<div class="col col-2">
+							<label class="input">
+								<input type="text" placeholder="2/12">
+							</label>
+						</div>
+						<div class="col col-2">
+							<label class="input">
+								<input type="text" placeholder="2/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">col-3</label>
+					<div class="row">
+						<div class="col col-3">
+							<label class="input">
+								<input type="text" placeholder="3/12">
+							</label>
+						</div>
+						<div class="col col-3">
+							<label class="input">
+								<input type="text" placeholder="3/12">
+							</label>
+						</div>
+						<div class="col col-3">
+							<label class="input">
+								<input type="text" placeholder="3/12">
+							</label>
+						</div>
+						<div class="col col-3">
+							<label class="input">
+								<input type="text" placeholder="3/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">col-4</label>
+					<div class="row">
+						<div class="col col-4">
+							<label class="input">
+								<input type="text" placeholder="4/12">
+							</label>
+						</div>
+						<div class="col col-4">
+							<label class="input">
+								<input type="text" placeholder="4/12">
+							</label>
+						</div>
+						<div class="col col-4">
+							<label class="input">
+								<input type="text" placeholder="4/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">col-6</label>
+					<div class="row">
+						<div class="col col-6">
+							<label class="input">
+								<input type="text" placeholder="6/12">
+							</label>
+						</div>
+						<div class="col col-6">
+							<label class="input">
+								<input type="text" placeholder="6/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">col-7, col-5</label>
+					<div class="row">
+						<div class="col col-7">
+							<label class="input">
+								<input type="text" placeholder="7/12">
+							</label>
+						</div>
+						<div class="col col-5">
+							<label class="input">
+								<input type="text" placeholder="5/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">col-8, col-4</label>
+					<div class="row">
+						<div class="col col-8">
+							<label class="input">
+								<input type="text" placeholder="8/12">
+							</label>
+						</div>
+						<div class="col col-4">
+							<label class="input">
+								<input type="text" placeholder="4/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">col-9, col-3</label>
+					<div class="row">
+						<div class="col col-9">
+							<label class="input">
+								<input type="text" placeholder="9/12">
+							</label>
+						</div>
+						<div class="col col-3">
+							<label class="input">
+								<input type="text" placeholder="3/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">col-10, col-2</label>
+					<div class="row">
+						<div class="col col-10">
+							<label class="input">
+								<input type="text" placeholder="10/12">
+							</label>
+						</div>
+						<div class="col col-2">
+							<label class="input">
+								<input type="text" placeholder="2/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="code-example">
+					<label class="label">col-12</label>
+					<div class="row">
+						<div class="col col-12">
+							<label class="input">
+								<input type="text" placeholder="12/12">
+							</label>
+						</div>
+					</div>
+				</div>
+			</section>
+		</fieldset>
+	</form>
+</div>
+
+<style>
+.code-example {position:relative}
+#source-button {position:absolute;top:0;right:0;z-index:100;font-weight:600}
+#source-modal .modal-content {border-radius:0}
+#source-modal .btn-clipboard {letter-spacing:0.5px}
+#source-modal .hljs {padding:10px 12px}
+pre {display:block;padding:9px;margin:0 0 9.5px;font-size:12px;line-height:1.49;word-break:break-all;word-wrap:break-word;color:#333;background-color:#eaeaea;border:0;border-radius:0}
+pre code {padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}
+.pre-scrollable {max-height:340px;overflow-y:scroll}
+.example-box {position:relative;border:1px dashed #d5d5d5;padding:10px}
+</style>
+
+<!--{? C.G5_IS_MOBILE}-->
+<style>
+.modal-backdrop {z-index:0}
+</style>
+<!--{/}-->
+
+<script src="../../../plugins/prism/prism.min.js"></script>
+<script src="../../../plugins/clipboard/clipboard.min.js"></script>
+<script src="../../../js/code-view.min.js"></script>
+<script>
+$(document).ready(function(){
+	var clipboard = new Clipboard('.btn-copy');
+    Codeview.init();
+});
+</script>

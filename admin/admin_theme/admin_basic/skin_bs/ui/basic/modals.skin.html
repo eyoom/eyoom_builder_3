@@ -1,0 +1,1006 @@
+<?php if (!defined('_GNUBOARD_')) exit;
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/prism/prism.min.css" type="text/css" media="screen">',0);
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/sweetalert/sweetalert.min.css" type="text/css" media="screen">',0);
+?>
+
+<div class="ui-modal">
+	<div class="headline">
+		<h4><strong><i class="fa fa-genderless color-red"></i> Modal</strong></h4>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-info font-size-12"><i class="fa fa-info-circle"></i> 이윰빌더에서 사용하는 시즌3 Modal의 ShortCodes 입니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-success font-size-12"><i class="fa fa-check"></i> 소스코드는 해당 예제에 마우스 포인트를 갖다대면 <a href="#" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a> 버튼이 나타나며, 클릭하면 소스코드를 볼 수 있습니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-warning font-size-12"><i class="fa fa-exclamation-circle"></i> 아래의 예제들은 버튼 소스 코드에 <code>.btn-e-block</code>이 포함되어 있습니다. 버튼의 block 속성을 원치않으면 <code>.btn-e-block</code>을 지우고 사용하세요.<br><i class="fa fa-exclamation-circle"></i> 예제의 샘플을 작동해 보았다면, 새로고침 후 소스코드를 복사하여 사용하세요. (작동 후 불필요한 소스가 잔존하기 때문)</p>
+	</div>
+	<div class="margin-bottom-30"></div>
+
+	<h4 class="font-bold text-center margin-bottom-20">모달 기본</h4>
+	<div class="row">
+		<div class="col-sm-4 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_default">modal-default <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_default" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal default</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_backdrop">modal-backdrop <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_backdrop" class="modal fade" data-backdrop="false">
+					<div class="modal-dialog modal-default">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal backdrop</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_noanimation">modal-noanimation <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_noanimation" class="modal">
+					<div class="modal-dialog modal-default">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal none animation</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="margin-bottom-30"></div>
+
+	<h4 class="font-bold text-center margin-bottom-20">모달 크기</h4>
+	<p class="text-center margin-bottom-20"><code>.modal-xs</code> <code>.modal-sm</code> <code>.modal-default</code> <code>.modal-lg</code> <code>.modal-xlg</code></p>
+	<div class="row">
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_xs">modal-xs <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_xs" class="modal fade">
+					<div class="modal-dialog modal-xs">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">X-Small modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_sm">modal-sm <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_sm" class="modal fade">
+					<div class="modal-dialog modal-sm">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Small modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_default">modal-default <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_default" class="modal fade">
+					<div class="modal-dialog modal-default">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Default modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_lg">modal-lg <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_lg" class="modal fade">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Large modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_xlg">modal-xlg <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_xlg" class="modal fade">
+					<div class="modal-dialog modal-xlg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">X-Large modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="margin-bottom-30"></div>
+
+	<h4 class="font-bold text-center margin-bottom-20">모달 색상</h4>
+	<p class="text-center margin-bottom-20"><code>.bg-light</code> <code>.bg-dark</code> <code>.bg-red</code> <code>.bg-blue</code> <code>.bg-green</code> <code>.bg-yellow</code> <code>.bg-purple</code> <code>.bg-brown</code> <code>.bg-orange</code> <code>.bg-indigo</code> <code>.bg-teal</code> <code>.bg-pink</code></p>
+	<div class="row margin-bottom-20">
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-default btn-e-block" data-toggle="modal" data-target="#modal_light">modal-light <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_light" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-light">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal light</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-default">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_dark">modal-dark <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_dark" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-dark">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal dark</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-dark">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-red btn-e-block" data-toggle="modal" data-target="#modal_red">modal-red <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_red" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-red">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal red</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-red">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-blue btn-e-block" data-toggle="modal" data-target="#modal_blue">modal-red <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_blue" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-blue">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal blue</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-green btn-e-block" data-toggle="modal" data-target="#modal_green">modal-green <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_green" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-green">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal green</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-green">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-yellow btn-e-block" data-toggle="modal" data-target="#modal_yellow">modal-yellow <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_yellow" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-yellow">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal yellow</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-yellow">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-purple btn-e-block" data-toggle="modal" data-target="#modal_purple">modal-purple <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_purple" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-purple">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal purple</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-purple">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brown btn-e-block" data-toggle="modal" data-target="#modal_brown">modal-brown <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_brown" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-brown">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal brown</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-brown">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-orange btn-e-block" data-toggle="modal" data-target="#modal_orange">modal-orange <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_orange" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-orange">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal orange</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-orange">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-indigo btn-e-block" data-toggle="modal" data-target="#modal_indigo">modal-indigo <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_indigo" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-indigo">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal indigo</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-indigo">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-teal btn-e-block" data-toggle="modal" data-target="#modal_teal">modal-teal <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_teal" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-teal">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal teal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-teal">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-pink btn-e-block" data-toggle="modal" data-target="#modal_pink">modal-pink <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_pink" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header bg-pink">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Modal pink</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-pink">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="margin-bottom-30"></div>
+
+	<h4 class="font-bold text-center margin-bottom-20">모달 이벤트</h4>
+	<div class="row">
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_onshow" id="onshow_callback">modal-onshow <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_onshow" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">onShow event modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+				    $('#onshow_callback').on('click', function() {
+				        $('#modal_onshow').on('show.bs.modal', function() {
+				            alert('alert 확인 버튼 클릭 후 모달이 열립니다.')
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_onshown" id="onshown_callback">modal-onshown <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_onshown" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">onShown event modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+				    $('#onshown_callback').on('click', function() {
+				        $('#modal_onshown').on('shown.bs.modal', function() {
+				            alert('모달이 열린 후 alert이 나옵니다.')
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_onhide" id="onhide_callback">modal-onhide <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_onhide" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">onHide event modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+				    $('#onhide_callback').on('click', function() {
+				        $('#modal_onhide').on('hide.bs.modal', function() {
+				            alert('모달을 닫으면 alert의 확인버튼을 클릭하여야 모달이 종료됩니다.')
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" data-toggle="modal" data-target="#modal_onhidden" id="onhidden_callback">modal-onhidden <i class="fa fa-play-circle-o"></i></button>
+				<div id="modal_onhidden" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">onHidden event modal</h4>
+							</div>
+							<div class="modal-body">
+								<h6 class="font-bold">Text in a modal</h6>
+								<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<hr>
+								<h6 class="font-bold">Another paragraph</h6>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+								<button type="button" class="btn-e btn-e-lg btn-e-blue">Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script>
+				    $('#onhidden_callback').on('click', function() {
+				        $('#modal_onhidden').on('hidden.bs.modal', function() {
+				            alert('모달을 닫으면 모달이 종료된 후 alert이 나옵니다.')
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+	</div>
+	<div class="margin-bottom-30"></div>
+
+	<h4 class="font-bold text-center margin-bottom-20">경고창</h4>
+	<div class="alert alert-info margin-bottom-20">
+		<h5 class="font-bold">플러그인 호출</h5>
+		<p>작업중인 파일 상단과 하단에 아래소스를 추가합니다. sweetalert.min.css 스타일시트와 sweetalert.min.js 스크립트 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</p>
+		<div class="margin-bottom-10"></div>
+<pre class="line-numbers">
+<code class="language-html">
+&lt;!--작업중인 파일 상단에 추가-->
+&lt;link rel="stylesheet" href="\../../../plugins/sweetalert/sweetalert.min.css">
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/sweetalert/sweetalert.min.js">&lt;/script></code>
+</pre>
+		<p>보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.</p>
+		<ul>
+			<li>../plugins/sweetalert/sweetalert.min.css</li>
+			<li>../plugins/sweetalert/sweetalert.min.js</li>
+		</ul>
+	</div>
+	<div class="row margin-bottom-20">
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_basic">Sweet Basic <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_basic').on('click', function() {
+				        swal({
+				            title: "여기에 전달할 문구를!",
+				            confirmButtonColor: "#0078FF",
+				            confirmButtonText: "확인"
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_title_text">Title with a text <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_title_text').on('click', function() {
+				        swal({
+				            title: "여기에 전달할 문구를!",
+				            text: "상세 정보를 위한 추가 설명을 기술하세요.",
+				            confirmButtonColor: "#0078FF",
+				            confirmButtonText: "확인"
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_html">With HTML <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_html').on('click', function() {
+				        swal({
+				            title: "HTML <small>작은 타이틀</small>",
+				            text: "HTML 태그를 이용하여 <span style='color:#FF9500'>스타일 설정</span> 이 가능합니다.",
+				            html: true,
+				            confirmButtonColor: "#0078FF",
+				            confirmButtonText: "확인"
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_auto_closer">Auto closer <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_auto_closer').on('click', function() {
+				        swal({
+				            title: "자동 닫힘!",
+				            text: "3초 후 이 경고창은 닫힙니다.",
+				            confirmButtonColor: "#0078FF",
+				            timer: 3000,
+				            confirmButtonText: "확인"
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+	</div>
+	<div class="row margin-bottom-20">
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_success">Success <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_success').on('click', function() {
+				        swal({
+				            title: "성공!",
+				            text: "아래 버튼을 클릭하면 종료됩니다.",
+				            confirmButtonColor: "#87BA00",
+				            type: "success",
+				            confirmButtonText: "확인"
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_info">Info <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_info').on('click', function() {
+				        swal({
+				            title: "정보",
+				            text: "전달할 정보를 기술합니다.",
+				            confirmButtonColor: "#0078FF",
+				            type: "info",
+				            confirmButtonText: "확인"
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_warning">Warning <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_warning').on('click', function() {
+				        swal({
+				            title: "위험!",
+				            text: "이 가상 파일을 복구할수 없습니다.",
+				            type: "warning",
+				            showCancelButton: true,
+				            confirmButtonColor: "#FF9500",
+				            confirmButtonText: "삭제",
+				            cancelButtonText: "취소"
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_error">Error <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_error').on('click', function() {
+				        swal({
+				            title: "Oops...",
+				            text: "문제가 발생했습니다!",
+				            confirmButtonColor: "#FF2900",
+				            type: "error",
+				            confirmButtonText: "확인"
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+	</div>
+	<div class="row margin-bottom-20">
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_prompt">Prompt dialog <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_prompt').on('click', function() {
+				        swal({
+				            title: "입력하세요!",
+				            text: "아래 입력폼에 무엇을 입력하세요.",
+				            type: "input",
+				            showCancelButton: true,
+				            confirmButtonColor: "#0078FF",
+				            closeOnConfirm: false,
+				            animation: "slide-from-top",
+				            inputPlaceholder: "입력하세요.",
+				            confirmButtonText: "확인",
+				            cancelButtonText: "취소"
+				        },
+				        function(inputValue){
+				            if (inputValue === false) return false;
+				            if (inputValue === "") {
+				                swal.showInputError("입력된 내용이 없습니다.");
+				                return false
+				            }
+				            swal({
+				                title: "성공!",
+				                text: "입력된 내용: " + inputValue,
+				                type: "success",
+				                confirmButtonColor: "#87BA00",
+				                confirmButtonText: "확인"
+				            });
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_loader">With a loader <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_loader').on('click', function() {
+				        swal({
+				            title: "Ajax 요청 샘플",
+				            text: "Ajax 실행을 위한 확인",
+				            type: "info",
+				            showCancelButton: true,
+				            closeOnConfirm: false,
+				            confirmButtonColor: "#0078FF",
+				            showLoaderOnConfirm: true,
+				            confirmButtonText: "확인",
+				            cancelButtonText: "취소"
+				        },
+				        function() {
+				            setTimeout(function() {
+				                swal({
+				                    title: "Ajax 요청 종료!",
+				                    confirmButtonColor: "#0078FF",
+				                    confirmButtonText: "확인"
+				                });
+				            }, 2000);
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="code-example">
+				<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" id="sweet_combine">Combine <i class="fa fa-play-circle-o"></i></button>
+				<script>
+				    $('#sweet_combine').on('click', function() {
+				        swal({
+				            title: "위험!",
+				            text: "이 가상 파일을 복구할수 없습니다.",
+				            type: "warning",
+				            showCancelButton: true,
+				            confirmButtonColor: "#FF9500",
+				            confirmButtonText: "삭제",
+				            cancelButtonText: "취소",
+				            closeOnConfirm: false,
+				            closeOnCancel: false
+				        },
+				        function(isConfirm){
+				            if (isConfirm) {
+				                swal({
+				                    title: "삭제되었습니다!",
+				                    text: "당신의 가상파일은 삭제되었습니다.",
+				                    confirmButtonColor: "#87BA00",
+				                    type: "success",
+				                    confirmButtonText: "확인"
+				                });
+				            }
+				            else {
+				                swal({
+				                    title: "취소되었습니다.",
+				                    text: "당신의 가상 파일은 안전합니다.",
+				                    confirmButtonColor: "#FF2900",
+				                    type: "error",
+				                    confirmButtonText: "확인"
+				                });
+				            }
+				        });
+				    });
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.code-example {position:relative}
+#source-button {position:absolute;top:0;right:0;z-index:100;font-weight:600}
+#source-modal .modal-content {border-radius:0}
+#source-modal .btn-clipboard {letter-spacing:0.5px}
+#source-modal .hljs {padding:10px 12px}
+pre {display:block;padding:9px;margin:0 0 9.5px;font-size:12px;line-height:1.49;word-break:break-all;word-wrap:break-word;color:#333;background-color:#eaeaea;border:0;border-radius:0}
+pre code {padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}
+.pre-scrollable {max-height:340px;overflow-y:scroll}
+.example-box {position:relative;border:1px dashed #d5d5d5;padding:10px}
+</style>
+
+<!--{? C.G5_IS_MOBILE}-->
+<style>
+.modal-backdrop {z-index:0}
+</style>
+<!--{/}-->
+
+<script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+<script src="../../../plugins/prism/prism.min.js"></script>
+<script src="../../../plugins/clipboard/clipboard.min.js"></script>
+<script src="../../../js/code-view.min.js"></script>
+<script>
+$(document).ready(function(){
+	var clipboard = new Clipboard('.btn-copy');
+    Codeview.init();
+});
+</script>

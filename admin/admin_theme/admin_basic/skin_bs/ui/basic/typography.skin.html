@@ -1,0 +1,1097 @@
+<?php if (!defined('_GNUBOARD_')) exit;
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/prism/prism.min.css" type="text/css" media="screen">',0);
+?>
+
+<div class="ui-typography">
+	<div class="headline">
+		<h4><strong><i class="fa fa-genderless color-red"></i> Typography</strong></h4>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-info font-size-12"><i class="fa fa-info-circle"></i> 이윰빌더에서 사용하는 시즌3 Typography의 ShortCodes 입니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-success font-size-12"><i class="fa fa-check"></i> 소스코드는 해당 예제에 마우스 포인트를 갖다대면 <a href="#" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a> 버튼이 나타나며, 클릭하면 소스코드를 볼 수 있습니다.</p>
+	</div>
+	<div class="margin-bottom-30"></div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>제목</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>모든 HTML 제목인, <code>&lt;h1&gt;</code> 부터 <code>&lt;h6&gt;</code> 까지 사용가능합니다. 당신의 텍스트를 인라인으로 표시되면서 스타일만 제목 스타일로 맞추기 위해 <code>.h1</code> 부터 <code>.h6</code> 클래스 또한 사용 가능합니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="row">
+		    	<div class="col-md-6 md-margin-bottom-20">
+			    	<div class="example-box">
+						<div class="code-example">
+							<h1>h1. Heading 1</h1>
+						</div>
+						<div class="code-example">
+							<h2>h2. Heading 2</h2>
+						</div>
+						<div class="code-example">
+							<h3>h3. Heading 3</h3>
+						</div>
+						<div class="code-example">
+							<h4>h4. Heading 4</h4>
+						</div>
+						<div class="code-example">
+							<h5>h5. Heading 5</h5>
+						</div>
+						<div class="code-example">
+							<h6>h6. Heading 6</h6>
+						</div>
+			    	</div>
+		    	</div>
+		    	<div class="col-md-6">
+			    	<div class="example-box">
+						<div class="code-example">
+							<h1>h1. Heading 1 <small>Secondary text</small></h1>
+						</div>
+						<div class="code-example">
+							<h2>h2. Heading 2 <small>Secondary text</small></h2>
+						</div>
+						<div class="code-example">
+							<h3>h3. Heading 3 <small>Secondary text</small></h3>
+						</div>
+						<div class="code-example">
+							<h4>h4. Heading 4 <small>Secondary text</small></h4>
+						</div>
+						<div class="code-example">
+							<h5>h5. Heading 5 <small>Secondary text</small></h5>
+						</div>
+						<div class="code-example">
+							<h6>h6. Heading 6 <small>Secondary text</small></h6>
+						</div>
+			    	</div>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>리드 문단</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p><code>.lead</code> 을 추가하여 문장을 눈에 띄도록 만드세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>표시된 텍스트</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>또다른 맥락에서 관련있는 텍스트들을 찾아내어 강조하기 위해, <code>&lt;mark&gt;</code> 태그를 사용하세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<p>당신은 <mark>강조할</mark> 텍스트에 mark 태그를 사용할 수 있습니다.</p>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>삭제된 텍스트</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>텍스트 블록이 삭제 되었음을 나타내기 위해서는 <code>&lt;del&gt;</code> 태그를 사용하세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<del>이 텍스트줄은 삭제된 텍스트로 다뤄짐을 의미합니다.</del>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>취소선 텍스트</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>텍스트 블록이 더 이상상 연관이 없음을 나타내기 위해서 <code>&lt;s&gt;</code> 태그를 사용하세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<s>이 텍스트줄은 더 이상 정확하지 않다고 다뤄짐을 의미합니다.</s>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>삽입된 텍스트</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>문서에 추가됨을 나타내기 위해서 <code>&lt;ins&gt;</code> 태그를 사용하세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<ins>이 텍스트줄은 문서에 추가분으로 다뤄짐을 의미합니다.</ins>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>밑줄친 텍스트</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>텍스트에 밑출을 치려면 <code>&lt;u&gt;</code> 태그를 사용하세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<u>이 텍스트줄은 밑줄이 그어질것입니다</u>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>작은 텍스트</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>텍스트 인라인이나 블록을 덜 강조하기 위해, 부모 태그보다 85% 의 크기로 보여지게 하는 <code>&lt;small&gt;</code> 태그를 사용하세요. 제목 요소는 내포된 <code>&lt;small&gt;</code> 요소를 위한 그들만의 <code>font-size</code> 를 가지고 있습니다.</p>
+	    	<p>당신은 <code>&lt;small&gt;</code> 대신 인라인 요소에 <code>.small</code> 을 사용할 수 있습니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<small>이 텍스트는 작게 보이도록 되어 있습니다.</small>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>두껍게</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>폰트 두께를 두껍게 하여 텍스트를 강조합니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<p>다음의 텍스트는 <strong>두꺼운 텍스트로 렌더링 됩니다</strong>.</p>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>이탤릭</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>이탤릭으로 텍스트를 강조합니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<p>다음의 텍스트는 <em>이탤릭체로 렌더링 됩니다</em>.</p>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>정렬 클래스</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>정렬 클래스로 콤포넌트의 텍스트를 손쉽게 재정렬하세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<p class="text-left">좌측정렬된 텍스트.</p>
+		    	</div>
+		    	<div class="code-example">
+		    		<p class="text-center">중앙정렬된 텍스트.</p>
+		    	</div>
+		    	<div class="code-example">
+		    		<p class="text-right">우측정렬된 텍스트.</p>
+		    	</div>
+		    	<div class="code-example">
+		    		<p class="text-justify">양쪽정렬된 텍스트.</p>
+		    	</div>
+		    	<div class="code-example">
+		    		<p class="text-nowrap">그냥 텍스트.</p>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>변형 클래스</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>콤포넌트의 텍스트를 대소문자 클래스로 변형시킵니다. (한글은 해당사항이 없습니다.)</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<p class="text-lowercase">Lowercased text.</p>
+		    	</div>
+		    	<div class="code-example">
+		    		<p class="text-uppercase">Uppercased text.</p>
+		    	</div>
+		    	<div class="code-example">
+		    		<p class="text-capitalize">Capitalized text.</p>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>약어</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p><code>&lt;abbr&gt;</code> 는 약어나 두문자어를 마우스를 올렸을 때 원래 텍스트를 보여주기 위한 요소입니다. <code>title</code> 속성이 있는 약어는 점으로된 밑줄을 가지고 있고 마우스를 올렸을때 물음표 커서가 보여지며, 원래 텍스트를 보여줍니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+		    		<p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>인용구</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>당신의 문서안에 다른 출처로부터 인용한 콘텐츠 블록을 위해 사용합니다.</p>
+			<p>인용구 <abbr title="HyperText Markup Language">HTML</abbr> 을 <code>&lt;blockquote&gt;</code> 로 감싸세요. 직접 인용구를 위해서, 우리는 <code>&lt;p&gt;</code> 태그를 추천합니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+					<blockquote>
+						<p>Donec id elit non mi porta gravida at eget metus.</p>
+					</blockquote>
+		    	</div>
+	    	</div>
+	    	<hr class="hr-margin-lr">
+	    	<p>출처를 알수 있게 <code>&lt;footer&gt;</code> 태그를 추가하세요. 출처 원천의 이름은 <code>&lt;cite&gt;</code> 로 감싸주세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+					<blockquote>
+						<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+					</blockquote>
+		    	</div>
+	    	</div>
+	    	<hr class="hr-margin-lr">
+	    	<p>오른쪽 정렬된 인용구를 위해서 <code>.blockquote-reverse</code> 를 추가하세요.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+					<blockquote class="blockquote-reverse">
+						<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+						<footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+					</blockquote>
+		    	</div>
+	    	</div>
+	    	<hr class="hr-margin-lr">
+			<p>라인 색상별 예제입니다. 위 인용구 예제들과 조합하여 사용할수 있습니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="row">
+		    		<div class="col-md-6">
+				    	<div class="code-example">
+							<blockquote class="bq-grey">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-dark">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-red">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-blue">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-green">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-yellow">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+		    		</div>
+		    		<div class="col-md-6">
+				    	<div class="code-example">
+							<blockquote class="bq-purple">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-brown">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-orange">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-indigo">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-teal">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="bq-pink">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+		    		</div>
+		    	</div>
+	    	</div>
+	    	<hr class="hr-margin-lr">
+			<p>박스형 컬러 종류별 예제입니다. 위 예제들과 조합하여 사용할수 <mark>없습니다</mark>.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="row">
+		    		<div class="col-md-6">
+				    	<div class="code-example">
+							<blockquote class="hero">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-right">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-grey">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-dark">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-red">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-blue">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-green">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+		    		</div>
+		    		<div class="col-md-6">
+				    	<div class="code-example">
+							<blockquote class="hero-bg-yellow">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-purple">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-brown">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-orange">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-indigo">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-teal">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+				    	<div class="code-example">
+							<blockquote class="hero-bg-pink">
+								<p>Donec id elit non mi porta gravida at eget metus.</p>
+							</blockquote>
+				    	</div>
+		    		</div>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>설명</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>연관된 설명들의 목록입니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+					<dl>
+					    <dt>Description 1</dt>
+					    <dd>Nullam non wisi a sem semper eleifend. Donec mattis.</dd>
+					    <dt>Description 2</dt>
+					    <dd>Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum.</dd>
+					    <dd>Aenean lectus lorem, imperdiet at, ultrices eget, ornare et.</dd>
+					    <dt>Description 3</dt>
+					    <dd>Pellentesque adipiscing purus ac magna.</dd>
+					</dl>
+		    	</div>
+	    	</div>
+	    	<hr class="hr-margin-lr">
+	    	<p>수평설명 - <code>&lt;dl&gt;</code> 내 용어들과 설명들을 나란히 놓습니다. 기본 <code>&lt;dl&gt;</code> 처럼 쌓이는 것부터 시작이지만, 네비게이션 바가 펼쳐지는 때와 같은 타이밍에 다음과 같이 됩니다.</p>
+	    	<p><strong>예제</strong></p>
+	    	<div class="example-box">
+		    	<div class="code-example">
+					<dl class="dl-horizontal">
+					    <dt>Description 1</dt>
+					    <dd>Nullam non wisi a sem semper eleifend. Donec mattis.</dd>
+					    <dt>Description 2</dt>
+					    <dd>Duis pretium velit ac mauris.</dd>
+					    <dd>Proin eu wisi suscipit nulla suscipit interdum.</dd>
+					    <dt>Description 3</dt>
+					    <dd>Pellentesque adipiscing purus ac magna.</dd>
+					    <dt>Description 4</dt>
+					    <dd>Mauris a dolor. Nulla facilisi.</dd>
+					</dl>
+		    	</div>
+	    	</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>목록</strong></h5>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-6">
+					<p><strong class="color-yellow"><u>순서없는</u></strong> - 순서가 명확치 않은 항목들의 목록입니다.</p>
+			    	<p><strong>예제</strong></p>
+			    	<div class="example-box">
+				    	<div class="code-example">
+							<ul>
+							    <li>Nullam non wisi a sem semper</li>
+							    <li>Semper eleifend. Donec mattis</li>
+							    <li>Duis pretium velit ac mauris
+							        <ul>
+							            <li>Proin eu wisi suscipit</li>
+							            <li>Nulla suscipit interdum</li>
+							            <li>Pellentesque adipiscing purus</li>
+							            <li>Adipiscing purus ac magna</li>
+							        </ul>
+							    </li>
+							    <li>Mauris a dolor nulla facilis</li>
+							</ul>
+				    	</div>
+			    	</div>
+				</div>
+				<hr class="visible-sm visible-xs">
+				<div class="col-md-6">
+			    	<p><strong class="color-yellow"><u>순서있는</u></strong> - 순서가 명확한 항목들의 목록입니다.</p>
+			    	<p><strong>예제</strong></p>
+			    	<div class="example-box">
+				    	<div class="code-example">
+							<ol>
+							    <li>Nullam non wisi a sem semper</li>
+							    <li>Semper eleifend. Donec mattis</li>
+							    <li>Duis pretium velit ac mauris
+							        <ol>
+							            <li>Proin eu wisi suscipit</li>
+							            <li>Nulla suscipit interdum</li>
+							            <li>Pellentesque adipiscing purus</li>
+							            <li>Adipiscing purus ac magna</li>
+							        </ol>
+							    </li>
+							    <li>Mauris a dolor nulla facilis</li>
+							</ol>
+				    	</div>
+			    	</div>
+				</div>
+			</div>
+	    	<hr class="hr-margin-lr">
+			<div class="row">
+				<div class="col-md-6">
+			    	<p><strong class="color-yellow"><u>스타일 없는</u></strong> - 항목에서 <code>list-style</code> 과 좌측 마진을 제거하세요. (직접 자식만) 이것은 오직 바로 아래 항목들에게만 적용됩니다. 그래서 당신은 중첩된 목록에도 따로 클래스를 추가하여야 합니다.</p>
+			    	<p><strong>예제</strong></p>
+			    	<div class="example-box">
+				    	<div class="code-example">
+							<ul class="list-unstyled">
+							    <li>Nullam non wisi a sem semper</li>
+							    <li>Semper eleifend. Donec mattis</li>
+							    <li>Duis pretium velit ac mauris
+							        <ul>
+							            <li>Proin eu wisi suscipit</li>
+							            <li>Nulla suscipit interdum</li>
+							            <li>Pellentesque adipiscing purus</li>
+							            <li>Adipiscing purus ac magna</li>
+							        </ul>
+							    </li>
+							    <li>Mauris a dolor nulla facilis</li>
+							</ul>
+				    	</div>
+			    	</div>
+				</div>
+				<hr class="visible-sm visible-xs">
+				<div class="col-md-6">
+			    	<p><strong class="color-yellow"><u>인라인</u></strong> - <code>display: inline-block;</code> 로 항목들을 한줄에 보여주고 약간의 패딩을 줍니다.</p>
+			    	<p><strong>예제</strong></p>
+			    	<div class="example-box">
+				    	<div class="code-example">
+							<ul class="list-inline">
+							    <li>1. <a href="#">Home</a></li>
+							    <li>2. <a href="#">About</a></li>
+							    <li>3. <a href="#">Services</a></li>
+							    <li>4. <a href="#">Blog</a></li>
+							    <li>5. <a href="#">Contacts</a></li>
+							</ul>
+				    	</div>
+			    	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>텍스트 컬러</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>텍스트 컬러는 감싸고 있는 태그에 <code>.color-색상</code> 클래스를 추가하세요.</p>
+			<p>지정된 색상 종류 - <span class="color-grey">grey</span>, <span class="color-dark">dark</span>, <span class="color-red">red</span>, <span class="color-blue">blue</span>, <span class="color-green">green</span>, <span class="color-yellow">yellow</span>, <span class="color-purple">purple</span>, <span class="color-brown">brown</span>, <span class="color-orange">orange</span>, <span class="color-indigo">indigo</span>, <span class="color-teal">teal</span>, <span class="color-pink">pink</span></p>
+	    	<p><strong>예제</strong></p>
+			<div class="row">
+				<div class="col-md-6 md-margin-bottom-20">
+					<div class="example-box">
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-grey">Donec ullamcorper nulla non metus auctor fringilla.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-dark">Vestibulum id ligula porta felis euismod semper.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-red">Duis mollis, est non commodo luctus, nisi erat porttitor.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-blue">Maecenas faucibus mollis interdum.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-green">Donec sed odio dui.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-yellow">Fusce dapibus, tellus ac cursus commodo, tortor mauris.</span>
+				    	</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="example-box">
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-purple">Ipsum Magna Fermentum.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-brown">Nullam id dolor id nibh ultricies vehicula ut id elit.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-orange">Sed posuere consectetur est at lobortis.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-indigo">Maecenas sed diam eget risus varius blandit sit amet non magna.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-teal">Sed posuere consectetur est at lobortis.</span>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="color-pink">Cras mattis consectetur purus sit amet fermentum.</span>
+				    	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>텍스트 언더라인</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>텍스트 언더라인은 해당 텍스트를 감싸고 있는 태그에 <code>.text-underline-색상</code> 클래스를 추가하세요.</p>
+			<p>지정된 색상 종류 - <span class="color-grey">grey</span>, <span class="color-dark">dark</span>, <span class="color-red">red</span>, <span class="color-blue">blue</span>, <span class="color-green">green</span>, <span class="color-yellow">yellow</span>, <span class="color-purple">purple</span>, <span class="color-brown">brown</span>, <span class="color-orange">orange</span>, <span class="color-indigo">indigo</span>, <span class="color-teal">teal</span>, <span class="color-pink">pink</span></p>
+	    	<p><strong>예제</strong></p>
+			<div class="row">
+				<div class="col-md-6 md-margin-bottom-20">
+					<div class="example-box">
+				    	<div class="code-example margin-bottom-10">
+							Donec <span class="text-underline-grey">ullamcorper nulla</span> non metus auctor fringilla.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Vestibulum id ligula porta <span class="text-underline-dark">felis euismod</span> semper.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Duis mollis, est <span class="text-underline-red">non commodo</span> luctus, nisi erat porttitor.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="text-underline-blue">Maecenas faucibus</span> mollis interdum.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Donec <span class="text-underline-green">sed odio</span> dui.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Fusce dapibus, <span class="text-underline-yellow">tellus ac</span> cursus commodo, tortor mauris.
+				    	</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="example-box">
+				    	<div class="code-example margin-bottom-10">
+							<span class="text-underline-purple">Ipsum Magna</span> Fermentum.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Nullam id dolor id nibh ultricies <span class="text-underline-brown">vehicula ut id</span> elit.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Sed <span class="text-underline-orange">posuere consectetur</span> est at lobortis.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Maecenas sed diam eget risus varius <span class="text-underline-indigo">blandit sit amet</span> non magna.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<span class="text-underline-teal">Sed posuere</span> consectetur est at lobortis.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Cras mattis consectetur <span class="text-underline-pink">purus sit amet</span> fermentum.
+				    	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>텍스트 하이라이트</strong></h5>
+		</div>
+		<div class="panel-body">
+			<p>텍스트 하이라이트는 해당 텍스트를 감싸고 있는 태그에 <code>.text-hl .text-hl-색상</code> 클래스를 추가하세요.<br><code>.rounded .rounded-2x .rounded-3x</code> 를 추가하여 라운드 처리를 할수 있습니다.</p>
+			<p>지정된 색상 종류 - <span class="color-grey">grey</span>, <span class="color-dark">dark</span>, <span class="color-red">red</span>, <span class="color-blue">blue</span>, <span class="color-green">green</span>, <span class="color-yellow">yellow</span>, <span class="color-purple">purple</span>, <span class="color-brown">brown</span>, <span class="color-orange">orange</span>, <span class="color-indigo">indigo</span>, <span class="color-teal">teal</span>, <span class="color-pink">pink</span></p>
+	    	<p><strong>예제</strong></p>
+			<div class="row">
+				<div class="col-md-6 md-margin-bottom-20">
+					<div class="example-box">
+				    	<div class="code-example margin-bottom-10">
+							Aenean lorem <span class="text-hl text-hl-light">text-hl text-hl-light</span> sit malesuada.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Bibendum <span class="text-hl text-hl-dark">text-hl text-hl-dark</span> magna dapibus condimentum.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Mollis Ornare fringilla <span class="text-hl text-hl-red rounded">text-hl text-hl-red rounded</span> ipsum.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Mattis euismod <span class="text-hl text-hl-blue rounded-2x">text-hl text-hl-blue rounded-2x</span> tortor justo.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Justo <span class="text-hl text-hl-green rounded-3x">text-hl text-hl-green rounded-3x</span> fusce vehicula mattis.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Elit vehicula parturient <span class="text-hl text-hl-yellow rounded-3x">text-hl text-hl-yellow rounded-3x</span> porta.
+				    	</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="example-box">
+				    	<div class="code-example margin-bottom-10">
+							Aenean lorem <span class="text-hl text-hl-purple">text-hl text-hl-purple</span> sit malesuada.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Bibendum <span class="text-hl text-hl-brown">text-hl text-hl-brown</span> magna dapibus condimentum.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Mollis Ornare fringilla <span class="text-hl text-hl-orange rounded">text-hl text-hl-orange rounded</span> ipsum.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Mattis euismod <span class="text-hl text-hl-indigo rounded-2x">text-hl text-hl-indigo rounded-2x</span> tortor justo.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Justo <span class="text-hl text-hl-teal rounded-3x">text-hl text-hl-teal rounded-3x</span> fusce vehicula mattis.
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							Elit vehicula parturient <span class="text-hl text-hl-pink rounded-3x">text-hl text-hl-pink rounded-3x</span> porta.
+				    	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>텍스트 백그라운드</strong></h5>
+		</div>
+		<div class="panel-body">
+	    	<p><strong>예제</strong></p>
+			<div class="row">
+				<div class="col-md-6 md-margin-bottom-20">
+					<div class="example-box">
+				    	<div class="code-example margin-bottom-10">
+							<div class="cont-text-bg">
+							    <p class="bg-primary">bg-primary</p>
+							</div>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<div class="cont-text-bg">
+							    <p class="bg-info">bg-info</p>
+							</div>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<div class="cont-text-bg">
+							    <p class="bg-success">bg-success</p>
+							</div>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<div class="cont-text-bg">
+							    <p class="bg-warning">bg-warning</p>
+							</div>
+				    	</div>
+				    	<div class="code-example">
+							<div class="cont-text-bg">
+							    <p class="bg-danger">bg-danger</p>
+							</div>
+				    	</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="example-box">
+				    	<div class="code-example margin-bottom-10">
+							<div class="cont-text-bg">
+							    <p class="bg-primary">Default</p>
+							</div>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<div class="cont-text-bg">
+							    <p class="bg-info rounded">rounded</p>
+							</div>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<div class="cont-text-bg">
+							    <p class="bg-success rounded-2x">rounded-2x</p>
+							</div>
+				    	</div>
+				    	<div class="code-example margin-bottom-10">
+							<div class="cont-text-bg">
+							    <p class="bg-warning rounded-3x">rounded-3x</p>
+							</div>
+				    	</div>
+				    	<div class="code-example">
+							<div class="cont-text-bg">
+							    <p class="bg-danger rounded-4x">rounded-4x</p>
+							</div>
+				    	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>경보 (알림)</strong></h5>
+		</div>
+		<div class="panel-body">
+	    	<p><strong>예제</strong></p>
+			<div class="example-box">
+		    	<div class="code-example">
+					<div class="alert alert-primary">
+					    <p>alert-primary</p>
+					</div>
+		    	</div>
+		    	<div class="code-example">
+					<div class="alert alert-info">
+					    <p>alert-info</p>
+					</div>
+		    	</div>
+		    	<div class="code-example">
+					<div class="alert alert-success">
+					    <p>alert-success</p>
+					</div>
+		    	</div>
+		    	<div class="code-example">
+					<div class="alert alert-warning">
+					    <p>alert-warning</p>
+					</div>
+		    	</div>
+		    	<div class="code-example">
+					<div class="alert alert-danger">
+					    <p>alert-danger</p>
+					</div>
+		    	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>툴팁</strong></h5>
+		</div>
+		<div class="panel-body">
+	    	<p><strong>예제</strong></p>
+			<div class="example-box">
+				<div class="row">
+					<div class="col-sm-3 sm-margin-bottom-10">
+				    	<div class="code-example">
+							<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark tooltips" data-toggle="tooltip" data-placement="top" data-original-title="Tooltip top">Tooltip on top</button>
+				    	</div>
+					</div>
+					<div class="col-sm-3 sm-margin-bottom-10">
+				    	<div class="code-example">
+							<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark tooltips" data-toggle="tooltip" data-placement="bottom" data-original-title="Tooltip bottom">Tooltip on bottom</button>
+				    	</div>
+					</div>
+					<div class="col-sm-3 sm-margin-bottom-10">
+				    	<div class="code-example margin">
+							<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark tooltips" data-toggle="tooltip" data-placement="left" data-original-title="Tooltip left">Tooltip on left</button>
+				    	</div>
+					</div>
+					<div class="col-sm-3">
+				    	<div class="code-example">
+							<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark tooltips" data-toggle="tooltip" data-placement="right" data-original-title="Tooltip right">Tooltip on right</button>
+				    	</div>
+					</div>
+		    	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-60">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>팝오버</strong></h5>
+		</div>
+		<div class="panel-body">
+	    	<p><strong>예제</strong></p>
+			<div class="example-box">
+				<div class="row">
+					<div class="col-sm-3 sm-margin-bottom-10">
+				    	<div class="code-example">
+							<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark popovers" data-container="body" data-toggle="popover" data-placement="top" data-content="Popover on top">Popover on top</button>
+						</div>
+					</div>
+					<div class="col-sm-3 sm-margin-bottom-10">
+				    	<div class="code-example">
+							<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark popovers" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Popover on bottom">Popover on bottom</button>
+				    	</div>
+					</div>
+					<div class="col-sm-3 sm-margin-bottom-10">
+				    	<div class="code-example margin">
+							<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark popovers" data-container="body" data-toggle="popover" data-placement="left" data-content="Popover on left">Popover on left</button>
+				    	</div>
+					</div>
+					<div class="col-sm-3">
+				    	<div class="code-example">
+							<button type="button" class="btn-e btn-e-lg btn-e-brd btn-e-dark popovers" data-container="body" data-toggle="popover" data-placement="right" data-content="Popover on right">Popover on right</button>
+				    	</div>
+					</div>
+		    	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>헤드라인</strong></h5>
+		</div>
+		<div class="panel-body">
+	    	<p><strong>예제</strong></p>
+			<div class="example-box">
+				<div class="code-example">
+					<div class="headline">
+						<h1>Headline h1</h1>
+					</div>
+				</div>
+				<div class="code-example">
+					<div class="headline">
+						<h2>Headline h2</h2>
+					</div>
+				</div>
+				<div class="code-example">
+					<div class="headline">
+						<h3>Headline h3</h3>
+					</div>
+				</div>
+				<div class="code-example">
+					<div class="headline">
+						<h4>Headline h4</h4>
+					</div>
+				</div>
+				<div class="code-example">
+					<div class="headline">
+						<h5>Headline h5</h5>
+					</div>
+				</div>
+				<div class="code-example">
+					<div class="headline">
+						<h6>Headline h6</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default margin-bottom-30">
+		<div class="panel-heading">
+			<h5 class="panel-title"><strong>헤딩 (표제)</strong></h5>
+		</div>
+		<div class="panel-body">
+	    	<p><strong>예제</strong></p>
+			<div class="example-box">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="code-example">
+							<div class="heading heading-e1">
+							    <h2>Heading E1</h2>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e2">
+							    <h2>Heading E2</h2>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e3">
+							    <h2>Heading E3</h2>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e4">
+							    <h2>Heading E4</h2>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e5">
+							    <h2>Heading E5</h2>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e6">
+							    <h2>Heading E6</h2>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="code-example">
+							<div class="heading heading-e1">
+							    <h4>Heading E1</h4>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e2">
+							    <h4>Heading E2</h4>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e3">
+							    <h4>Heading E3</h4>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e4">
+							    <h4>Heading E4</h4>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e5">
+							    <h4>Heading E5</h4>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+						<div class="code-example">
+							<div class="heading heading-e6">
+							    <h4>Heading E6</h4>
+							    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.code-example {position:relative}
+#source-button {position:absolute;top:0;right:0;z-index:100;font-weight:600}
+#source-modal .modal-content {border-radius:0}
+#source-modal .btn-clipboard {letter-spacing:0.5px}
+#source-modal .hljs {padding:10px 12px}
+pre {display:block;padding:9px;margin:0 0 9.5px;font-size:12px;line-height:1.49;word-break:break-all;word-wrap:break-word;color:#333;background-color:#eaeaea;border:0;border-radius:0}
+pre code {padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}
+.pre-scrollable {max-height:340px;overflow-y:scroll}
+.example-box {position:relative;border:1px dashed #d5d5d5;padding:10px}
+</style>
+
+<!--{? C.G5_IS_MOBILE}-->
+<style>
+.modal-backdrop {z-index:0}
+</style>
+<!--{/}-->
+
+<script src="../../../plugins/prism/prism.min.js"></script>
+<script src="../../../plugins/clipboard/clipboard.min.js"></script>
+<script src="../../../js/code-view.min.js"></script>
+<script>
+$(document).ready(function(){
+	var clipboard = new Clipboard('.btn-copy');
+    Codeview.init();
+});
+</script>

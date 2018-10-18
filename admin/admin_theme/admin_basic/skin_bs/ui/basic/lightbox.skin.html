@@ -1,0 +1,564 @@
+<?php if (!defined('_GNUBOARD_')) exit;
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/prism/prism.min.css" type="text/css" media="screen">',0);
+add_stylesheet('<link rel="stylesheet" href="../../../plugins/magnific-popup/magnific-popup.min.css" type="text/css" media="screen">',0);
+?>
+
+<div class="ui-lightbox">
+	<div class="headline">
+		<h4><strong><i class="fa fa-genderless color-red"></i> Lightbox</strong></h4>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-info font-size-12"><i class="fa fa-info-circle"></i> 이윰빌더에서 사용하는 시즌3 Lightbox의 ShortCodes 입니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-success font-size-12"><i class="fa fa-check"></i> 소스코드는 해당 예제에 마우스 포인트를 갖다대면 <a href="#" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a> 버튼이 나타나며, 클릭하면 소스코드를 볼 수 있습니다.</p>
+	</div>
+	<div class="margin-bottom-20"></div>
+	<div class="alert alert-info margin-bottom-20">
+		<h5 class="font-bold">플러그인 호출</h5>
+		<p>작업중인 파일 상단과 하단에 아래소스를 추가합니다. magnific-popup.min.css 스타일시트와 magnific-popup.min.js 스크립트 상대경로는 작업중인 파일경로에 맞게 수정이 필요할수 있습니다.</p>
+		<div class="margin-bottom-10"></div>
+<pre class="line-numbers">
+<code class="language-html">
+&lt;!--작업중인 파일 상단에 추가-->
+&lt;link rel="stylesheet" href="\../../../plugins/magnific-popup/magnific-popup.min.css">
+
+&lt;!--작업중인 파일 하단에 추가-->
+&lt;script src="\../../../plugins/magnific-popup/magnific-popup.min.js">&lt;/script></code>
+</pre>
+		<p>보통 위 상대경로가 맞지 않으면 아래 상대경로일 가능성이 큽니다.</p>
+		<ul>
+			<li>../plugins/magnific-popup/magnific-popup.min.css</li>
+			<li>../plugins/magnific-popup/magnific-popup.min.js</li>
+		</ul>
+	</div>
+	<div class="margin-bottom-40"></div>
+
+	<h4 class="font-bold text-center margin-bottom-20">단일 이미지 라이트박스</h4>
+	<div class="alert alert-warning">
+		<p>세가지 유형의 크기 조절 설정</p>
+		<ol class="margin-top-10">
+			<li>수직과 수평을 맞춤</li>
+			<li>수평만 맞춤</li>
+			<li>줌 애니메이션 효과, 화면 우측 상단으로 닫기 아이콘 위치 설정</li>
+		</ol>
+	</div>
+	<div class="row margin-bottom-40">
+		<div class="col-sm-2 col-sm-offset-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<a class="image-popup-vertical-fit" href="./img/sample_12.jpg" title="자막. 정렬 설정 및 HTML을 포함할수 있습니다.">
+					<img src="./img/sample_12.jpg" class="img-responsive">
+				</a>
+				<script>
+					$(document).ready(function() {
+						$('.image-popup-vertical-fit').magnificPopup({
+							type: 'image',
+							closeOnContentClick: true,
+							mainClass: 'mfp-img-mobile',
+							image: {
+								verticalFit: true
+							}
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-2 sm-margin-bottom-20">
+			<div class="code-example">
+				<a class="image-popup-fit-width" href="./img/sample_03.jpg" title="자막. 정렬 설정 및 HTML을 포함할수 있습니다.">
+					<img src="./img/sample_03.jpg" class="img-responsive">
+				</a>
+				<script>
+					$(document).ready(function() {
+						$('.image-popup-fit-width').magnificPopup({
+							type: 'image',
+							closeOnContentClick: true,
+							image: {
+								verticalFit: false
+							}
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<div class="code-example">
+				<a class="image-popup-zoom" href="./img/sample_07.jpg" title="자막. 정렬 설정 및 HTML을 포함할수 있습니다.">
+					<img src="./img/sample_07.jpg" class="img-responsive">
+				</a>
+				<script>
+					$(document).ready(function() {
+						$('.image-popup-zoom').magnificPopup({
+							type: 'image',
+							closeOnContentClick: true,
+							closeBtnInside: false,
+							fixedContentPos: true,
+							mainClass: 'mfp-with-zoom',
+							image: {
+								verticalFit: true
+							},
+							zoom: {
+								enabled: true,
+								duration: 300
+							}
+						});
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<h4 class="font-bold text-center margin-bottom-20">라이트박스 갤러리</h4>
+	<div class="alert alert-warning">
+		<p>각 갤러리 항목에있는 HTML 콘텐츠를 넣어 콘텐츠 형식을 혼합 할 수 있습니다. 이 예에서 이미지의 로딩은 이동 방향에 따라 다음 이미지를 사용할 수 있습니다.</p>
+	</div>
+	<div class="code-example margin-bottom-40">
+		<div class="popup-gallery">
+			<div class="row">
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_03.jpg" title="공연"><img src="./img/sample_03.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_04.jpg" title="드레스룸"><img src="./img/sample_04.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_05.jpg" title="석양"><img src="./img/sample_05.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_07.jpg" title="커피"><img src="./img/sample_07.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_09.jpg" title="산과 구름"><img src="./img/sample_09.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_10.jpg" title="비상"><img src="./img/sample_10.jpg" class="img-responsive"></a>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$('.popup-gallery').magnificPopup({
+					delegate: 'a',
+					type: 'image',
+					tLoading: '로딩중...',
+					mainClass: 'mfp-img-mobile',
+					gallery: {
+						enabled: true,
+						navigateByImgClick: true,
+						preload: [0,1]
+					},
+					image: {
+						tError: '이미지를 불러올수 없습니다.',
+						titleSrc: function(item) {
+							return item.el.attr('title') + '<small>by 작자명</small>';
+						}
+					}
+				});
+			});
+		</script>
+	</div>
+
+	<h4 class="font-bold text-center margin-bottom-20">줌 효과 갤러리</h4>
+	<div class="code-example margin-bottom-40">
+		<div class="zoom-gallery">
+			<div class="row">
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_01.jpg" data-source="./img/sample_01.jpg" title="산"><img src="./img/sample_01.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_06.jpg" data-source="./img/sample_06.jpg" title="벤치"><img src="./img/sample_06.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_13.jpg" data-source="./img/sample_13.jpg" title="바다"><img src="./img/sample_13.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_08.jpg" data-source="./img/sample_08.jpg" title="빌딩"><img src="./img/sample_08.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_14.jpg" data-source="./img/sample_14.jpg" title="커피"><img src="./img/sample_14.jpg" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-2 col-xs-6 sm-margin-bottom-20">
+					<a href="./img/sample_11.jpg" data-source="./img/sample_11.jpg" title="등대"><img src="./img/sample_11.jpg" class="img-responsive"></a>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$('.zoom-gallery').magnificPopup({
+					delegate: 'a',
+					type: 'image',
+					closeOnContentClick: false,
+					closeBtnInside: false,
+					mainClass: 'mfp-with-zoom mfp-img-mobile',
+					image: {
+						verticalFit: true,
+						titleSrc: function(item) {
+							return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+						}
+					},
+					gallery: {
+						enabled: true
+					},
+					zoom: {
+						enabled: true,
+						duration: 300,
+						opener: function(element) {
+							return element.find('img');
+						}
+					}
+				});
+			});
+		</script>
+	</div>
+
+	<div class="cont-text-bg">
+		<p class="bg-warning font-size-12"><i class="fa fa-exclamation-circle"></i> 아래의 예제들은 버튼 소스 코드에 <code>.btn-e-block</code>이 포함되어 있습니다. 버튼의 block 속성을 원치않으면 <code>.btn-e-block</code>을 지우고 사용하세요.</p>
+	</div>
+	<div class="margin-bottom-30"></div>
+	<h4 class="font-bold text-center margin-bottom-20">비디오 / 지도 / 폼</h4>
+	<div class="row margin-bottom-40">
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<a class="popup-youtube btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="http://www.youtube.com/watch?v=vlDzYIIOYmM">YouTube 비디오 <i class="fa fa-play-circle"></i></a>
+				<script>
+					$(document).ready(function() {
+						$('.popup-youtube').magnificPopup({
+							disableOn: 700,
+							type: 'iframe',
+							mainClass: 'mfp-fade',
+							removalDelay: 160,
+							preloader: false,
+							fixedContentPos: false
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<a class="popup-vimeo btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="https://vimeo.com/137857207">Vimeo 비디오 <i class="fa fa-play-circle"></i></a>
+				<script>
+					$(document).ready(function() {
+						$('.popup-vimeo').magnificPopup({
+							disableOn: 700,
+							type: 'iframe',
+							mainClass: 'mfp-fade',
+							removalDelay: 160,
+							preloader: false,
+							fixedContentPos: false
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3 sm-margin-bottom-20">
+			<div class="code-example">
+				<a class="popup-gmap btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.7923057583876!2d126.97310795162205!3d37.559956832162015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca28ad207e0cf%3A0xcaabef5971d06766!2z7ISc7Jq4IOyIreuhgOusuA!5e0!3m2!1sko!2skr!4v1477790568276">Google 지도 <i class="fa fa-map-marker"></i></a>
+				<script>
+					$(document).ready(function() {
+						$('.popup-gmap').magnificPopup({
+							disableOn: 700,
+							type: 'iframe',
+							mainClass: 'mfp-fade',
+							removalDelay: 160,
+							preloader: false,
+							fixedContentPos: false
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="code-example">
+				<a class="popup-form btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="#test-form">폼 열기 <i class="fa fa-edit"></i></a>
+				<form id="test-form" class="eyoom-form white-popup-block mfp-hide">
+					<h3 class="font-bold">Form</h3>
+					<p class="margin-bottom-20">라이트 박스는 자동으로 첫 번째 입력에 초점을 맞출 수있는 옵션이 있습니다.</p>
+					<section>
+						<label class="label" for="name">Name</label>
+						<label class="input">
+							<input id="name" name="name" type="text" placeholder="Name" required="">
+						</label>
+					</section>
+					<section>
+						<label class="label" for="email">Email</label>
+						<label class="input">
+							<input id="email" name="email" type="email" placeholder="example@domain.com" required="">
+						</label>
+					</section>
+					<section>
+						<label class="label" for="phone">Phone</label>
+						<label class="input">
+							<input id="phone" name="phone" type="tel" placeholder="xxx-xxxx-xxxx" required="">
+						</label>
+					</section>
+					<section>
+						<label class="label" for="textarea">Textarea</label><br>
+						<label class="textarea">
+							<textarea id="textarea"></textarea>
+						</label>
+					</section>
+				</form>
+				<script>
+					$(document).ready(function() {
+						$('.popup-form').magnificPopup({
+							type: 'inline',
+							preloader: false,
+							focus: '#name',
+							callbacks: {
+								beforeOpen: function() {
+									if($(window).width() < 700) {
+										this.st.focus = false;
+									} else {
+										this.st.focus = '#name';
+									}
+								}
+							}
+						});
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<h4 class="font-bold text-center margin-bottom-20">Ajax / Modal</h4>
+	<div class="row margin-bottom-40">
+		<div class="col-sm-4 sm-margin-bottom-20">
+			<div class="code-example">
+				<a class="simple-ajax-popup-align-top btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="theme/admin_basic/skin_bs/ui/basic/lightbox-ajax-sample/test-ajax.html">Ajax로 내용 로드 1 <i class="fa fa-play-circle-o"></i></a>
+				<script>
+					$(document).ready(function() {
+						$('.simple-ajax-popup-align-top').magnificPopup({
+							type: 'ajax',
+							alignTop: true,
+							overflowY: 'scroll'
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-4 sm-margin-bottom-20">
+			<div class="code-example">
+				<a class="simple-ajax-popup btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="theme/admin_basic/skin_bs/ui/basic/lightbox-ajax-sample/test-ajax-2.html">Ajax로 내용 로드 2 <i class="fa fa-play-circle-o"></i></a>
+				<script>
+					$(document).ready(function() {
+						$('.simple-ajax-popup').magnificPopup({
+							type: 'ajax'
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="code-example">
+				<a class="popup-modal btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="#test-modal">Modal 열기 <i class="fa fa-play-circle-o"></i></a>
+				<div id="test-modal" class="white-popup-block mfp-hide">
+					<h3 class="font-bold">Modal 대화</h3>
+					<p>이 예제는 사용자의 선택이나 액션(클릭)으로 창을 닫게 만들수 있습니다.</p>
+					<p><a class="popup-modal-dismiss" href="#"><i class="fa fa-check"></i> 닫기</a></p>
+				</div>
+				<script>
+					$(function () {
+						$('.popup-modal').magnificPopup({
+							type: 'inline',
+							preloader: false,
+							focus: '#username',
+							modal: true
+						});
+						$(document).on('click', '.popup-modal-dismiss', function (e) {
+							e.preventDefault();
+							$.magnificPopup.close();
+						});
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<h4 class="font-bold text-center margin-bottom-20">Error</h4>
+	<div class="row margin-bottom-40">
+		<div class="col-sm-6 sm-margin-bottom-20">
+			<div class="code-example">
+				<a id="broken-image" class="mfp-image btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Blois_Loire_Panorama_-_July_2011.jpg/640px-Blois_Loire_Panorama_-_July_2011-fake.jpg">이미지 요청 실패 <i class="fa fa-play-circle-o"></i></a>
+				<script>
+					$(document).ready(function() {
+						$('#broken-image').magnificPopup({
+							image: {
+								tError: '이미지를 불러올수 없습니다.'
+							}
+						});
+					});
+				</script>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="code-example">
+				<a id="broken-ajax" class="mfp-ajax btn-e btn-e-lg btn-e-brd btn-e-dark btn-e-block" href="http://example.com/fakeg">Ajax 요청 실패 <i class="fa fa-play-circle-o"></i></a>
+				<script>
+					$(document).ready(function() {
+						$('#broken-ajax').magnificPopup({
+							ajax: {
+								tError: '내용을 불러올수 없습니다.'
+							}
+						});
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<div class="headline">
+		<h4><strong><i class="fa fa-genderless color-red"></i> Thumbnail overlay</strong></h4>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-info font-size-12"><i class="fa fa-info-circle"></i> 이윰빌더에서 사용하는 시즌3 Thumbnail overlay의 ShortCodes 입니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-success font-size-12"><i class="fa fa-check"></i> 소스코드는 해당 예제에 마우스 포인트를 갖다대면 <a href="#" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a> 버튼이 나타나며, 클릭하면 소스코드를 볼 수 있습니다.</p>
+	</div>
+	<div class="margin-bottom-20"></div>
+
+	<div class="code-example margin-bottom-40">
+		<div class="thumbnail-gallery">
+			<div class="row">
+				<div class="col-sm-3 col-xs-6">
+					<div class="thumbnail">
+						<div class="thumb">
+							<img src="./img/sample_03.jpg" alt="공연">
+							<div class="caption-overflow">
+								<span>
+									<a href="./img/sample_03.jpg" class="btn-e btn-e-default btn-e-lg btn-e-brd" title="공연"><i class="fa fa-plus color-white"></i></a>
+									<a href="#" class="btn-e btn-e-default btn-e-lg btn-e-brd"><i class="fa fa-link color-white"></i></a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-6">
+					<div class="thumbnail">
+						<div class="thumb">
+							<img src="./img/sample_04.jpg" alt="">
+							<div class="caption-overflow">
+								<span>
+									<a href="./img/sample_04.jpg" class="btn-e btn-e-default btn-e-lg btn-e-brd" title="드레스룸"><i class="fa fa-plus color-white"></i></a>
+									<a href="#" class="btn-e btn-e-default btn-e-lg btn-e-brd"><i class="fa fa-link color-white"></i></a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-6">
+					<div class="thumbnail">
+						<div class="thumb">
+							<img src="./img/sample_05.jpg" alt="">
+							<div class="caption-overflow">
+								<span>
+									<a href="./img/sample_05.jpg" class="btn-e btn-e-default btn-e-lg btn-e-brd" title="석양"><i class="fa fa-plus color-white"></i></a>
+									<a href="#" class="btn-e btn-e-default btn-e-lg btn-e-brd"><i class="fa fa-link color-white"></i></a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3 col-xs-6">
+					<div class="thumbnail">
+						<div class="thumb">
+							<img src="./img/sample_07.jpg" alt="">
+							<div class="caption-overflow">
+								<span>
+									<a href="./img/sample_07.jpg" class="btn-e btn-e-default btn-e-lg btn-e-brd" title="커피"><i class="fa fa-plus color-white"></i></a>
+									<a href="#" class="btn-e btn-e-default btn-e-lg btn-e-brd"><i class="fa fa-link color-white"></i></a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$('.thumbnail-gallery').magnificPopup({
+					delegate: 'a',
+					type: 'image',
+					tLoading: '로딩중...',
+					mainClass: 'mfp-img-mobile',
+					image: {
+						tError: '이미지를 불러올수 없습니다.',
+						titleSrc: function(item) {
+							return item.el.attr('title');
+						}
+					}
+				});
+			});
+		</script>
+	</div>
+	
+	<div class="headline">
+		<h4><strong><i class="fa fa-genderless color-red"></i> Video responsive</strong></h4>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-info font-size-12"><i class="fa fa-info-circle"></i> 이윰빌더에서 사용하는 시즌3 Video responsive의 ShortCodes 입니다.</p>
+	</div>
+	<div class="cont-text-bg">
+		<p class="bg-success font-size-12"><i class="fa fa-check"></i> 소스코드는 해당 예제에 마우스 포인트를 갖다대면 <a href="#" class="btn-e btn-e-purple btn-e-xs btn-e-source" style="padding-left:15px;padding-right:15px"><i class="fa fa-code"></i></a> 버튼이 나타나며, 클릭하면 소스코드를 볼 수 있습니다.</p>
+	</div>
+	<div class="margin-bottom-20"></div>
+	
+	<div class="row">
+		<div class="col-sm-6 sm-margin-bottom-30">
+			<div class="code-example">
+				<div class="responsive-video">
+					<iframe width="100%" src="https://www.youtube.com/embed/vlDzYIIOYmM" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+			</div>
+<pre class="line-numbers">
+<code class="language-html">
+&lt;div class="responsive-video">
+    YouTube iframe 동영상소스
+&lt;/div></code>
+</pre>
+		</div>
+		<div class="col-sm-6">
+			<div class="code-example">
+				<div class="responsive-video">
+					<iframe src="https://player.vimeo.com/video/137857207" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				</div>
+			</div>
+<pre class="line-numbers">
+<code class="language-html">
+&lt;div class="responsive-video">
+    Vimeo iframe 동영상소스
+&lt;/div></code>
+</pre>
+		</div>
+	</div>
+</div>
+
+<style>
+.code-example {position:relative}
+#source-button {position:absolute;top:0;right:0;z-index:100;font-weight:600}
+#source-modal .modal-content {border-radius:0}
+#source-modal .btn-clipboard {letter-spacing:0.5px}
+#source-modal .hljs {padding:10px 12px}
+pre {display:block;padding:9px;margin:0 0 9.5px;font-size:12px;line-height:1.49;word-break:break-all;word-wrap:break-word;color:#333;background-color:#eaeaea;border:0;border-radius:0}
+pre code {padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}
+.pre-scrollable {max-height:340px;overflow-y:scroll}
+.example-box {position:relative;border:1px dashed #d5d5d5;padding:10px}
+</style>
+
+<!--{? C.G5_IS_MOBILE}-->
+<style>
+.modal-backdrop {z-index:0}
+</style>
+<!--{/}-->
+
+<script src="../../../plugins/magnific-popup/magnific-popup.min.js"></script>
+<script src="../../../plugins/prism/prism.min.js"></script>
+<script src="../../../plugins/clipboard/clipboard.min.js"></script>
+<script src="../../../js/code-view.min.js"></script>
+<script>
+$(document).ready(function(){
+	var clipboard = new Clipboard('.btn-copy');
+    Codeview.init();
+});
+</script>
