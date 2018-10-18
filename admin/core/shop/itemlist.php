@@ -19,7 +19,6 @@ if ($stx != "") {
         $sql_search .= " $where $sfl like '%$stx%' ";
         $where = " and ";
     }
-    if ($save_stx != $stx) $page = 1;
 }
 
 if ($sca != "") {
@@ -30,16 +29,19 @@ if ($cate_a) {
 	$sql_cate = " and (ca_id like '{$cate_a}%' or ca_id2 like '{$cate_a}%' or ca_id3 like '{$cate_a}%') ";
 	$w = " (1) and ca_id like '{$cate_a}%' and length(ca_id)=4";
 	$cate2 = $shop->get_goods_category($fields, $w);
+	$qstr .= "&amp;cate_a={$cate_a}";
 }
 if ($cate_a && $cate_b) {
 	$sql_cate = " and (ca_id like '{$cate_b}%' or ca_id2 like '{$cate_b}%' or ca_id3 like '{$cate_b}%') ";
 	$w = " (1) and ca_id like '{$cate_b}%' and length(ca_id)=6";
 	$cate3 = $shop->get_goods_category($fields, $w);
+	$qstr .= "&amp;cate_b={$cate_b}";
 }
 if ($cate_a && $cate_b && $cate_c) {
 	$sql_cate = " and (ca_id like '{$cate_c}%' or ca_id2 like '{$cate_c}%' or ca_id3 like '{$cate_c}%') ";
 	$w = " (1) and ca_id like '{$cate_c}%' and length(ca_id)=8";
 	$cate4 = $shop->get_goods_category($fields, $w);
+	$qstr .= "&amp;cate_c={$cate_c}";
 }
 
 $sql_search .= $sql_cate;
