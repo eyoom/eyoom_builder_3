@@ -9,6 +9,8 @@ auth_check($auth[$sub_menu], "w");
  */
 $action_url = EYOOM_ADMIN_URL . "/?dir=shop&amp;pid=couponzoneformupdate&amp;smode=1";
 
+$cz_id = (int) $cz_id;
+
 if ($w == 'u') {
     $html_title = '쿠폰 수정';
 

@@ -121,7 +121,7 @@
 						<section>
 							<label for="gr_{.key_}" class="label">여분필드 {.key_} 내용</label>
 					        <label class="input">
-					        	<input type="text" name="gr_{.key_}" id="gr_{.key_}" value="{=get_text(.gr_value)}">
+					        	<input type="text" name="gr_{.key_}" id="gr_{.key_}" value="{=get_sanitize_input(.gr_value)}">
 					        </label>
 						</section>
 					</div>

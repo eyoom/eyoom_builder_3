@@ -145,22 +145,6 @@ if(!isset($default['de_inicis_cartpoint_use'])) {
                     ADD `de_inicis_cartpoint_use` tinyint(4) NOT NULL DEFAULT '0' AFTER `de_samsung_pay_use` ", true);
 }
 
-// 카카오페이 필드 추가
-if(!isset($default['de_kakaopay_mid'])) {
-    sql_query(" ALTER TABLE `{$g5['g5_shop_default_table']}`
-                    ADD `de_kakaopay_mid` varchar(255) NOT NULL DEFAULT '' AFTER `de_tax_flag_use`,
-                    ADD `de_kakaopay_key` varchar(255) NOT NULL DEFAULT '' AFTER `de_kakaopay_mid`,
-                    ADD `de_kakaopay_enckey` varchar(255) NOT NULL DEFAULT '' AFTER `de_kakaopay_key`,
-                    ADD `de_kakaopay_hashkey` varchar(255) NOT NULL DEFAULT '' AFTER `de_kakaopay_enckey`,
-                    ADD `de_kakaopay_cancelpwd` varchar(255) NOT NULL DEFAULT '' AFTER `de_kakaopay_hashkey` ", true);
-}
-
-// 이니시스 웹결제 사인키 필드 추가
-if(!isset($default['de_inicis_sign_key'])) {
-    sql_query(" ALTER TABLE `{$g5['g5_shop_default_table']}`
-                    ADD `de_inicis_sign_key` varchar(255) NOT NULL DEFAULT '' AFTER `de_inicis_admin_key` ", true);
-}
-
 // 네이버페이 필드추가
 if(!isset($default['de_naverpay_mid'])) {
     sql_query(" ALTER TABLE `{$g5['g5_shop_default_table']}`
@@ -230,7 +214,7 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
             $exe .= 'pp_cli_exe.exe';
         }
         
-        $module_check_path = G5_SHOP_PATH.$exe;
+        echo module_exec_check(G5_SHOP_PATH.$exe, 'pp_cli');
 
 
         // shop/kcp/log 디렉토리 체크 후 있으면 경고
@@ -246,15 +230,27 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
         $log_path = G5_LGXPAY_PATH.'/lgdacom/log';
 
         if(!is_dir($log_path)) {
-	        $script_alert['lg_log'] = "
-	        	<script>alert(\"".str_replace(G5_PATH.'/', '', G5_LGXPAY_PATH)."/lgdacom 폴더 안에 log 폴더를 생성하신 후 쓰기권한을 부여해 주십시오.\n> mkdir log\n> chmod 707 log\");</script>
-	        ";
-        } else {
-            if(!is_writable($log_path)) {
-				$script_alert['lg_log'] = "
-	        		<script>alert(\"".str_replace(G5_PATH.'/', '', $log_path)." 폴더에 쓰기권한을 부여해 주십시오.\n> chmod 707 log\");</script>
-				";
+            if( is_writable(G5_LGXPAY_PATH.'/lgdacom/') ){
+                // 디렉토리가 없다면 생성합니다. (퍼미션도 변경하구요.)
+                @mkdir($log_path, G5_DIR_PERMISSION);
+                @chmod($log_path, G5_DIR_PERMISSION);
             }
+            
+            if(!is_dir($log_path)){
+    	        $script_alert['lg_log'] = "
+    	        	<script>alert(\"".str_replace(G5_PATH.'/', '', G5_LGXPAY_PATH)."/lgdacom 폴더 안에 log 폴더를 생성하신 후 쓰기권한을 부여해 주십시오.\n> mkdir log\n> chmod 707 log\");</script>
+    	        ";
+	        }
+        }
+
+        if(!is_writable($log_path)) {
+            if( function_exists('check_log_folder') ){
+                check_log_folder($log_path);
+            }
+        } else {
+			$script_alert['lg_log'] = "
+        		<script>alert(\"".str_replace(G5_PATH.'/', '', $log_path)." 폴더에 쓰기권한을 부여해 주십시오.\n> chmod 707 log\");</script>
+			";
         }
     }
 
@@ -295,6 +291,10 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
 				$script_alert['inicis_log'] = "
 		        	<script>alert(\"".str_replace(G5_PATH.'/', '', $log_path)." 폴더에 쓰기권한을 부여해 주십시오.\n> chmod 707 log\");</script>
 		        ";
+            } else {
+                if( function_exists('check_log_folder') && is_writable($log_path) ){
+                    check_log_folder($log_path);
+                }
             }
         }
     }
@@ -312,6 +312,10 @@ if($default['de_iche_use'] || $default['de_vbank_use'] || $default['de_hp_use'] 
 		        $script_alert['kakao_log'] = "
 		        	<script>alert(\"".str_replace(G5_PATH.'/', '', $log_path)." 폴더에 쓰기권한을 부여해 주십시오.\n> chmod 707 log\");</script>
 		        ";
+            } else {
+                if( function_exists('check_log_folder') && is_writable($log_path) ){
+                    check_log_folder($log_path);
+                }
             }
         }
     }

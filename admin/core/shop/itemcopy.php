@@ -4,6 +4,8 @@ if (!defined('_EYOOM_IS_ADMIN_')) exit;
 
 auth_check($auth[$sub_menu], "r");
 
+$ca_id = preg_replace('/[^0-9a-z]/i', '', $ca_id);
+
 /**
  * submit & list & item view buttons
  */

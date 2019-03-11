@@ -1823,7 +1823,7 @@
 						<section>
 							<label for="cf_{.key_}" class="label">여분필드 {.key_} 값</label>
 					        <label class="input">
-					        	<input type="text" name="cf_{.key_}" id="cf_{.key_}" value="{=get_text(.cf_value)}">
+					        	<input type="text" name="cf_{.key_}" id="cf_{.key_}" value="{=get_sanitize_input(.cf_value)}">
 					        </label>
 						</section>
 					</div>

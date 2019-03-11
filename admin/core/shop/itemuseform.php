@@ -11,6 +11,8 @@ auth_check($auth[$sub_menu], "w");
  */
 $action_url = EYOOM_ADMIN_URL . "/?dir=shop&amp;pid=itemuseformupdate&amp;smode=1";
 
+$is_id = preg_replace('/[^0-9]/', '', $is_id);
+
 $sql = " select *
            from {$g5['g5_shop_item_use_table']} a
            left join {$g5['member_table']} b on (a.mb_id = b.mb_id)

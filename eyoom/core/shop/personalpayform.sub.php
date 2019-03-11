@@ -18,7 +18,7 @@ include_once (G5_SHOP_PATH.'/'.$default['de_pg_service'].'/orderform.2.php');
 $orderform2 = ob_get_contents();
 ob_end_clean();
 
-$multi_settle == 0;
+$multi_settle = 0;
 $checked = '';
 
 $escrow_title = "";

@@ -4,6 +4,9 @@ if (!defined('_EYOOM_IS_ADMIN_')) exit;
 
 auth_check($auth[$sub_menu], "r");
 
+$fr_date = preg_replace('/[^0-9_\-]/', '', $fr_date);
+$to_date = preg_replace('/[^0-9_\-]/', '', $to_date);
+
 function conv_telno($t)
 {
     // 숫자만 있고 0으로 시작하는 전화번호

@@ -70,6 +70,11 @@ if(!sql_query(" select od_pg from {$g5['g5_shop_order_table']} limit 1 ", false)
 // add_javascript('js 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
 
+if($od['od_pg'] === 'inicis' && !$od['od_test']) {
+    $sql = "select P_TID from {$g5['g5_shop_inicis_log_table']} where oid = '$od_id' and P_STATUS = 'cancel' ";
+    $tmp_row = sql_fetch($sql);
+}
+
 $chk_cnt = 0;
 for($i=0; $row=sql_fetch_array($result); $i++) {
     // 상품이미지

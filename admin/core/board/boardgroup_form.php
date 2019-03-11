@@ -22,7 +22,11 @@ if ($w == '') {
 }
 else
     alert('제대로 된 값이 넘어오지 않았습니다.');
-    
+
+if (!isset($group['gr_device'])) {
+    sql_query(" ALTER TABLE `{$g5['group_table']}` ADD `gr_device` ENUM('both','pc','mobile') NOT NULL DEFAULT 'both' AFTER `gr_subject` ", false);
+}
+
 $sql1 = " select count(*) as cnt from {$g5['group_member_table']} where gr_id = '{$gr_id}' ";
 $row1 = sql_fetch($sql1);
 $grmember_cnt = $row1['cnt'];

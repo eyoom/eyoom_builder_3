@@ -20,18 +20,18 @@ if ($_POST['act_button'] == "선택수정") {
         $k = $_POST['chk'][$i];
 
         $sql = "update {$g5['g5_shop_item_table']}
-                   set ca_id          = '{$_POST['ca_id'][$k]}',
-                       ca_id2         = '{$_POST['ca_id2'][$k]}',
-                       ca_id3         = '{$_POST['ca_id3'][$k]}',
-                       it_name        = '{$_POST['it_name'][$k]}',
-                       it_cust_price  = '{$_POST['it_cust_price'][$k]}',
-                       it_price       = '{$_POST['it_price'][$k]}',
-                       it_stock_qty   = '{$_POST['it_stock_qty'][$k]}',
-                       it_skin        = '{$_POST['it_skin'][$k]}',
-                       it_mobile_skin = '{$_POST['it_mobile_skin'][$k]}',
-                       it_use         = '{$_POST['it_use'][$k]}',
-                       it_soldout     = '{$_POST['it_soldout'][$k]}',
-                       it_order       = '{$_POST['it_order'][$k]}',
+                    set it_name        = '".sql_real_escape_string($_POST['it_name'][$k])."',
+                        it_cust_price  = '".sql_real_escape_string($_POST['it_cust_price'][$k])."',
+                        it_price       = '".sql_real_escape_string($_POST['it_price'][$k])."',
+                        it_stock_qty   = '".sql_real_escape_string($_POST['it_stock_qty'][$k])."',
+                        it_use         = '".sql_real_escape_string($_POST['it_use'][$k])."',
+                        it_soldout     = '".sql_real_escape_string($_POST['it_soldout'][$k])."',
+                        it_order       = '".sql_real_escape_string($_POST['it_order'][$k])."',
+                        it_type1       = '".sql_real_escape_string($_POST['it_type1'][$k])."',
+                        it_type2       = '".sql_real_escape_string($_POST['it_type2'][$k])."',
+                        it_type3       = '".sql_real_escape_string($_POST['it_type3'][$k])."',
+                        it_type4       = '".sql_real_escape_string($_POST['it_type4'][$k])."',
+                        it_type5       = '".sql_real_escape_string($_POST['it_type5'][$k])."',
                        it_update_time = '".G5_TIME_YMDHIS."'
                  where it_id   = '{$_POST['it_id'][$k]}' ";
         sql_query($sql);
