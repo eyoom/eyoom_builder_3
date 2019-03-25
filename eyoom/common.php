@@ -5,7 +5,7 @@ if (!defined('_EYOOM_')) exit;
 define('_EYOOM_COMMON_',true);
 
 // Version
-define('_EYOOM_VESION_','EyoomBuilder_3.0.8');
+define('_EYOOM_VESION_','EyoomBuilder_3.0.9');
 
 // GNUBOARD5 Library
 include_once(G5_LIB_PATH.'/common.lib.php');

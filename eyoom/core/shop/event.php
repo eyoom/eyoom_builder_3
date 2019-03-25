@@ -1,6 +1,8 @@
 <?php
 if (!defined('_SHOP_')) exit;
 
+$ev_id = (int) $ev_id;
+
 if (G5_IS_MOBILE && $eyoom['use_shop_mobile'] == 'y') {
 	include_once(EYOOM_MSHOP_PATH.'/event.php');
 	return;
@@ -30,8 +32,11 @@ if ($sort != "")
 else
 	$order_by = 'b.it_order, b.it_id desc';
 
-if ($skin)
+if ($skin) {
+	$skin = preg_replace('#\.+(\/|\\\)#', '', $skin);
 	$ev['ev_skin'] = $skin;
+}
+	
 	
 // 리스트 유형별로 출력
 $list_file = EYOOM_SHOP_PATH."/{$ev['ev_skin']}";
